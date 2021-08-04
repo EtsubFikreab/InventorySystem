@@ -25,9 +25,8 @@ public class Data{
             String password = " ";
             
             con = DriverManager.getConnection( host, username, password );
-
-            stmt = con.createStatement(
-            ResultSet.TYPE_SCROLL_INSENSITIVE, 
+            stmt = con.createStatement();
+            /*ResultSet.TYPE_SCROLL_INSENSITIVE, 
             ResultSet.CONCUR_UPDATABLE );
             
             //SQL statement
@@ -38,7 +37,7 @@ public class Data{
             rs = stmt.executeQuery( SQL );
             //hold all the records from the database table
 
-            rs.next( );
+            ;*/
 
         
         }
@@ -46,5 +45,8 @@ public class Data{
             System.out.println( err.getMessage( ) );
             }
     }
+    
+    //TODO Functions to get rows from all kinds of tables that are defined in the database
+
 
 }
