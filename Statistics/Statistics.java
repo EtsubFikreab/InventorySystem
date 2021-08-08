@@ -27,6 +27,9 @@ public class Statistics{
          * 
          * IN: 15 12 5
          * OUT: -15
+         * 
+         * IN: 12 12 5
+         * OUT: 0
          */
          totalProfit += (priceSold - priceBought)*quantitySold;
     }
