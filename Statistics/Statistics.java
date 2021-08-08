@@ -10,5 +10,25 @@
  */
 package Statistics;
 public class Statistics{
-    
+    public static void main(String[] args) {
+        //function made for testing purposes
+        Statistics s = new Statistics();
+        s.profit(12,12,5);
+        System.out.println(totalProfit);
+    }
+    static double totalProfit=0;
+    void profit (double priceBought, double priceSold, double quantitySold){
+        //quantity is double because items like consumables can be sold in fractions 
+        //eg sugar 0.5kg
+        /**
+         * sample:
+         * IN: 12 15 5
+         * OUT: 15
+         * 
+         * IN: 15 12 5
+         * OUT: -15
+         */
+         totalProfit += (priceSold - priceBought)*quantitySold;
+    }
+
 }
