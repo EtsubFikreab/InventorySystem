@@ -21,7 +21,7 @@ public class Dashboard extends javax.swing.JFrame {
     Doconnect doconnect;
     Connection con;
     Statement stmt;
-    ResultSet rs;
+    ResultSet rsBuy, rsCat, rsCus, rsPro, rsSell, rsStaff, rsStorage, rsSupplier;
     int curRow = 0;
     
     /**
@@ -3267,6 +3267,78 @@ public class Dashboard extends javax.swing.JFrame {
         textFeildNameCategory.setText(result[1]);
         textAreaDescriptionCategory.setText(result[2]);
     }
+    
+    private void singleBuy(){
+        String result[] = new String[5];
+        result = doconnect.readBuy();
+        
+//        textFeildNameUpdate3.setText(result[2]);
+//        textFeildPriceUpdate2.setText(result[4]);
+//        textFeildQuantityUpdate2.setText(result[3]);
+//        textFeildNameUpdate4.setText(result[1]);
+    }
+    
+    private void singleCustomer(){
+        String result[] = new String[6];
+        result = doconnect.readCustomer();
+        
+//        textFeildNameUpdate13.setText(result[0]);
+//        textFeildNameUpdate17.setText(result[1]);
+//        textFeildPriceUpdate5.setText(result[4]);
+//        textFeildNameUpdate16.setText(result[3]);
+//        textFeildNameUpdate16.setText(result[5]);
+    }
+    
+    private void singleProduct(){
+        String result[] = new String[7];
+        result = doconnect.readProduct();
+        
+//        textFeildNameUpdate.setText(result[0]);
+//        textFeildPriceUpdate.setText(result[2]);
+//        textFeildQuantityUpdate.setText(result[4]);
+//        textAreaDescription.setText(result[3]);
+    }
+    private void singleSell(){
+        String result[] = new String[5];
+        result = doconnect.readSell();
+        
+//        textFeildNameUpdate1.setText(result[1]);
+//        textFeildPriceUpdate1.setText(result[4]);
+//        textFeildQuantityUpdate1.setText(result[3]);
+//        textFeildNameUpdate2.setText(result[2]);
+    }
+    
+    private void singleStaff(){
+        String result[] = new String[6];
+        result = doconnect.readStaff();
+        
+//        textFeildNameUpdate10.setText(result[0]);
+//        textFeildNameUpdate14.setText(result[1]);
+//        textFeildPriceUpdate4.setText(result[3]);
+//        textFeildNameUpdate11.setText(result[4]);
+//        textFeildNameUpdate12.setText(result[5]);
+    }
+    
+    private void singleStorage(){
+        String result[] = new String[3];
+        result = doconnect.readStorage();
+        
+//        textFeildNameUpdate16.setText(result[0]);
+//        textAreaDescription3.setText(result[2]);
+    }
+    
+    private void singleSupplier(){
+        String result[] = new String[7];
+        result = doconnect.readSupplier();
+        
+//        textFeildNameUpdate6.setText(result[1]);
+//        textFeildPriceUpdate3.setText(result[2]);
+//        textFeildNameUpdate7.setText(result[3]);
+//        textFeildNameUpdate8.setText(result[4]);
+//        textFeildNameUpdate9.setText(result[5]);
+//        textAreaDescription2.setText(result[6]);
+    }
+    
     private void setIconImage() {
         //changes the icon image from the default java mug to a file that is in the working directory
         setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("icon.png")));
