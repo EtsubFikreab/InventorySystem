@@ -3,7 +3,7 @@ package Manipulate;
 import java.sql.SQLException;
 import java.sql.ResultSet;
 
-public class Product extends Connect{
+public class Product extends Connect implements reader{
     String name;
     double quantity, priceBought;
     ResultSet rs;
@@ -46,5 +46,20 @@ public class Product extends Connect{
         catch ( SQLException err ) {
             System.out.println( err.getMessage( ) );
         }
+    }
+
+    public String[] readNext(){
+        String results[] = new String[6];
+        return results;
+    }
+
+    public String[] readPrevious(){
+        String results[] = new String[6];
+        return results;
+    }
+
+    public String[] readLast(){
+        String results[] = new String[6];
+        return results;
     }
 }

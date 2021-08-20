@@ -3,7 +3,7 @@ package Manipulate;
 import java.sql.SQLException;
 import java.sql.ResultSet;
 
-public class Staff extends Connect {
+public class Staff extends Connect implements reader{
     String Fname;
 	 String Lname;
 	 int StID;
@@ -48,5 +48,21 @@ public class Staff extends Connect {
         catch (SQLException err){
             System.out.println(err.getMessage());
         }
+    }
+
+
+    public String[] readNext(){
+        String results[] = new String[6];
+        return results;
+    }
+    
+    public String[] readPrevious(){
+        String results[] = new String[6];
+        return results;
+    }
+    
+    public String[] readLast(){
+        String results[] = new String[6];
+        return results;
     }
 }

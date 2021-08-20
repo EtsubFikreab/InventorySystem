@@ -3,7 +3,7 @@ package Manipulate;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class Supplier extends Connect{
+public class Supplier extends Connect implements reader{
   int SID;
 	String Sname;
 	String SAddress;
@@ -49,10 +49,25 @@ public class Supplier extends Connect{
       rs.updateString("supplierDescription",(results[4]));
       rs.insertRow();
     }
-  catch ( SQLException err ) {
+    catch ( SQLException err ) {
       System.out.println( err.getMessage( ) );
-  }
+    }
 
 
   }
+
+  public String[] readNext(){
+    String results[] = new String[6];
+    return results;
+  }
+
+  public String[] readPrevious(){
+    String results[] = new String[6];
+    return results;
+  }
+
+  public String[] readLast(){
+    String results[] = new String[6];
+    return results;
+  } 
 }

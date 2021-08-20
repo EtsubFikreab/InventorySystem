@@ -10,3 +10,10 @@ abstract class Connect {
     abstract String [] read();
     abstract void write(String result[]);
 }
+
+
+interface reader{
+    String[] readNext();
+    String[] readPrevious();
+    String[] readLast();
+}

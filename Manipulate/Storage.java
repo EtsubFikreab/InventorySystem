@@ -3,7 +3,7 @@ package Manipulate;
 import java.sql.SQLException;
 import java.sql.ResultSet;
 
-public class Storage extends Connect{
+public class Storage extends Connect implements reader{
     String StorageArea;
 	 int StorageID;
 	 String StoDesc;
@@ -42,4 +42,19 @@ public class Storage extends Connect{
         }
  
      }
+
+    public String[] readNext(){
+        String results[] = new String[6];
+        return results;
+    }
+
+    public String[] readPrevious(){
+        String results[] = new String[6];
+        return results;
+    }
+
+    public String[] readLast(){
+        String results[] = new String[6];
+        return results;
+    }
 }

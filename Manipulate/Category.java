@@ -3,7 +3,7 @@ package Manipulate;
 import java.sql.SQLException;
 import java.sql.ResultSet;
 
-public class Category extends Connect{
+public class Category extends Connect implements reader{
     String CatName;
     int CatID;
     String CatDesc;
@@ -32,20 +32,33 @@ public class Category extends Connect{
         return results;
     }
     public void write(String result[]){
-    try{
-      String SQL = "SELECT * FROM Category";
-      rs = stmt.executeQuery( SQL );
-      rs.moveToInsertRow( );
-      rs.updateInt("CatID", Integer.parseInt(result[0]));
-      rs.updateString("CatName",(result[1]));
-      rs.updateString("Description",(result[2]));
-      rs.insertRow();
+        try{
+            String SQL = "SELECT * FROM Category";
+            rs = stmt.executeQuery( SQL );
+            rs.moveToInsertRow( );
+            rs.updateInt("CatID", Integer.parseInt(result[0]));
+            rs.updateString("CatName",(result[1]));
+            rs.updateString("Description",(result[2]));
+            rs.insertRow();
+        }
+        catch ( SQLException err ) {
+            System.out.println( err.getMessage( ) );
+        }
+
     }
-  catch ( SQLException err ) {
-      System.out.println( err.getMessage( ) );
-  }
 
+    public String[] readNext(){
+        String results[] = new String[6];
+        return results;
+    }
 
+    public String[] readPrevious(){
+        String results[] = new String[6];
+        return results;
+    }
 
+    public String[] readLast(){
+        String results[] = new String[6];
+        return results;
     }
 }

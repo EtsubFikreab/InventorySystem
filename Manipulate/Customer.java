@@ -1,7 +1,7 @@
 package Manipulate;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-class Customer extends Connect{
+class Customer extends Connect implements reader{
     String Fname;
     String Lname;
     int CID; 
@@ -44,7 +44,20 @@ class Customer extends Connect{
         catch ( SQLException err ) {
             System.out.println( err.getMessage( ) );
         }
+    }
 
+    public String[] readNext(){
+        String results[] = new String[6];
+        return results;
+    }
 
+    public String[] readPrevious(){
+        String results[] = new String[6];
+        return results;
+    }
+
+    public String[] readLast(){
+        String results[] = new String[6];
+        return results;
     }
 }
