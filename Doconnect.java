@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package inventoryapp;
+//package inventoryapp;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -18,7 +18,7 @@ import java.sql.SQLException;
 public class Doconnect {
     Connection con;
     Statement stmt;
-    ResultSet rsBuy, rsCat, rsCus, rsPro, rsSell, rsStaff, rsStorage, rsSupplier;
+    ResultSet rs,rsBuy, rsCat, rsCus, rsPro, rsSell, rsStaff, rsStorage, rsSupplier;
     int curRow = 0;
     Doconnect(){
          try{
