@@ -37,6 +37,22 @@ public class Supplier extends Connect{
   }
 
   public void write(String results[]){
-    
+    try{
+      String SQL = "SELECT * FROM Supplier";
+      rs = stmt.executeQuery( SQL );
+      rs.moveToInsertRow( );
+      rs.updateInt("supplierID", Integer.parseInt(results[0]));
+      rs.updateString("supplierName",(results[1]));
+      rs.updateString("supplierAddress",(results[2]));
+      rs.updateString("supplierEmail",(results[3]));
+      rs.updateString("POBOX",(results[4]));
+      rs.updateString("supplierDescription",(results[4]));
+      rs.insertRow();
+    }
+  catch ( SQLException err ) {
+      System.out.println( err.getMessage( ) );
+  }
+
+
   }
 }

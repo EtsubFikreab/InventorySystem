@@ -36,6 +36,20 @@ public class Sell extends Connect {
   }  
 
   public void write(String results[]){
+    try{
+      String SQL = "SELECT * FROM sell";
+      rs = stmt.executeQuery( SQL );
+      rs.moveToInsertRow( );
+      rs.updateInt("staffID", Integer.parseInt(results[0]));
+      rs.updateInt("productID", Integer.parseInt(results[1]));
+      rs.updateInt("customerID", Integer.parseInt(results[2]));
+      rs.updateInt("quantity", Integer.parseInt(results[3]));
+      rs.updateDouble("price", Double.parseDouble(results[4]));
+      rs.insertRow();
+    }
+  catch ( SQLException err ) {
+      System.out.println( err.getMessage( ) );
+  }
 
   }
 }
