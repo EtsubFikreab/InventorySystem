@@ -25,6 +25,21 @@ public class Storage extends Connect{
         return results;
      }
      public void write(String result[]){
+        try{
+            String SQL = "SELECT * FROM storage";    
+
+            rs = stmt.executeQuery( SQL );
+            rs.moveToInsertRow( );
+            rs.updateString("storageArea",  result[0]);
+            rs.updateInt("storageID", Integer.parseInt(result[1]));
+            rs.updateString("Description", result[2]);
+            
+            rs.insertRow( );
+      
+        }
+        catch (SQLException err){
+            System.out.println(err.getMessage());
+        }
  
      }
 }
