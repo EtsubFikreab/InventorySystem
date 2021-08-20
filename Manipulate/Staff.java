@@ -15,9 +15,6 @@ public class Staff extends Connect {
         String[] results = new String[6];
         try{
             String SQL = "SELECT * FROM staff";
-    
-  
-    
             rs = stmt.executeQuery( SQL );
             //hold all the records from the database table
 
@@ -35,6 +32,21 @@ public class Staff extends Connect {
         return results;
     }
     public void write(String result[]){
-
+        try{
+            String SQL = "SELECT * FROM staff";
+            rs = stmt.executeQuery( SQL );
+            rs.moveToInsertRow( );
+            rs.updateString("Fname",  result[0]);
+            rs.updateString("Lname",  result[1]);
+            rs.updateInt("storageID", Integer.parseInt(result[2]));
+            rs.updateString("staffAddress",  result[3]);
+            rs.updateString("staffPhone", result[4]);
+            rs.updateString("staffEmail", result[5]);
+            
+            rs.insertRow( );
+        }
+        catch (SQLException err){
+            System.out.println(err.getMessage());
+        }
     }
 }

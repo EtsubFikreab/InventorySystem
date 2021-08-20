@@ -21,7 +21,7 @@ public class Doconnect {
            con = DriverManager.getConnection( host, username, "" );
 
            stmt = con.createStatement(
-           ResultSet.TYPE_SCROLL_INSENSITIVE, 
+           ResultSet.TYPE_SCROLL_SENSITIVE, 
            ResultSet.CONCUR_UPDATABLE );
        }
        catch ( SQLException err ) {

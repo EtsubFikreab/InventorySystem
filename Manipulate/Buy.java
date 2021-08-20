@@ -1,16 +1,20 @@
-
+/**
+ * Product that is bought by the customer.
+ */
 package Manipulate;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class Buy extends Connect {
+  
   int SID;
 	int StID;
 	int PID;
 	int Quantity;
 	double Price;
 	String Date;
+
   ResultSet rs;
 
   public String[] read(){
@@ -19,7 +23,6 @@ public class Buy extends Connect {
             String SQL = "SELECT * FROM buy";
             rs = stmt.executeQuery( SQL );
             //hold all the records from the database table
-
             rs.next( );
             results[0] = Integer.toString(rs.getInt("staffID"));
             results[1] = Integer.toString(rs.getInt("supplierID"));
@@ -34,6 +37,21 @@ public class Buy extends Connect {
   }
 
   public void write(String results[]){
+    try{
+      String SQL = "SELECT * FROM buy";
+      rs = stmt.executeQuery( SQL );
+      rs.moveToInsertRow( );
+      rs.updateInt("staffID", Integer.parseInt(results[0]));
+      rs.updateInt("supplierID",  Integer.parseInt(results[1]));
+      rs.updateInt("productID", Integer.parseInt(results[2]));
+      rs.updateInt("quantity", Integer.parseInt(results[3]));
+      rs.updateDouble("price",  Double.parseDouble(results[4]));
+      
+      rs.insertRow( );
 
+  }
+  catch (SQLException err){
+      System.out.println(err.getMessage());
+  }
   }
 }
