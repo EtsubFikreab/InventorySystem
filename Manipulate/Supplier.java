@@ -2,6 +2,7 @@ package Manipulate;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import javax.swing.JOptionPane;
 
 public class Supplier extends Connect implements reader{
   int SID;
@@ -57,17 +58,66 @@ public class Supplier extends Connect implements reader{
   }
 
   public String[] readNext(){
-    String results[] = new String[6];
+    String results[] = new String[7];
+    try {
+      if ( rs.next( )) {
+        results[0] = Integer.toString(rs.getInt("supplierID"));
+        results[1] = rs.getString("supplierName");
+        results[2] = rs.getString("supplierAddress");
+        results[3] = rs.getString("supplierPhone");
+        results[4] = rs.getString("supplierEmail");
+        results[5] = Integer.toString(rs.getInt("POBOX"));
+        results[6] = rs.getString("supplierDescription");
+      }
+      else {
+          rs.previous( );
+          JOptionPane.showMessageDialog(null, "End of File");
+      }
+    }
+    catch (SQLException err) {
+        JOptionPane.showMessageDialog(null, err.getMessage());
+    }
     return results;
   }
 
   public String[] readPrevious(){
-    String results[] = new String[6];
+    String results[] = new String[7];
+    try {
+      if ( rs.previous( )) {
+        results[0] = Integer.toString(rs.getInt("supplierID"));
+        results[1] = rs.getString("supplierName");
+        results[2] = rs.getString("supplierAddress");
+        results[3] = rs.getString("supplierPhone");
+        results[4] = rs.getString("supplierEmail");
+        results[5] = Integer.toString(rs.getInt("POBOX"));
+        results[6] = rs.getString("supplierDescription");
+      }
+      else {
+          rs.next( );
+          JOptionPane.showMessageDialog(null, "Start of File");
+      }
+    }
+    catch (SQLException err) {
+        JOptionPane.showMessageDialog(null, err.getMessage());
+    }
     return results;
   }
 
   public String[] readLast(){
-    String results[] = new String[6];
+    String results[] = new String[7];
+    try {
+      rs.last();
+      results[0] = Integer.toString(rs.getInt("supplierID"));
+      results[1] = rs.getString("supplierName");
+      results[2] = rs.getString("supplierAddress");
+      results[3] = rs.getString("supplierPhone");
+      results[4] = rs.getString("supplierEmail");
+      results[5] = Integer.toString(rs.getInt("POBOX"));
+      results[6] = rs.getString("supplierDescription");
+    }
+    catch (SQLException err) {
+        JOptionPane.showMessageDialog(null, err.getMessage());
+    }
     return results;
   } 
 }

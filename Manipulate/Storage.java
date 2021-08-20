@@ -2,6 +2,7 @@ package Manipulate;
 
 import java.sql.SQLException;
 import java.sql.ResultSet;
+import javax.swing.JOptionPane;
 
 public class Storage extends Connect implements reader{
     String StorageArea;
@@ -44,17 +45,54 @@ public class Storage extends Connect implements reader{
      }
 
     public String[] readNext(){
-        String results[] = new String[6];
+        String results[] = new String[3];
+        try {
+            if ( rs.next( )) {
+                results[0] = Integer.toString(rs.getInt("storageArea"));
+                results[1] = Integer.toString(rs.getInt("storageID"));
+                results[2] = rs.getString("Description");
+            }
+            else {
+                rs.previous( );
+                JOptionPane.showMessageDialog(null, "End of File");
+            }
+        }
+        catch (SQLException err) {
+            JOptionPane.showMessageDialog(null, err.getMessage());
+        }
         return results;
     }
 
     public String[] readPrevious(){
-        String results[] = new String[6];
+        String results[] = new String[3];
+        try {
+            if ( rs.previous( )) {
+                results[0] = Integer.toString(rs.getInt("storageArea"));
+                results[1] = Integer.toString(rs.getInt("storageID"));
+                results[2] = rs.getString("Description");
+            }
+            else {
+                rs.next( );
+                JOptionPane.showMessageDialog(null, "Start of File");
+            }
+        }
+        catch (SQLException err) {
+            JOptionPane.showMessageDialog(null, err.getMessage());
+        }
         return results;
     }
 
     public String[] readLast(){
-        String results[] = new String[6];
+        String results[] = new String[3];
+        try {
+            rs.last();
+            results[0] = Integer.toString(rs.getInt("storageArea"));
+            results[1] = Integer.toString(rs.getInt("storageID"));
+            results[2] = rs.getString("Description");
+        }
+        catch (SQLException err) {
+            JOptionPane.showMessageDialog(null, err.getMessage());
+        }
         return results;
     }
 }

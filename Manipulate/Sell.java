@@ -47,24 +47,9 @@ public class Sell extends Connect {
       rs.updateDouble("price", Double.parseDouble(results[4]));
       rs.insertRow();
     }
-    catch ( SQLException err ) {
+  catch ( SQLException err ) {
       System.out.println( err.getMessage( ) );
-    }
-
   }
 
-  public String[] readNext(){
-    String results[] = new String[6];
-    return results;
-  }
-
-  public String[] readPrevious(){
-    String results[] = new String[6];
-    return results;
-  }
-
-  public String[] readLast(){
-    String results[] = new String[6];
-    return results;
   }
 }

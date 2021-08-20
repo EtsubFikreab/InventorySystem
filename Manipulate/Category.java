@@ -2,6 +2,7 @@ package Manipulate;
 
 import java.sql.SQLException;
 import java.sql.ResultSet;
+import javax.swing.JOptionPane;
 
 public class Category extends Connect implements reader{
     String CatName;
@@ -48,17 +49,57 @@ public class Category extends Connect implements reader{
     }
 
     public String[] readNext(){
-        String results[] = new String[6];
+        String results[] = new String[3];
+        try {
+            if ( rs.next( )) {
+                int id_col = rs.getInt("CatID");
+                results[0] = Integer.toString(id_col);
+                results[1] = rs.getString("CatName");
+                results[2] = rs.getString("Description");
+            }
+            else {
+                rs.previous( );
+                JOptionPane.showMessageDialog(null, "End of File");
+            }
+        }
+        catch (SQLException err) {
+            JOptionPane.showMessageDialog(null, err.getMessage());
+        }
         return results;
     }
 
     public String[] readPrevious(){
-        String results[] = new String[6];
+        String results[] = new String[3];
+        try {
+            if ( rs.previous( )) {
+                int id_col = rs.getInt("CatID");
+                results[0] = Integer.toString(id_col);
+                results[1] = rs.getString("CatName");
+                results[2] = rs.getString("Description");
+            }
+            else {
+                rs.next( );
+                JOptionPane.showMessageDialog(null, "Start of File");
+            }
+        }
+        catch (SQLException err) {
+            JOptionPane.showMessageDialog(null, err.getMessage());
+        }
         return results;
     }
 
     public String[] readLast(){
-        String results[] = new String[6];
+        String results[] = new String[3];
+        try {
+            rs.last();
+            int id_col = rs.getInt("CatID");
+            results[0] = Integer.toString(id_col);
+            results[1] = rs.getString("CatName");
+            results[2] = rs.getString("Description");
+        }
+        catch (SQLException err) {
+            JOptionPane.showMessageDialog(null, err.getMessage());
+        }
         return results;
     }
 }

@@ -2,6 +2,7 @@ package Manipulate;
 
 import java.sql.SQLException;
 import java.sql.ResultSet;
+import javax.swing.JOptionPane;
 
 public class Staff extends Connect implements reader{
     String Fname;
@@ -53,16 +54,62 @@ public class Staff extends Connect implements reader{
 
     public String[] readNext(){
         String results[] = new String[6];
+        try {
+            if ( rs.next( )) {
+                results[0] = rs.getString("Fname");
+                results[1] = rs.getString("Lname");
+                results[2] = Integer.toString(rs.getInt("staffID"));
+                results[3] = rs.getString("staffAddress");
+                results[4] = rs.getString("staffPhone");
+                results[5] = rs.getString("staffEmail");
+            }
+            else {
+                rs.previous( );
+                JOptionPane.showMessageDialog(null, "End of File");
+            }
+        }
+        catch (SQLException err) {
+            JOptionPane.showMessageDialog(null, err.getMessage());
+        }
         return results;
     }
     
     public String[] readPrevious(){
         String results[] = new String[6];
+        try {
+            if ( rs.previous( )) {
+                results[0] = rs.getString("Fname");
+                results[1] = rs.getString("Lname");
+                results[2] = Integer.toString(rs.getInt("staffID"));
+                results[3] = rs.getString("staffAddress");
+                results[4] = rs.getString("staffPhone");
+                results[5] = rs.getString("staffEmail");
+            }
+            else {
+                rs.next( );
+                JOptionPane.showMessageDialog(null, "Start of File");
+            }
+        }
+        catch (SQLException err) {
+            JOptionPane.showMessageDialog(null, err.getMessage());
+        }
         return results;
     }
     
     public String[] readLast(){
         String results[] = new String[6];
+        try {
+            rs.last();
+            results[0] = rs.getString("Fname");
+            results[1] = rs.getString("Lname");
+            results[2] = Integer.toString(rs.getInt("staffID"));
+            results[3] = rs.getString("staffAddress");
+            results[4] = rs.getString("staffPhone");
+            results[5] = rs.getString("staffEmail");
+        }
+        catch (SQLException err) {
+            JOptionPane.showMessageDialog(null, err.getMessage());
+        }
         return results;
     }
 }

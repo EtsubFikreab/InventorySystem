@@ -1,6 +1,8 @@
 package Manipulate;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import javax.swing.JOptionPane;
+
 class Customer extends Connect implements reader{
     String Fname;
     String Lname;
@@ -48,16 +50,62 @@ class Customer extends Connect implements reader{
 
     public String[] readNext(){
         String results[] = new String[6];
+        try {
+            if ( rs.next( )) {
+                results[0] = rs.getString("Fname");
+                results[1] = rs.getString("Lname");
+                results[2] = Integer.toString(rs.getInt("CID"));
+                results[3] = rs.getString("CAddress");
+                results[4] = rs.getString("Cphone");
+                results[5] = rs.getString("CEmail");
+            }
+            else {
+                rs.previous( );
+                JOptionPane.showMessageDialog(null, "End of File");
+            }
+        }
+        catch (SQLException err) {
+            JOptionPane.showMessageDialog(null, err.getMessage());
+        }
         return results;
     }
 
     public String[] readPrevious(){
         String results[] = new String[6];
+        try {
+            if ( rs.previous( )) {
+                results[0] = rs.getString("Fname");
+                results[1] = rs.getString("Lname");
+                results[2] = Integer.toString(rs.getInt("CID"));
+                results[3] = rs.getString("CAddress");
+                results[4] = rs.getString("Cphone");
+                results[5] = rs.getString("CEmail");
+            }
+            else {
+                rs.next( );
+                JOptionPane.showMessageDialog(null, "Start of File");
+            }
+        }
+        catch (SQLException err) {
+            JOptionPane.showMessageDialog(null, err.getMessage());
+        }
         return results;
     }
 
     public String[] readLast(){
         String results[] = new String[6];
+        try {
+            rs.last();
+            results[0] = rs.getString("Fname");
+            results[1] = rs.getString("Lname");
+            results[2] = Integer.toString(rs.getInt("CID"));
+            results[3] = rs.getString("CAddress");
+            results[4] = rs.getString("Cphone");
+            results[5] = rs.getString("CEmail");
+        }
+        catch (SQLException err) {
+            JOptionPane.showMessageDialog(null, err.getMessage());
+        }
         return results;
     }
 }
