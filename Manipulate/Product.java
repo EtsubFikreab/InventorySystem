@@ -5,15 +5,12 @@ import java.sql.ResultSet;
 
 public class Product extends Connect{
     String name;
-    double quantity, priceSold, priceBought;
+    double quantity, priceBought;
     ResultSet rs;
     public String [] read(){
         String[] results = new String[7];
         try{
-            String SQL = "SELECT * FROM product";
-    
-  
-    
+            String SQL = "SELECT * FROM product";    
             rs = stmt.executeQuery( SQL );
             //hold all the records from the database table
 
@@ -33,6 +30,21 @@ public class Product extends Connect{
         return results;
     }
     public void write(String result[]){
-
+        try{
+            rs.moveToInsertRow( );
+            rs.updateString("productName", result[0]);
+            rs.updateInt("productID",  Integer.parseInt(result[1]));
+            rs.updateDouble("productPrice", Double.parseDouble(result[2]));
+            // TODO insert date
+            rs.updateString("productDescription", result[3]);
+            rs.updateInt("productQuantity", Integer.parseInt(result[4]));
+            rs.updateInt("catagoryID",  Integer.parseInt(result[5]));
+            rs.updateInt("storageID",  Integer.parseInt(result[6]));
+            
+            rs.insertRow( );
+        }
+        catch ( SQLException err ) {
+            System.out.println( err.getMessage( ) );
+        }
     }
 }

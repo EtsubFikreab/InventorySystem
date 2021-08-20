@@ -3323,7 +3323,7 @@ public class Dashboard extends javax.swing.JFrame {
         String result[] = new String[3];
         result = doconnect.readStorage();
         
-//        textFeildNameUpdate16.setText(result[0]);
+        textFeildNameUpdate16.setText(result[0]);
 //        textAreaDescription3.setText(result[2]);
     }
     
