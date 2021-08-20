@@ -19,7 +19,6 @@ public class Buy extends Connect {
             String SQL = "SELECT * FROM buy";
             rs = stmt.executeQuery( SQL );
             //hold all the records from the database table
-
             rs.next( );
             results[0] = Integer.toString(rs.getInt("staffID"));
             results[1] = Integer.toString(rs.getInt("supplierID"));

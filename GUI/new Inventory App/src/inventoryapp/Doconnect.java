@@ -22,7 +22,7 @@ public class Doconnect {
     int curRow = 0;
     Doconnect(){
          try{
-            String host = "jdbc:mysql://localhost:3306/inventory";
+            String host = "jdbc:mysql://localhost:3306/inventorymanagmentsystem";
             String username = "root";
             con = DriverManager.getConnection( host, username, "" );
 
