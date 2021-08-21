@@ -20,10 +20,10 @@ class Customer extends Connect implements reader{
             rs.next( );
             result[0] = rs.getString("Fname");
             result[1] = rs.getString("Lname");
-            result[2] = Integer.toString(rs.getInt("CID"));
-            result[3] = rs.getString("CAddress");
-            result[4] = rs.getString("Cphone");
-            result[5] = rs.getString("CEmail");
+            result[2] = Integer.toString(rs.getInt("customerID"));
+            result[3] = rs.getString("customerAddress");
+            result[4] = rs.getString("customerPhone");
+            result[5] = rs.getString("customerEmail");
         }
         catch ( SQLException err ) {
             System.out.println( err.getMessage( ) );
@@ -37,9 +37,9 @@ class Customer extends Connect implements reader{
             rs.moveToInsertRow( );
             rs.updateString("Fname",(result[0]));
             rs.updateString("Lname",(result[1]));
-            rs.updateString("CAddress",(result[3]));
-            rs.updateString("Cphone",(result[4]));
-            rs.updateString("CEmail",(result[5]));
+            rs.updateString("customerAddress",(result[3]));
+            rs.updateString("customerPhone",(result[4]));
+            rs.updateString("customerEmail",(result[5]));
             rs.insertRow();
           }
         catch ( SQLException err ) {
@@ -53,10 +53,10 @@ class Customer extends Connect implements reader{
             if ( rs.next( )) {
                 results[0] = rs.getString("Fname");
                 results[1] = rs.getString("Lname");
-                results[2] = Integer.toString(rs.getInt("CID"));
-                results[3] = rs.getString("CAddress");
-                results[4] = rs.getString("Cphone");
-                results[5] = rs.getString("CEmail");
+                results[2] = Integer.toString(rs.getInt("customerID"));
+                results[3] = rs.getString("customerAddress");
+                results[4] = rs.getString("customerPhone");
+                results[5] = rs.getString("customerEmail");
             }
             else {
                 rs.previous( );
@@ -75,10 +75,10 @@ class Customer extends Connect implements reader{
             if ( rs.previous( )) {
                 results[0] = rs.getString("Fname");
                 results[1] = rs.getString("Lname");
-                results[2] = Integer.toString(rs.getInt("CID"));
-                results[3] = rs.getString("CAddress");
-                results[4] = rs.getString("Cphone");
-                results[5] = rs.getString("CEmail");
+                results[2] = Integer.toString(rs.getInt("customerID"));
+                results[3] = rs.getString("customerAddress");
+                results[4] = rs.getString("customerPhone");
+                results[5] = rs.getString("customerEmail");
             }
             else {
                 rs.next( );
@@ -97,10 +97,10 @@ class Customer extends Connect implements reader{
             rs.last();
             results[0] = rs.getString("Fname");
             results[1] = rs.getString("Lname");
-            results[2] = Integer.toString(rs.getInt("CID"));
-            results[3] = rs.getString("CAddress");
-            results[4] = rs.getString("Cphone");
-            results[5] = rs.getString("CEmail");
+            results[2] = Integer.toString(rs.getInt("customerID"));
+            results[3] = rs.getString("customerAddress");
+            results[4] = rs.getString("customerPhone");
+            results[5] = rs.getString("customerEmail");
         }
         catch (SQLException err) {
             JOptionPane.showMessageDialog(null, err.getMessage());
@@ -112,10 +112,10 @@ class Customer extends Connect implements reader{
         try {
             rs.updateString("Fname",(result[0]));
             rs.updateString("Lname",(result[1]));
-            rs.updateString("Lname",(result[1]));
-            rs.updateInt("CID" ,Integer.parseInt(result[3]));
-            rs.updateString("Cphone",(result[4]));
-            rs.updateString("CEmail",(result[5]));
+            rs.updateInt("customerID" ,Integer.parseInt(result[2]));
+            rs.updateString("customerAddress",(result[3]));
+            rs.updateString("customerPhone",(result[4]));
+            rs.updateString("customerEmail",(result[5]));
             rs.updateRow( );
             JOptionPane.showMessageDialog(null, "Updated");
         }
