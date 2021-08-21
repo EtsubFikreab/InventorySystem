@@ -3,14 +3,14 @@ package Manipulate;
 public class Tables {
     Product product;
     
-    Sell sell;
-    Buy buy;
+    public Sell sell;
+    public Buy buy;
 
-    Category category;
-    Supplier supplier;
-    Staff staff;
-    Customer customer;
-    Storage storage;
+    public Category category;
+    public Supplier supplier;
+    public Staff staff;
+    public Customer customer;
+    public Storage storage;
 
     public void productTables(){
         product = new Product();
