@@ -98,7 +98,8 @@ public class Storage extends Connect implements reader{
     public boolean updateRow(String result[]){
         try {
             rs.updateInt("storageArea", Integer.parseInt(result[0]));
-            rs.updateInt("storageID", Integer.parseInt(result[1]));
+            //THIS ARE COMMENTED BECAUSE THE ID PART IS AUTO INCREAMENT BY THE DATABASE
+            //   rs.updateInt("storageID", Integer.parseInt(result[1]));
             rs.updateString("Description",(result[2]));
             rs.updateRow( );
             JOptionPane.showMessageDialog(null, "Updated");

@@ -133,9 +133,8 @@ public class Supplier extends Connect implements reader{
 }
 public boolean updateRow( String result[]){
   try {
-      
-     
-      rs.updateInt("supplierID", Integer.parseInt(result[0]));
+    //THIS ARE COMMENTED BECAUSE THE ID PART IS AUTO INCREAMENT BY THE DATABASE 
+    // rs.updateInt("supplierID", Integer.parseInt(result[0]));
       rs.updateString("supplierName",(result[1]));
       rs.updateString("supplierAddress",(result[2]));
       rs.updateString("supplierEmail",(result[3]));

@@ -129,13 +129,14 @@ public class Product extends Connect implements reader{
     public boolean updateRow( String result[]){
         try {
             rs.updateString("productName", result[0]);
-            rs.updateInt("productID",  Integer.parseInt(result[1]));
+        //THIS ARE COMMENTED BECAUSE THE ID PART IS AUTO INCREAMENT BY THE DATABASE
+         //   rs.updateInt("productID",  Integer.parseInt(result[1]));
             rs.updateDouble("productPrice", Double.parseDouble(result[2]));
             // TODO insert date
             rs.updateString("productDescription", result[3]);
             rs.updateInt("productQuantity", Integer.parseInt(result[4]));
-            rs.updateInt("catagoryID",  Integer.parseInt(result[5]));
-            rs.updateInt("storageID",  Integer.parseInt(result[6]));
+           // rs.updateInt("catagoryID",  Integer.parseInt(result[5]));
+           // rs.updateInt("storageID",  Integer.parseInt(result[6]));
             rs.updateRow( );
             JOptionPane.showMessageDialog(null, "Updated");
         }

@@ -41,9 +41,10 @@ public class Buy extends Connect {
       String SQL = "SELECT * FROM buy";
       rs = stmt.executeQuery( SQL );
       rs.moveToInsertRow( );
-      rs.updateInt("staffID", Integer.parseInt(results[0]));
-      rs.updateInt("supplierID",  Integer.parseInt(results[1]));
-      rs.updateInt("productID", Integer.parseInt(results[2]));
+      //THIS ARE COMMENTED BECAUSE THE ID PART IS AUTO INCREAMENT BY THE DATABASE
+      // rs.updateInt("staffID", Integer.parseInt(results[0]));
+      // rs.updateInt("supplierID",  Integer.parseInt(results[1]));
+      // rs.updateInt("productID", Integer.parseInt(results[2]));
       rs.updateInt("quantity", Integer.parseInt(results[3]));
       rs.updateDouble("price",  Double.parseDouble(results[4]));
       
