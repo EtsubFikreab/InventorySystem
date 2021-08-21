@@ -131,7 +131,6 @@ public class Staff extends Connect implements reader{
     public boolean deleteRow(){
         try{
             rs.deleteRow( );
-            //TODO  implement read() in the event handler (button)
             JOptionPane.showMessageDialog(null, "Succesfully Deleted");
         }
         catch (SQLException err){
