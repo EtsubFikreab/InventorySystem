@@ -96,7 +96,7 @@ public class Storage extends Connect implements reader{
         return results;
     }
 
-    public boolean updateRow( String result[]){
+    public boolean updateRow(String result[]){
         try {
             rs.updateInt("storageArea", Integer.parseInt(result[0]));
             rs.updateInt("storageID", Integer.parseInt(result[1]));
