@@ -1,5 +1,6 @@
 package Manipulate;
 
+import java.sql.ResultSet;
 import java.sql.Statement;
 
 abstract class Connect {
@@ -16,4 +17,6 @@ interface reader{
     String[] readNext();
     String[] readPrevious();
     String[] readLast();
+    boolean updateRow(ResultSet set);
+    boolean deleteRow(ResultSet set, String result[]);
 }
