@@ -32,6 +32,20 @@ public class Category extends Connect{
         return results;
     }
     public void write(String result[]){
+    try{
+      String SQL = "SELECT * FROM Category";
+      rs = stmt.executeQuery( SQL );
+      rs.moveToInsertRow( );
+      rs.updateInt("CatID", Integer.parseInt(result[0]));
+      rs.updateString("CatName",(result[1]));
+      rs.updateString("Description",(result[2]));
+      rs.insertRow();
+    }
+  catch ( SQLException err ) {
+      System.out.println( err.getMessage( ) );
+  }
+
+
 
     }
 }
