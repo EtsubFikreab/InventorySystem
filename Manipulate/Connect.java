@@ -1,9 +1,29 @@
 package Manipulate;
 
 import java.sql.Statement;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
 
 abstract class Connect {
-    static Statement stmt;
+    static Connection con;
+    Statement stmt;
+    Connect(){
+        try{
+           String host = "jdbc:mysql://localhost:3306/inventorySystem";//set name to your own database
+           String username = "root";
+           con = DriverManager.getConnection( host, username, "" );
+
+           stmt = con.createStatement(
+           ResultSet.TYPE_SCROLL_SENSITIVE, 
+           ResultSet.CONCUR_UPDATABLE );
+       }
+       catch ( SQLException err ) {
+           System.out.println( err.getMessage( ) );
+           }
+    }
     public void setStatement(Statement statement) {
         stmt = statement;
     }

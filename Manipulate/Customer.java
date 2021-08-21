@@ -1,4 +1,5 @@
 package Manipulate;
+
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
@@ -112,7 +113,6 @@ class Customer extends Connect implements reader{
         try {
             rs.updateString("Fname",(result[0]));
             rs.updateString("Lname",(result[1]));
-            rs.updateInt("customerID" ,Integer.parseInt(result[2]));
             rs.updateString("customerAddress",(result[3]));
             rs.updateString("customerPhone",(result[4]));
             rs.updateString("customerEmail",(result[5]));
