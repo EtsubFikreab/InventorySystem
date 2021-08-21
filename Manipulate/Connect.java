@@ -1,6 +1,5 @@
 package Manipulate;
 
-import java.sql.ResultSet;
 import java.sql.Statement;
 
 abstract class Connect {
