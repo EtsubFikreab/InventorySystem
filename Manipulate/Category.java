@@ -102,4 +102,21 @@ public class Category extends Connect implements reader{
         }
         return results;
     }
+
+    public boolean updateRow( String result[]){
+        try {
+            rs.updateInt("CatID", Integer.parseInt(result[0]));
+            rs.updateString("CatName",(result[1]));
+            rs.updateString("Description",(result[2]));
+            rs.updateRow( );
+            JOptionPane.showMessageDialog(null, "Updated");
+        }
+        catch (SQLException err) {
+            System.out.println(err.getMessage());
+            return false;
+        }
+        return true;
+    }
+    
+    
 }
