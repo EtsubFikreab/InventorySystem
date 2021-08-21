@@ -108,6 +108,25 @@ class Customer extends Connect implements reader{
         }
         return results;
     }
+
+    public boolean updateRow( String result[]){
+        try {
+            rs.updateString("Fname",(result[0]));
+            rs.updateString("Lname",(result[1]));
+            rs.updateString("Lname",(result[1]));
+            rs.updateInt("CID" ,Integer.parseInt(result[3]));
+            rs.updateString("Cphone",(result[4]));
+            rs.updateString("CEmail",(result[5]));
+            rs.updateRow( );
+            JOptionPane.showMessageDialog(null, "Updated");
+        }
+        catch (SQLException err) {
+            System.out.println(err.getMessage());
+            return false;
+        }
+        return true;
+    }
+
     public boolean deleteRow(){
         try{
             rs.deleteRow( );

@@ -17,7 +17,7 @@ interface reader{
     String[] readNext();
     String[] readPrevious();
     String[] readLast();
-    boolean updateRow(ResultSet set, String result[]);
-    boolean deleteRow(ResultSet set)
+    boolean updateRow(String result[]);
+    boolean deleteRow()
     ;
 }
