@@ -37,8 +37,7 @@ class Customer extends Connect implements reader{
             rs.moveToInsertRow( );
             rs.updateString("Fname",(result[0]));
             rs.updateString("Lname",(result[1]));
-            rs.updateString("Lname",(result[1]));
-            rs.updateInt("CID" ,Integer.parseInt(result[3]));
+            rs.updateString("CAddress",(result[3]));
             rs.updateString("Cphone",(result[4]));
             rs.updateString("CEmail",(result[5]));
             rs.insertRow();
