@@ -16,7 +16,11 @@ public class Doconnect {
         Connection con;
         Statement stmt=null;
         try{
+<<<<<<< Updated upstream
            String host = "localhost";
+=======
+           String host = "jdbc:mysql://localhost:3306/inventory_system";
+>>>>>>> Stashed changes
            String username = "root";
            con = DriverManager.getConnection( host, username, "" );
 
