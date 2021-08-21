@@ -28,10 +28,10 @@ public class Main {
     public static void main(String[] args){
         Customer customer = new Customer();
         customer.setStatement(stmt);
+        String results[]=new String[6];
+        results = customer.read();
          String testCustomer[] = {"Barry", "Allen", "12","Central City","4722","flash@justiceleague.com"};
          customer.updateRow(testCustomer);
-        // String results[]=new String[6];
-        // results = customer.read();
         // System.out.println(results[0]);
         
         // results = customer.readLast();
