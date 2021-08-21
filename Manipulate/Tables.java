@@ -1,7 +1,7 @@
 package Manipulate;
 
 public class Tables {
-    Product product;
+    public Product product;
     
     public Sell sell;
     public Buy buy;
