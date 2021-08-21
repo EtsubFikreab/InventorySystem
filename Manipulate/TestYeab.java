@@ -9,7 +9,7 @@ public class TestYeab {
         // buy.write(testBuy);
         Supplier supplier = new Supplier();
         supplier.setStatement(stmt);
-        String testSupplier[] = {"Yeabsira Tilahun","Algeria Street", "Yeabsiratilahun78@gmail.com","2310", "Supply viagra"};
+        String testSupplier[] = {"Yeabsira Tilahun","Algeria Street", "Yeabsiratilahun78@gmail.com","2310", "we Supply viagra"};
         supplier.updateRow(testSupplier);
 
         
