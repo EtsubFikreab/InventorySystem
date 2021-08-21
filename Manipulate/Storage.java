@@ -95,4 +95,33 @@ public class Storage extends Connect implements reader{
         }
         return results;
     }
+
+    public boolean updateRow( String result[]){
+        try {
+            rs.updateInt("storageArea", Integer.parseInt(result[0]));
+            rs.updateInt("storageID", Integer.parseInt(result[1]));
+            rs.updateString("Description",(result[2]));
+            rs.updateRow( );
+            JOptionPane.showMessageDialog(null, "Updated");
+        }
+        catch (SQLException err) {
+            System.out.println(err.getMessage());
+            return false;
+        }
+        return true;
+    }
+
+    public boolean deleteRow(){
+        try{
+            rs.deleteRow( );
+            JOptionPane.showMessageDialog(null, "Succesfully Deleted");
+        }
+        catch (SQLException err){
+            System.out.println(err.getMessage());
+            return false;
+        }
+        return true;
+    }
+
+
 }
