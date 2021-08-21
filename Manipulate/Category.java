@@ -102,6 +102,19 @@ public class Category extends Connect implements reader{
         }
         return results;
     }
+    public boolean deleteRow(){
+        try{
+            rs.deleteRow( );
+            //TODO  implement read() in the event handler (button)
+            JOptionPane.showMessageDialog(null, "Succesfully Deleted");
+        }
+        catch (SQLException err){
+            System.out.println(err.getMessage());
+            return false;
+        }
+        return true;
+    }
+
 
     public boolean updateRow( String result[]){
         try {
