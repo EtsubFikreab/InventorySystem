@@ -39,7 +39,6 @@ public class Staff extends Connect implements reader{
             rs.moveToInsertRow( );
             rs.updateString("Fname",  result[0]);
             rs.updateString("Lname",  result[1]);
-            rs.updateInt("storageID", Integer.parseInt(result[2]));
             rs.updateString("staffAddress",  result[3]);
             rs.updateString("staffPhone", result[4]);
             rs.updateString("staffEmail", result[5]);

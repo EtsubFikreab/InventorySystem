@@ -42,7 +42,6 @@ public class Supplier extends Connect implements reader{
       String SQL = "SELECT * FROM Supplier";
       rs = stmt.executeQuery( SQL );
       rs.moveToInsertRow( );
-      rs.updateInt("supplierID", Integer.parseInt(results[0]));
       rs.updateString("supplierName",(results[1]));
       rs.updateString("supplierAddress",(results[2]));
       rs.updateString("supplierEmail",(results[3]));

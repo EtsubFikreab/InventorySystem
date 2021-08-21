@@ -16,7 +16,7 @@ public class Doconnect {
         Connection con;
         Statement stmt=null;
         try{
-           String host = "jdbc:mysql://localhost:3306/inventory";
+           String host = "localhost";
            String username = "root";
            con = DriverManager.getConnection( host, username, "" );
 

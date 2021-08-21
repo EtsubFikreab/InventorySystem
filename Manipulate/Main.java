@@ -12,7 +12,7 @@ public class Main {
         Connection con;
         Statement stmt=null;
         try{
-           String host = "jdbc:mysql://localhost:3306/inventory";
+           String host = "jdbc:mysql://localhost:3306/inventory_system";
            String username = "root";
            con = DriverManager.getConnection( host, username, "" );
 

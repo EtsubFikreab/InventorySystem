@@ -17,7 +17,6 @@ public class Product extends Connect implements reader{
 
             rs.next( );
             results[0] = rs.getString("productName");
-            results[1] = Integer.toString(rs.getInt("productID"));
             results[2] = Double.toString(rs.getDouble("productPrice"));
             // String date = rsCus.getString("importDate");
             results[3] = rs.getString("productDescription");

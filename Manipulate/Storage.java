@@ -32,7 +32,6 @@ public class Storage extends Connect implements reader{
             rs = stmt.executeQuery( SQL );
             rs.moveToInsertRow( );
             rs.updateString("storageArea",  result[0]);
-            rs.updateInt("storageID", Integer.parseInt(result[1]));
             rs.updateString("Description", result[2]);
             
             rs.insertRow( );
