@@ -47,7 +47,7 @@ public class Supplier extends Connect implements reader{
       rs.updateString("supplierAddress",(results[2]));
       rs.updateString("supplierEmail",(results[3]));
       rs.updateString("POBOX",(results[4]));
-      rs.updateString("supplierDescription",(results[4]));
+      rs.updateString("supplierDescription",(results[5]));
       rs.insertRow();
     }
     catch ( SQLException err ) {
@@ -120,4 +120,35 @@ public class Supplier extends Connect implements reader{
     }
     return results;
   } 
+  public boolean deleteRow(){
+    try{
+        rs.deleteRow( );
+        //TODO  implement read() in the event handler (button)
+        JOptionPane.showMessageDialog(null, "Succesfully Deleted");
+    }
+    catch (SQLException err){
+        System.out.println(err.getMessage());
+        return false;
+    }
+    return true;
+}
+public boolean updateRow( String result[]){
+  try {
+      
+     
+      rs.updateInt("supplierID", Integer.parseInt(result[0]));
+      rs.updateString("supplierName",(result[1]));
+      rs.updateString("supplierAddress",(result[2]));
+      rs.updateString("supplierEmail",(result[3]));
+      rs.updateString("POBOX",(result[4]));
+      rs.updateString("supplierDescription",(result[5]));
+      rs.updateRow( );
+      JOptionPane.showMessageDialog(null, "Updated");
+  }
+  catch (SQLException err) {
+      System.out.println(err.getMessage());
+      return false;
+  }
+  return true;
+}
 }
