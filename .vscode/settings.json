@@ -7,10 +7,17 @@
             "previewLimit": 50,
             "server": "localhost",
             "port": 3306,
+<<<<<<< Updated upstream
             "askForPassword": true,
             "driver": "MySQL",
             "name": "Inventory",
             "database": "InventorySystem",
+=======
+            "askForPassword": false,
+            "driver": "MySQL",
+            "name": "Data",
+            "database": "inventory_system",
+>>>>>>> Stashed changes
             "username": "root"
         }
     ]
