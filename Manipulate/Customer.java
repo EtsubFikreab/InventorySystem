@@ -4,7 +4,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
 
-class Customer extends Connect implements reader{
+public class Customer extends Connect implements reader{
     String Fname;
     String Lname;
     int CID; 
