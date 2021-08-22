@@ -12,6 +12,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import javax.swing.*;
+import Manipulate.Tables;
 
 /**
  *
@@ -21,8 +22,9 @@ public class Dashboard extends javax.swing.JFrame {
     Doconnect doconnect;
     Connection con;
     Statement stmt;
-    ResultSet rs;
+    ResultSet rsBuy, rsCat, rsCus, rsPro, rsSell, rsStaff, rsStorage, rsSupplier;
     int curRow = 0;
+    Tables table = new Tables();
     
     /**
      * Creates new form Dashboard
@@ -55,88 +57,88 @@ public class Dashboard extends javax.swing.JFrame {
         javax.swing.JTabbedPane TabsTrade = new javax.swing.JTabbedPane();
         javax.swing.JPanel addTab = new javax.swing.JPanel();
         javax.swing.JPanel Product = new javax.swing.JPanel();
-        javax.swing.JTextField textFeildNameAdd = new javax.swing.JTextField();
-        javax.swing.JTextField priceTextFeild = new javax.swing.JTextField();
+        textFeildNameAdd = new javax.swing.JTextField();
+        priceTextFeild = new javax.swing.JTextField();
         javax.swing.JLabel jLabel2 = new javax.swing.JLabel();
         javax.swing.JLabel jLabel4 = new javax.swing.JLabel();
         javax.swing.JLabel jLabel5 = new javax.swing.JLabel();
-        javax.swing.JTextField quantityTextFeild = new javax.swing.JTextField();
+        quantityTextFeild = new javax.swing.JTextField();
         javax.swing.JLabel jLabel6 = new javax.swing.JLabel();
         javax.swing.JLabel jLabel7 = new javax.swing.JLabel();
         javax.swing.JLabel jLabel8 = new javax.swing.JLabel();
-        javax.swing.JComboBox<String> SupplierComboBox = new javax.swing.JComboBox<>();
+        SupplierComboBox = new javax.swing.JComboBox<>();
         javax.swing.JLabel jLabel9 = new javax.swing.JLabel();
-        javax.swing.JComboBox<String> CategoryComboBox = new javax.swing.JComboBox<>();
+        CategoryComboBox = new javax.swing.JComboBox<>();
         javax.swing.JLabel jLabel10 = new javax.swing.JLabel();
-        javax.swing.JComboBox<String> StorageComboBox = new javax.swing.JComboBox<>();
+        StorageComboBox = new javax.swing.JComboBox<>();
         javax.swing.JScrollPane jScrollPane2 = new javax.swing.JScrollPane();
-        javax.swing.JTextArea jTextArea1 = new javax.swing.JTextArea();
+        jTextArea1 = new javax.swing.JTextArea();
         javax.swing.JPanel jPanel3 = new javax.swing.JPanel();
-        javax.swing.JButton jButton2 = new javax.swing.JButton();
-        javax.swing.JButton jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
         javax.swing.JPanel updateTab = new javax.swing.JPanel();
         javax.swing.JPanel Product1 = new javax.swing.JPanel();
-        javax.swing.JTextField textFeildNameUpdate = new javax.swing.JTextField();
-        javax.swing.JTextField textFeildPriceUpdate = new javax.swing.JTextField();
+        textFeildNameUpdate = new javax.swing.JTextField();
+        textFeildPriceUpdate = new javax.swing.JTextField();
         javax.swing.JLabel jLabel26 = new javax.swing.JLabel();
         javax.swing.JLabel jLabel27 = new javax.swing.JLabel();
         javax.swing.JLabel jLabel28 = new javax.swing.JLabel();
-        javax.swing.JTextField textFeildQuantityUpdate = new javax.swing.JTextField();
+        textFeildQuantityUpdate = new javax.swing.JTextField();
         javax.swing.JLabel jLabel29 = new javax.swing.JLabel();
         javax.swing.JLabel jLabel31 = new javax.swing.JLabel();
-        javax.swing.JComboBox<String> comboBoxSupplier = new javax.swing.JComboBox<>();
+        comboBoxSupplier = new javax.swing.JComboBox<>();
         javax.swing.JLabel jLabel32 = new javax.swing.JLabel();
-        javax.swing.JComboBox<String> comboBoxCategory = new javax.swing.JComboBox<>();
+        comboBoxCategory = new javax.swing.JComboBox<>();
         javax.swing.JLabel jLabel33 = new javax.swing.JLabel();
-        javax.swing.JComboBox<String> comboBoxStorage = new javax.swing.JComboBox<>();
+        comboBoxStorage = new javax.swing.JComboBox<>();
         javax.swing.JLabel jLabel11 = new javax.swing.JLabel();
         javax.swing.JScrollPane jScrollPane3 = new javax.swing.JScrollPane();
-        javax.swing.JTextArea textAreaDescription = new javax.swing.JTextArea();
+        textAreaDescription = new javax.swing.JTextArea();
         javax.swing.JPanel jPanel5 = new javax.swing.JPanel();
-        javax.swing.JButton btnPrevious1 = new javax.swing.JButton();
-        javax.swing.JButton btnLast1 = new javax.swing.JButton();
-        javax.swing.JButton btnFirst1 = new javax.swing.JButton();
+        btnPrevious1 = new javax.swing.JButton();
+        btnLast1 = new javax.swing.JButton();
+        btnFirst1 = new javax.swing.JButton();
         javax.swing.JPanel jPanel6 = new javax.swing.JPanel();
-        javax.swing.JButton btnUpdateRecord1 = new javax.swing.JButton();
-        javax.swing.JButton btnDeleteRecord1 = new javax.swing.JButton();
-        javax.swing.JButton btnNext = new javax.swing.JButton();
+        btnUpdateRecord1 = new javax.swing.JButton();
+        btnDeleteRecord1 = new javax.swing.JButton();
+        btnNext = new javax.swing.JButton();
         javax.swing.JScrollPane jScrollPane1 = new javax.swing.JScrollPane();
         javax.swing.JTable jTable1 = new javax.swing.JTable();
         trade = new javax.swing.JPanel();
         javax.swing.JTabbedPane jTabbedPane2 = new javax.swing.JTabbedPane();
         javax.swing.JPanel jPanel7 = new javax.swing.JPanel();
         javax.swing.JPanel Product2 = new javax.swing.JPanel();
-        javax.swing.JTextField textFeildNameUpdate1 = new javax.swing.JTextField();
-        javax.swing.JTextField textFeildPriceUpdate1 = new javax.swing.JTextField();
+        textFeildNameUpdate1 = new javax.swing.JTextField();
+        textFeildPriceUpdate1 = new javax.swing.JTextField();
         javax.swing.JLabel jLabel30 = new javax.swing.JLabel();
         javax.swing.JLabel jLabel35 = new javax.swing.JLabel();
         javax.swing.JLabel jLabel36 = new javax.swing.JLabel();
-        javax.swing.JTextField textFeildQuantityUpdate1 = new javax.swing.JTextField();
+        textFeildQuantityUpdate1 = new javax.swing.JTextField();
         javax.swing.JLabel jLabel37 = new javax.swing.JLabel();
         javax.swing.JButton jButton3 = new javax.swing.JButton();
         javax.swing.JScrollPane jScrollPane6 = new javax.swing.JScrollPane();
         javax.swing.JTable jTable2 = new javax.swing.JTable();
         javax.swing.JLabel jLabel12 = new javax.swing.JLabel();
-        javax.swing.JTextField textFeildNameUpdate2 = new javax.swing.JTextField();
+        textFeildNameUpdate2 = new javax.swing.JTextField();
         javax.swing.JLabel jLabel38 = new javax.swing.JLabel();
-        javax.swing.JButton jButton4 = new javax.swing.JButton();
+        jButton4 = new javax.swing.JButton();
         javax.swing.JPanel jPanel4 = new javax.swing.JPanel();
         javax.swing.JPanel jPanel8 = new javax.swing.JPanel();
         javax.swing.JPanel Product3 = new javax.swing.JPanel();
-        javax.swing.JTextField textFeildNameUpdate3 = new javax.swing.JTextField();
-        javax.swing.JTextField textFeildPriceUpdate2 = new javax.swing.JTextField();
+        textFeildNameUpdate3 = new javax.swing.JTextField();
+        textFeildPriceUpdate2 = new javax.swing.JTextField();
         javax.swing.JLabel jLabel39 = new javax.swing.JLabel();
         javax.swing.JLabel jLabel40 = new javax.swing.JLabel();
         javax.swing.JLabel jLabel41 = new javax.swing.JLabel();
-        javax.swing.JTextField textFeildQuantityUpdate2 = new javax.swing.JTextField();
+        textFeildQuantityUpdate2 = new javax.swing.JTextField();
         javax.swing.JLabel jLabel42 = new javax.swing.JLabel();
         javax.swing.JButton jButton5 = new javax.swing.JButton();
         javax.swing.JScrollPane jScrollPane7 = new javax.swing.JScrollPane();
         javax.swing.JTable jTable3 = new javax.swing.JTable();
         javax.swing.JLabel jLabel13 = new javax.swing.JLabel();
-        javax.swing.JTextField textFeildNameUpdate4 = new javax.swing.JTextField();
+        textFeildNameUpdate4 = new javax.swing.JTextField();
         javax.swing.JLabel jLabel43 = new javax.swing.JLabel();
-        javax.swing.JButton jButton6 = new javax.swing.JButton();
+        jButton6 = new javax.swing.JButton();
         manage = new javax.swing.JPanel();
         javax.swing.JTabbedPane jTabbedPaneManage = new javax.swing.JTabbedPane();
         javax.swing.JPanel jPanelCategory = new javax.swing.JPanel();
@@ -147,114 +149,114 @@ public class Dashboard extends javax.swing.JFrame {
         javax.swing.JLabel jLabel14 = new javax.swing.JLabel();
         javax.swing.JScrollPane jScrollPane8 = new javax.swing.JScrollPane();
         textAreaDescriptionCategory = new javax.swing.JTextArea();
-        javax.swing.JButton jButtonNewCategory = new javax.swing.JButton();
-        javax.swing.JButton jButtonNewCategory1 = new javax.swing.JButton();
+        jButtonNewCategory = new javax.swing.JButton();
+        jButtonNewCategory1 = new javax.swing.JButton();
         javax.swing.JPanel jPanel9 = new javax.swing.JPanel();
-        javax.swing.JButton btnPreviousCategory = new javax.swing.JButton();
-        javax.swing.JButton btnLastCategory = new javax.swing.JButton();
-        javax.swing.JButton btnFirstCategory = new javax.swing.JButton();
+        btnPreviousCategory = new javax.swing.JButton();
+        btnLastCategory = new javax.swing.JButton();
+        btnFirstCategory = new javax.swing.JButton();
         javax.swing.JPanel jPanel10 = new javax.swing.JPanel();
-        javax.swing.JButton btnUpdateRecordCategory = new javax.swing.JButton();
-        javax.swing.JButton btnDeleteRecordCategory = new javax.swing.JButton();
-        javax.swing.JButton btnNextCategory = new javax.swing.JButton();
+        btnUpdateRecordCategory = new javax.swing.JButton();
+        btnDeleteRecordCategory = new javax.swing.JButton();
+        btnNextCategory = new javax.swing.JButton();
         javax.swing.JScrollPane jScrollPane9 = new javax.swing.JScrollPane();
         javax.swing.JTable jTable4 = new javax.swing.JTable();
         javax.swing.JPanel jPanelSupplier = new javax.swing.JPanel();
         javax.swing.JPanel updateTab2 = new javax.swing.JPanel();
         javax.swing.JPanel Product5 = new javax.swing.JPanel();
-        javax.swing.JTextField textFeildNameUpdate6 = new javax.swing.JTextField();
-        javax.swing.JTextField textFeildPriceUpdate3 = new javax.swing.JTextField();
+        textFeildNameUpdate6 = new javax.swing.JTextField();
+        textFeildPriceUpdate3 = new javax.swing.JTextField();
         javax.swing.JLabel jLabel46 = new javax.swing.JLabel();
         javax.swing.JLabel jLabel47 = new javax.swing.JLabel();
         javax.swing.JLabel jLabel15 = new javax.swing.JLabel();
         javax.swing.JScrollPane jScrollPane10 = new javax.swing.JScrollPane();
-        javax.swing.JTextArea textAreaDescription2 = new javax.swing.JTextArea();
+        textAreaDescription2 = new javax.swing.JTextArea();
         javax.swing.JLabel jLabel48 = new javax.swing.JLabel();
-        javax.swing.JTextField textFeildNameUpdate7 = new javax.swing.JTextField();
+        textFeildNameUpdate7 = new javax.swing.JTextField();
         javax.swing.JLabel jLabel49 = new javax.swing.JLabel();
-        javax.swing.JTextField textFeildNameUpdate8 = new javax.swing.JTextField();
+        textFeildNameUpdate8 = new javax.swing.JTextField();
         javax.swing.JLabel jLabel50 = new javax.swing.JLabel();
-        javax.swing.JTextField textFeildNameUpdate9 = new javax.swing.JTextField();
-        javax.swing.JButton jButton11 = new javax.swing.JButton();
-        javax.swing.JButton jButtonNewCategory2 = new javax.swing.JButton();
+        textFeildNameUpdate9 = new javax.swing.JTextField();
+        jButton11 = new javax.swing.JButton();
+        jButtonNewCategory2 = new javax.swing.JButton();
         javax.swing.JPanel jPanel11 = new javax.swing.JPanel();
-        javax.swing.JButton btnPrevious3 = new javax.swing.JButton();
-        javax.swing.JButton btnLast3 = new javax.swing.JButton();
-        javax.swing.JButton btnFirst3 = new javax.swing.JButton();
+        btnPrevious3 = new javax.swing.JButton();
+        btnLast3 = new javax.swing.JButton();
+        btnFirst3 = new javax.swing.JButton();
         javax.swing.JPanel jPanel12 = new javax.swing.JPanel();
-        javax.swing.JButton btnUpdateRecord3 = new javax.swing.JButton();
-        javax.swing.JButton btnDeleteRecord3 = new javax.swing.JButton();
-        javax.swing.JButton btnNext2 = new javax.swing.JButton();
+        btnUpdateRecord3 = new javax.swing.JButton();
+        btnDeleteRecord3 = new javax.swing.JButton();
+        btnNext2 = new javax.swing.JButton();
         javax.swing.JScrollPane jScrollPane11 = new javax.swing.JScrollPane();
         javax.swing.JTable jTable5 = new javax.swing.JTable();
         javax.swing.JPanel jPanelStaff = new javax.swing.JPanel();
         javax.swing.JPanel updateTab3 = new javax.swing.JPanel();
         javax.swing.JPanel Product6 = new javax.swing.JPanel();
-        javax.swing.JTextField textFeildNameUpdate10 = new javax.swing.JTextField();
-        javax.swing.JTextField textFeildPriceUpdate4 = new javax.swing.JTextField();
+        textFeildNameUpdate10 = new javax.swing.JTextField();
+        textFeildPriceUpdate4 = new javax.swing.JTextField();
         javax.swing.JLabel jLabel51 = new javax.swing.JLabel();
         javax.swing.JLabel jLabel52 = new javax.swing.JLabel();
         javax.swing.JLabel jLabel53 = new javax.swing.JLabel();
-        javax.swing.JTextField textFeildNameUpdate11 = new javax.swing.JTextField();
+        textFeildNameUpdate11 = new javax.swing.JTextField();
         javax.swing.JLabel jLabel54 = new javax.swing.JLabel();
-        javax.swing.JTextField textFeildNameUpdate12 = new javax.swing.JTextField();
-        javax.swing.JTextField textFeildNameUpdate14 = new javax.swing.JTextField();
+        textFeildNameUpdate12 = new javax.swing.JTextField();
+        textFeildNameUpdate14 = new javax.swing.JTextField();
         javax.swing.JLabel jLabel56 = new javax.swing.JLabel();
-        javax.swing.JButton jButton10 = new javax.swing.JButton();
-        javax.swing.JButton jButtonNewCategory3 = new javax.swing.JButton();
+        jButton10 = new javax.swing.JButton();
+        jButtonNewCategory3 = new javax.swing.JButton();
         javax.swing.JPanel jPanel13 = new javax.swing.JPanel();
-        javax.swing.JButton btnPrevious4 = new javax.swing.JButton();
-        javax.swing.JButton btnLast4 = new javax.swing.JButton();
-        javax.swing.JButton btnFirst4 = new javax.swing.JButton();
+        btnPrevious4 = new javax.swing.JButton();
+        btnLast4 = new javax.swing.JButton();
+        btnFirst4 = new javax.swing.JButton();
         javax.swing.JPanel jPanel14 = new javax.swing.JPanel();
-        javax.swing.JButton btnUpdateRecord4 = new javax.swing.JButton();
-        javax.swing.JButton btnDeleteRecord4 = new javax.swing.JButton();
-        javax.swing.JButton btnNext3 = new javax.swing.JButton();
+        btnUpdateRecord4 = new javax.swing.JButton();
+        btnDeleteRecord4 = new javax.swing.JButton();
+        btnNext3 = new javax.swing.JButton();
         javax.swing.JScrollPane jScrollPane13 = new javax.swing.JScrollPane();
         javax.swing.JTable jTable6 = new javax.swing.JTable();
         javax.swing.JPanel jPanelCustomer = new javax.swing.JPanel();
         javax.swing.JPanel updateTab4 = new javax.swing.JPanel();
         javax.swing.JPanel Product7 = new javax.swing.JPanel();
-        javax.swing.JTextField textFeildNameUpdate13 = new javax.swing.JTextField();
-        javax.swing.JTextField textFeildPriceUpdate5 = new javax.swing.JTextField();
+        textFeildNameUpdate13 = new javax.swing.JTextField();
+        textFeildPriceUpdate5 = new javax.swing.JTextField();
         javax.swing.JLabel jLabel55 = new javax.swing.JLabel();
         javax.swing.JLabel jLabel57 = new javax.swing.JLabel();
         javax.swing.JLabel jLabel58 = new javax.swing.JLabel();
-        javax.swing.JTextField textFeildNameUpdate15 = new javax.swing.JTextField();
+        textFeildNameUpdate15 = new javax.swing.JTextField();
         javax.swing.JLabel jLabel59 = new javax.swing.JLabel();
-        javax.swing.JTextField textFeildNameUpdate16 = new javax.swing.JTextField();
-        javax.swing.JTextField textFeildNameUpdate17 = new javax.swing.JTextField();
+        textFeildNameUpdate16 = new javax.swing.JTextField();
+        textFeildNameUpdate17 = new javax.swing.JTextField();
         javax.swing.JLabel jLabel60 = new javax.swing.JLabel();
-        javax.swing.JButton jButton9 = new javax.swing.JButton();
-        javax.swing.JButton jButtonNewCategory4 = new javax.swing.JButton();
+        jButton9 = new javax.swing.JButton();
+        jButtonNewCategory4 = new javax.swing.JButton();
         javax.swing.JPanel jPanel15 = new javax.swing.JPanel();
-        javax.swing.JButton btnPrevious5 = new javax.swing.JButton();
-        javax.swing.JButton btnLast5 = new javax.swing.JButton();
-        javax.swing.JButton btnFirst5 = new javax.swing.JButton();
+        btnPrevious5 = new javax.swing.JButton();
+        btnLast5 = new javax.swing.JButton();
+        btnFirst5 = new javax.swing.JButton();
         javax.swing.JPanel jPanel16 = new javax.swing.JPanel();
-        javax.swing.JButton btnUpdateRecord5 = new javax.swing.JButton();
-        javax.swing.JButton btnDeleteRecord5 = new javax.swing.JButton();
-        javax.swing.JButton btnNext4 = new javax.swing.JButton();
+        btnUpdateRecord5 = new javax.swing.JButton();
+        btnDeleteRecord5 = new javax.swing.JButton();
+        btnNext4 = new javax.swing.JButton();
         javax.swing.JScrollPane jScrollPane14 = new javax.swing.JScrollPane();
         javax.swing.JTable jTable7 = new javax.swing.JTable();
         javax.swing.JPanel jPanel1 = new javax.swing.JPanel();
         javax.swing.JPanel updateTab5 = new javax.swing.JPanel();
         javax.swing.JPanel Product8 = new javax.swing.JPanel();
-        javax.swing.JTextField textFeildNameUpdate18 = new javax.swing.JTextField();
+        textFeildNameUpdate18 = new javax.swing.JTextField();
         javax.swing.JLabel jLabel61 = new javax.swing.JLabel();
         javax.swing.JLabel jLabel16 = new javax.swing.JLabel();
         javax.swing.JScrollPane jScrollPane12 = new javax.swing.JScrollPane();
-        javax.swing.JTextArea textAreaDescription3 = new javax.swing.JTextArea();
-        javax.swing.JButton jButton8 = new javax.swing.JButton();
-        javax.swing.JButton jButtonNewCategory5 = new javax.swing.JButton();
+        textAreaDescription3 = new javax.swing.JTextArea();
+        jButton8 = new javax.swing.JButton();
+        jButtonNewCategory5 = new javax.swing.JButton();
         javax.swing.JPanel jPanel17 = new javax.swing.JPanel();
-        javax.swing.JButton btnPrevious6 = new javax.swing.JButton();
-        javax.swing.JButton btnLast6 = new javax.swing.JButton();
-        javax.swing.JButton btnFirst6 = new javax.swing.JButton();
+        btnPrevious6 = new javax.swing.JButton();
+        btnLast6 = new javax.swing.JButton();
+        btnFirst6 = new javax.swing.JButton();
         javax.swing.JPanel jPanel18 = new javax.swing.JPanel();
-        javax.swing.JButton btnUpdateRecord6 = new javax.swing.JButton();
-        javax.swing.JButton btnDeleteRecord6 = new javax.swing.JButton();
-        javax.swing.JButton btnNext5 = new javax.swing.JButton();
+        btnUpdateRecord6 = new javax.swing.JButton();
+        btnDeleteRecord6 = new javax.swing.JButton();
+        btnNext5 = new javax.swing.JButton();
         javax.swing.JScrollPane jScrollPane15 = new javax.swing.JScrollPane();
         javax.swing.JTable jTable8 = new javax.swing.JTable();
         about = new javax.swing.JPanel();
@@ -2872,7 +2874,7 @@ public class Dashboard extends javax.swing.JFrame {
     }
     public void DoConnectCategory( ) {
         try{
-            String host = "jdbc:mysql://localhost:3306/inventory";
+            String host = "jdbc:mysql://localhost:3306/inventory_management_system";
             String username = "root";
             con = DriverManager.getConnection( host, username, "" );
 
@@ -2883,14 +2885,14 @@ public class Dashboard extends javax.swing.JFrame {
             
           
             
-            rs = stmt.executeQuery( SQL );
+            rsCat = stmt.executeQuery( SQL );
             //hold all the records from the database table
 
-            rs.next( );
-            int id_col = rs.getInt("CatID");
+            rsCat.next( );
+            int id_col = rsCat.getInt("CatID");
             String id = Integer.toString(id_col);
-            String name = rs.getString("CatName");
-            String description = rs.getString("Description");
+            String name = rsCat.getString("CatName");
+            String description = rsCat.getString("Description");
 
             
             textFeildNameCategory.setText(name);
@@ -2951,7 +2953,8 @@ public class Dashboard extends javax.swing.JFrame {
         Parent.add(manage);
         Parent.repaint();
         Parent.revalidate();
-        singleCategory();
+        // singleCategory();
+        table.manageTables();
     }//GEN-LAST:event_mangeBtnActionPerformed
 
     private void SupplierComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SupplierComboBoxActionPerformed
@@ -3044,26 +3047,44 @@ public class Dashboard extends javax.swing.JFrame {
 
     private void btnPreviousCategoryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPreviousCategoryActionPerformed
         // TODO add your handling code here:
+        String results[] = new String[3];
+        results = table.category.readPrevious();
+        singleCategory(results);
     }//GEN-LAST:event_btnPreviousCategoryActionPerformed
 
     private void btnLastCategoryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLastCategoryActionPerformed
         // TODO add your handling code here:
+        String results[] = new String[3];
+        results = table.category.read();
+        singleCategory(results);
     }//GEN-LAST:event_btnLastCategoryActionPerformed
 
     private void btnFirstCategoryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFirstCategoryActionPerformed
         // TODO add your handling code here:
+        String results[] = new String[3];
+        results = table.category.read();
+        singleCategory(results);
+        
     }//GEN-LAST:event_btnFirstCategoryActionPerformed
 
     private void btnUpdateRecordCategoryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateRecordCategoryActionPerformed
         // TODO add your handling code here:
+        String result[] = new String[3];
+        result[1] = textFeildNameCategory.getText();
+        result[2] = textAreaDescriptionCategory.getText();
+        table.category.write(result);
     }//GEN-LAST:event_btnUpdateRecordCategoryActionPerformed
 
     private void btnDeleteRecordCategoryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteRecordCategoryActionPerformed
         // TODO add your handling code here:
+        table.category.deleteRow();
     }//GEN-LAST:event_btnDeleteRecordCategoryActionPerformed
 
     private void btnNextCategoryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNextCategoryActionPerformed
         // TODO add your handling code here:
+        String results[] = new String[3];
+        results = table.category.readNext();
+        singleCategory(results);
     }//GEN-LAST:event_btnNextCategoryActionPerformed
 
     private void textFeildNameUpdate6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textFeildNameUpdate6ActionPerformed
@@ -3076,26 +3097,47 @@ public class Dashboard extends javax.swing.JFrame {
 
     private void btnPrevious3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPrevious3ActionPerformed
         // TODO add your handling code here:
+        String results[] = new String[7];
+        results = table.supplier.readPrevious();
+        singleSupplier(results);
     }//GEN-LAST:event_btnPrevious3ActionPerformed
 
     private void btnLast3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLast3ActionPerformed
         // TODO add your handling code here:
+        String results[] = new String[7];
+        results = table.supplier.readLast();
+        singleSupplier(results);
     }//GEN-LAST:event_btnLast3ActionPerformed
 
     private void btnFirst3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFirst3ActionPerformed
         // TODO add your handling code here:
+        String results[] = new String[7];
+        results = table.supplier.read();
+        singleSupplier(results);
     }//GEN-LAST:event_btnFirst3ActionPerformed
 
     private void btnUpdateRecord3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateRecord3ActionPerformed
         // TODO add your handling code here:
+        String results[] = new String[7];
+        results[1] = textFeildNameUpdate6.getText();
+        results[2] = textFeildPriceUpdate3.getText();
+        results[3] = textFeildNameUpdate7.getText();
+        results[4] = textFeildNameUpdate8.getText();
+        results[5] = textFeildNameUpdate9.getText();
+        results[6] = textAreaDescription2.getText();
+        table.supplier.write(results);
     }//GEN-LAST:event_btnUpdateRecord3ActionPerformed
 
     private void btnDeleteRecord3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteRecord3ActionPerformed
         // TODO add your handling code here:
+        table.supplier.deleteRow();
     }//GEN-LAST:event_btnDeleteRecord3ActionPerformed
 
     private void btnNext2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNext2ActionPerformed
         // TODO add your handling code here:
+        String results[] = new String[7];
+        results = table.supplier.readNext();
+        singleSupplier(results);
     }//GEN-LAST:event_btnNext2ActionPerformed
 
     private void textFeildNameUpdate7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textFeildNameUpdate7ActionPerformed
@@ -3128,26 +3170,46 @@ public class Dashboard extends javax.swing.JFrame {
 
     private void btnPrevious4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPrevious4ActionPerformed
         // TODO add your handling code here:
+        String results[] = new String[6];
+        results = table.staff.readPrevious();
+        singleStaff(results);
     }//GEN-LAST:event_btnPrevious4ActionPerformed
 
     private void btnLast4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLast4ActionPerformed
         // TODO add your handling code here:
+        String results[] = new String[6];
+        results = table.staff.readLast();
+        singleStaff(results);
     }//GEN-LAST:event_btnLast4ActionPerformed
 
     private void btnFirst4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFirst4ActionPerformed
         // TODO add your handling code here:
+        String results[] = new String[6];
+        results = table.staff.read();
+        singleStaff(results);
     }//GEN-LAST:event_btnFirst4ActionPerformed
 
     private void btnUpdateRecord4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateRecord4ActionPerformed
         // TODO add your handling code here:
+        String result[] = new String[6];
+        result[0] = textFeildNameUpdate10.getText();
+        result[1] = textFeildNameUpdate14.getText();
+        result[3] = textFeildPriceUpdate4.getText();
+        result[4] = textFeildNameUpdate11.getText();
+        result[5] = textFeildNameUpdate12.getText();
+        table.staff.write(result);
     }//GEN-LAST:event_btnUpdateRecord4ActionPerformed
 
     private void btnDeleteRecord4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteRecord4ActionPerformed
         // TODO add your handling code here:
+        table.staff.deleteRow();
     }//GEN-LAST:event_btnDeleteRecord4ActionPerformed
 
     private void btnNext3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNext3ActionPerformed
         // TODO add your handling code here:
+        String results[] = new String[6];
+        results = table.staff.readNext();
+        singleStaff(results);
     }//GEN-LAST:event_btnNext3ActionPerformed
 
     private void textFeildNameUpdate14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textFeildNameUpdate14ActionPerformed
@@ -3176,26 +3238,46 @@ public class Dashboard extends javax.swing.JFrame {
 
     private void btnPrevious5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPrevious5ActionPerformed
         // TODO add your handling code here:
+        String results[] = new String[6];
+        results = table.customer.readPrevious();
+        singleCustomer(results);
     }//GEN-LAST:event_btnPrevious5ActionPerformed
 
     private void btnLast5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLast5ActionPerformed
         // TODO add your handling code here:
+        String results[] = new String[6];
+        results = table.customer.readLast();
+        singleCustomer(results);
     }//GEN-LAST:event_btnLast5ActionPerformed
 
     private void btnFirst5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFirst5ActionPerformed
         // TODO add your handling code here:
+        String results[] = new String[6];
+        results = table.customer.read();
+        singleCustomer(results);
     }//GEN-LAST:event_btnFirst5ActionPerformed
 
     private void btnUpdateRecord5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateRecord5ActionPerformed
         // TODO add your handling code here:
+        String result[] = new String[6];
+        result[0] = textFeildNameUpdate13.getText();
+        result[1] = textFeildNameUpdate17.getText();
+        result[4] = textFeildPriceUpdate5.getText();
+        result[3] = textFeildNameUpdate16.getText();
+        result[5] = textFeildNameUpdate16.getText();
+        table.customer.write(result);
     }//GEN-LAST:event_btnUpdateRecord5ActionPerformed
 
     private void btnDeleteRecord5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteRecord5ActionPerformed
         // TODO add your handling code here:
+        table.customer.deleteRow();
     }//GEN-LAST:event_btnDeleteRecord5ActionPerformed
 
     private void btnNext4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNext4ActionPerformed
         // TODO add your handling code here:
+        String results[] = new String[6];
+        results = table.customer.readNext();
+        singleCustomer(results);
     }//GEN-LAST:event_btnNext4ActionPerformed
 
     private void textFeildNameUpdate18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textFeildNameUpdate18ActionPerformed
@@ -3204,47 +3286,264 @@ public class Dashboard extends javax.swing.JFrame {
 
     private void btnPrevious6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPrevious6ActionPerformed
         // TODO add your handling code here:
+        String results[] = new String[3];
+        results = table.storage.readPrevious();
+        singleStorage(results);
     }//GEN-LAST:event_btnPrevious6ActionPerformed
 
     private void btnLast6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLast6ActionPerformed
         // TODO add your handling code here:
+        String results[] = new String[3];
+        results = table.storage.readLast();
+        singleStorage(results);
     }//GEN-LAST:event_btnLast6ActionPerformed
 
     private void btnFirst6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFirst6ActionPerformed
         // TODO add your handling code here:
+        String results[] = new String[3];
+        results = table.storage.read();
+        singleStorage(results);
     }//GEN-LAST:event_btnFirst6ActionPerformed
 
     private void btnUpdateRecord6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateRecord6ActionPerformed
         // TODO add your handling code here:
+        String result[] = new String[3];
+        result[0] = textFeildNameUpdate16.getText();
+        result[2] = textAreaDescription3.getText();
+        table.storage.write(result);
     }//GEN-LAST:event_btnUpdateRecord6ActionPerformed
 
     private void btnDeleteRecord6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteRecord6ActionPerformed
         // TODO add your handling code here:
+        table.storage.deleteRow();
     }//GEN-LAST:event_btnDeleteRecord6ActionPerformed
 
     private void btnNext5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNext5ActionPerformed
         // TODO add your handling code here:
+        String results[] = new String[3];
+        results = table.storage.readNext();
+        singleStorage(results);
     }//GEN-LAST:event_btnNext5ActionPerformed
 
     private void jButtonNewCategory1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonNewCategory1ActionPerformed
         // TODO add your handling code here:
+        String result[] = new String[3];
+        result[1] = textFeildNameCategory.getText();
+        result[2] = textAreaDescriptionCategory.getText();
+        table.category.write(result);
+
+        btnFirstCategory.setEnabled(true);
+        btnPreviousCategory.setEnabled(true);
+        btnNextCategory.setEnabled(true);
+        btnLastCategory.setEnabled(true);
+        btnUpdateRecordCategory.setEnabled(true);
+        btnDeleteRecordCategory.setEnabled(true);
+        jButtonNewCategory.setEnabled(true);
+        jButtonNewCategory1.setEnabled(false);
+
     }//GEN-LAST:event_jButtonNewCategory1ActionPerformed
 
     private void jButtonNewCategory2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonNewCategory2ActionPerformed
         // TODO add your handling code here:
+        String result[] = new String[7];
+        result[1] = textFeildNameUpdate6.getText();
+        result[2] = textFeildPriceUpdate3.getText();
+        result[3] = textFeildNameUpdate7.getText();
+        result[4] = textFeildNameUpdate8.getText();
+        result[5] = textFeildNameUpdate9.getText();
+        result[6] = textAreaDescription2.getText();
+        table.supplier.write(result);
+
+        btnFirst3.setEnabled(true);
+        btnPrevious3.setEnabled(true);
+        btnNext2.setEnabled(true);
+        btnLast3.setEnabled(true);
+        btnUpdateRecord3.setEnabled(true);
+        btnDeleteRecord3.setEnabled(true);
+        jButton11.setEnabled(true);
+        jButtonNewCategory2.setEnabled(false);
     }//GEN-LAST:event_jButtonNewCategory2ActionPerformed
 
     private void jButtonNewCategory3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonNewCategory3ActionPerformed
         // TODO add your handling code here:
+        String result[] = new String[6];
+        result[0] = textFeildNameUpdate10.getText();
+        result[1] = textFeildNameUpdate14.getText();
+        result[3] = textFeildPriceUpdate4.getText();
+        result[4] = textFeildNameUpdate11.getText();
+        result[5] = textFeildNameUpdate12.getText();
+        table.staff.write(result);
+
+        btnFirst4.setEnabled(true);
+        btnPrevious4.setEnabled(true);
+        btnNext3.setEnabled(true);
+        btnLast4.setEnabled(true);
+        btnUpdateRecord4.setEnabled(true);
+        btnDeleteRecord4.setEnabled(true);
+        jButton10.setEnabled(true);
+        jButtonNewCategory3.setEnabled(false);
     }//GEN-LAST:event_jButtonNewCategory3ActionPerformed
 
     private void jButtonNewCategory4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonNewCategory4ActionPerformed
         // TODO add your handling code here:
+        String result[] = new String[6];
+        result[0] = textFeildNameUpdate13.getText();
+        result[1] = textFeildNameUpdate17.getText();
+        result[4] = textFeildPriceUpdate5.getText();
+        result[3] = textFeildNameUpdate16.getText();
+        result[5] = textFeildNameUpdate16.getText();
+        table.customer.write(result);
+
+        btnFirst5.setEnabled(true);
+        btnPrevious5.setEnabled(true);
+        btnNext4.setEnabled(true);
+        btnLast5.setEnabled(true);
+        btnUpdateRecord5.setEnabled(true);
+        btnDeleteRecord5.setEnabled(true);
+        jButton9.setEnabled(true);
+        jButtonNewCategory4.setEnabled(false);
     }//GEN-LAST:event_jButtonNewCategory4ActionPerformed
 
     private void jButtonNewCategory5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonNewCategory5ActionPerformed
         // TODO add your handling code here:
+        String result[] = new String[3];
+        result[0] = textFeildNameUpdate16.getText();
+        result[2] = textAreaDescription3.getText();
+        table.storage.write(result);
+
+        btnFirst6.setEnabled(true);
+        btnPrevious6.setEnabled(true);
+        btnNext5.setEnabled(true);
+        btnLast6.setEnabled(true);
+        btnUpdateRecord6.setEnabled(true);
+        btnDeleteRecord6.setEnabled(true);
+        jButton8.setEnabled(true);
+        jButtonNewCategory5.setEnabled(false);
     }//GEN-LAST:event_jButtonNewCategory5ActionPerformed
+
+    private void StorageComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_StorageComboBoxActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_StorageComboBoxActionPerformed
+
+    private void jButtonNewCategoryActionPerformed(java.awt.event.ActionEvent evt) {                                                   
+        // TODO add your handling code here:
+        String result[] = new String[3];
+        textFeildNameCategory.setText("");
+        textAreaDescriptionCategory.setText("");
+
+        result[1] = textFeildNameCategory.getText();
+        result[2] = textAreaDescriptionCategory.getText();
+        table.category.write(result);
+
+        btnFirstCategory.setEnabled(false);
+        btnPreviousCategory.setEnabled(false);
+        btnNextCategory.setEnabled(false);
+        btnLastCategory.setEnabled(false);
+        btnUpdateRecordCategory.setEnabled(false);
+        btnDeleteRecordCategory.setEnabled(false);
+        jButtonNewCategory.setEnabled(false);
+        jButtonNewCategory1.setEnabled(true);
+    } 
+
+    private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {                                          
+        // TODO add your handling code here:
+        String result[] = new String[7];
+        textFeildNameUpdate6.setText("");
+        textFeildPriceUpdate3.setText("");
+        textFeildNameUpdate7.setText("");
+        textFeildNameUpdate8.setText("");
+        textFeildNameUpdate9.setText("");
+        textAreaDescription2.setText("");
+
+        result[1] = textFeildNameUpdate6.getText();
+        result[2] = textFeildPriceUpdate3.getText();
+        result[3] = textFeildNameUpdate7.getText();
+        result[4] = textFeildNameUpdate8.getText();
+        result[5] = textFeildNameUpdate9.getText();
+        result[6] = textAreaDescription2.getText();
+        table.category.write(result);
+
+        btnFirst3.setEnabled(false);
+        btnPrevious3.setEnabled(false);
+        btnNext2.setEnabled(false);
+        btnLast3.setEnabled(false);
+        btnUpdateRecord3.setEnabled(false);
+        btnDeleteRecord3.setEnabled(false);
+        jButton11.setEnabled(false);
+        jButtonNewCategory2.setEnabled(true);
+    }
+
+    private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {                                          
+        // TODO add your handling code here:
+        String result[] = new String[6];
+        textFeildNameUpdate10.setText("");
+        textFeildNameUpdate14.setText("");
+        textFeildPriceUpdate4.setText("");
+        textFeildNameUpdate11.setText("");
+        textFeildNameUpdate12.setText("");
+
+        result[0] = textFeildNameUpdate10.getText();
+        result[1] = textFeildNameUpdate14.getText();
+        result[3] = textFeildPriceUpdate4.getText();
+        result[4] = textFeildNameUpdate11.getText();
+        result[5] = textFeildNameUpdate12.getText();
+        table.staff.write(result);
+
+        btnFirst4.setEnabled(false);
+        btnPrevious4.setEnabled(false);
+        btnNext3.setEnabled(false);
+        btnLast4.setEnabled(false);
+        btnUpdateRecord4.setEnabled(false);
+        btnDeleteRecord4.setEnabled(false);
+        jButton10.setEnabled(false);
+        jButtonNewCategory3.setEnabled(true);
+    }
+
+    private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {                                         
+        // TODO add your handling code here:
+        String result[] = new String[6];
+        textFeildNameUpdate13.setText("");
+        textFeildNameUpdate17.setText("");
+        textFeildPriceUpdate5.setText("");
+        textFeildNameUpdate16.setText("");
+        textFeildNameUpdate16.setText("");
+
+        result[0] = textFeildNameUpdate13.getText();
+        result[1] = textFeildNameUpdate17.getText();
+        result[4] = textFeildPriceUpdate5.getText();
+        result[3] = textFeildNameUpdate16.getText();
+        result[5] = textFeildNameUpdate16.getText();
+        table.customer.write(result);
+
+        btnFirst5.setEnabled(false);
+        btnPrevious5.setEnabled(false);
+        btnNext4.setEnabled(false);
+        btnLast5.setEnabled(false);
+        btnUpdateRecord5.setEnabled(false);
+        btnDeleteRecord5.setEnabled(false);
+        jButton9.setEnabled(false);
+        jButtonNewCategory4.setEnabled(true);
+    }
+
+    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {                                         
+        // TODO add your handling code here:
+        String result[] = new String[3];
+        textFeildNameUpdate16.setText("");
+        textAreaDescription3.setText("");
+
+        result[0] = textFeildNameUpdate16.getText();
+        result[2] = textAreaDescription3.getText();
+        table.storage.write(result);
+
+        btnFirst6.setEnabled(false);
+        btnPrevious6.setEnabled(false);
+        btnNext5.setEnabled(false);
+        btnLast6.setEnabled(false);
+        btnUpdateRecord6.setEnabled(false);
+        btnDeleteRecord6.setEnabled(false);
+        jButton8.setEnabled(false);
+        jButtonNewCategory5.setEnabled(true);
+    }
 
     /**
      * @param args the command line arguments
@@ -3274,21 +3573,177 @@ public class Dashboard extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public javax.swing.JComboBox<String> CategoryComboBox;
     public javax.swing.JPanel Parent;
+    public javax.swing.JComboBox<String> StorageComboBox;
+    public javax.swing.JComboBox<String> SupplierComboBox;
     public javax.swing.JPanel about;
+    public javax.swing.JButton btnDeleteRecord1;
+    public javax.swing.JButton btnDeleteRecord3;
+    public javax.swing.JButton btnDeleteRecord4;
+    public javax.swing.JButton btnDeleteRecord5;
+    public javax.swing.JButton btnDeleteRecord6;
+    public javax.swing.JButton btnDeleteRecordCategory;
+    public javax.swing.JButton btnFirst1;
+    public javax.swing.JButton btnFirst3;
+    public javax.swing.JButton btnFirst4;
+    public javax.swing.JButton btnFirst5;
+    public javax.swing.JButton btnFirst6;
+    public javax.swing.JButton btnFirstCategory;
+    public javax.swing.JButton btnLast1;
+    public javax.swing.JButton btnLast3;
+    public javax.swing.JButton btnLast4;
+    public javax.swing.JButton btnLast5;
+    public javax.swing.JButton btnLast6;
+    public javax.swing.JButton btnLastCategory;
+    public javax.swing.JButton btnNext;
+    public javax.swing.JButton btnNext2;
+    public javax.swing.JButton btnNext3;
+    public javax.swing.JButton btnNext4;
+    public javax.swing.JButton btnNext5;
+    public javax.swing.JButton btnNextCategory;
+    public javax.swing.JButton btnPrevious1;
+    public javax.swing.JButton btnPrevious3;
+    public javax.swing.JButton btnPrevious4;
+    public javax.swing.JButton btnPrevious5;
+    public javax.swing.JButton btnPrevious6;
+    public javax.swing.JButton btnPreviousCategory;
+    public javax.swing.JButton btnUpdateRecord1;
+    public javax.swing.JButton btnUpdateRecord3;
+    public javax.swing.JButton btnUpdateRecord4;
+    public javax.swing.JButton btnUpdateRecord5;
+    public javax.swing.JButton btnUpdateRecord6;
+    public javax.swing.JButton btnUpdateRecordCategory;
+    public javax.swing.JComboBox<String> comboBoxCategory;
+    public javax.swing.JComboBox<String> comboBoxStorage;
+    public javax.swing.JComboBox<String> comboBoxSupplier;
     public javax.swing.JPanel home;
+    public javax.swing.JButton jButton1;
+    public javax.swing.JButton jButton10;
+    public javax.swing.JButton jButton11;
+    public javax.swing.JButton jButton2;
+    public javax.swing.JButton jButton4;
+    public javax.swing.JButton jButton6;
+    public javax.swing.JButton jButton8;
+    public javax.swing.JButton jButton9;
+    public javax.swing.JButton jButtonNewCategory;
+    public javax.swing.JButton jButtonNewCategory1;
+    public javax.swing.JButton jButtonNewCategory2;
+    public javax.swing.JButton jButtonNewCategory3;
+    public javax.swing.JButton jButtonNewCategory4;
+    public javax.swing.JButton jButtonNewCategory5;
+    public javax.swing.JTextArea jTextArea1;
     public javax.swing.JPanel manage;
+    public javax.swing.JTextField priceTextFeild;
     public javax.swing.JPanel product;
+    public javax.swing.JTextField quantityTextFeild;
+    public javax.swing.JTextArea textAreaDescription;
+    public javax.swing.JTextArea textAreaDescription2;
+    public javax.swing.JTextArea textAreaDescription3;
     public javax.swing.JTextArea textAreaDescriptionCategory;
+    public javax.swing.JTextField textFeildNameAdd;
     public javax.swing.JTextField textFeildNameCategory;
+    public javax.swing.JTextField textFeildNameUpdate;
+    public javax.swing.JTextField textFeildNameUpdate1;
+    public javax.swing.JTextField textFeildNameUpdate10;
+    public javax.swing.JTextField textFeildNameUpdate11;
+    public javax.swing.JTextField textFeildNameUpdate12;
+    public javax.swing.JTextField textFeildNameUpdate13;
+    public javax.swing.JTextField textFeildNameUpdate14;
+    public javax.swing.JTextField textFeildNameUpdate15;
+    public javax.swing.JTextField textFeildNameUpdate16;
+    public javax.swing.JTextField textFeildNameUpdate17;
+    public javax.swing.JTextField textFeildNameUpdate18;
+    public javax.swing.JTextField textFeildNameUpdate2;
+    public javax.swing.JTextField textFeildNameUpdate3;
+    public javax.swing.JTextField textFeildNameUpdate4;
+    public javax.swing.JTextField textFeildNameUpdate6;
+    public javax.swing.JTextField textFeildNameUpdate7;
+    public javax.swing.JTextField textFeildNameUpdate8;
+    public javax.swing.JTextField textFeildNameUpdate9;
+    public javax.swing.JTextField textFeildPriceUpdate;
+    public javax.swing.JTextField textFeildPriceUpdate1;
+    public javax.swing.JTextField textFeildPriceUpdate2;
+    public javax.swing.JTextField textFeildPriceUpdate3;
+    public javax.swing.JTextField textFeildPriceUpdate4;
+    public javax.swing.JTextField textFeildPriceUpdate5;
+    public javax.swing.JTextField textFeildQuantityUpdate;
+    public javax.swing.JTextField textFeildQuantityUpdate1;
+    public javax.swing.JTextField textFeildQuantityUpdate2;
     public javax.swing.JPanel trade;
     // End of variables declaration//GEN-END:variables
-    private void singleCategory(){
-        String result[] = new String[3];
-        result = doconnect.readCategory();
+    private void singleCategory(String result[]){
         
         textFeildNameCategory.setText(result[1]);
         textAreaDescriptionCategory.setText(result[2]);
+    }
+    
+    private void singleBuy(String result[]){
+        // String result[] = new String[5];
+        // result = doconnect.readBuy();
+        
+        textFeildNameUpdate3.setText(result[2]);
+        textFeildPriceUpdate2.setText(result[4]);
+        textFeildQuantityUpdate2.setText(result[3]);
+        textFeildNameUpdate4.setText(result[1]);
+    }
+    
+    private void singleCustomer(String result[]){
+        // String result[] = new String[6];
+        // result = doconnect.readCustomer();
+        
+        textFeildNameUpdate13.setText(result[0]);
+        textFeildNameUpdate17.setText(result[1]);
+        textFeildPriceUpdate5.setText(result[4]);
+        textFeildNameUpdate16.setText(result[3]);
+        textFeildNameUpdate16.setText(result[5]);
+    }
+    
+    private void singleProduct(String result[]){
+        // String result[] = new String[7];
+        // result = doconnect.readProduct();
+        
+        textFeildNameUpdate.setText(result[3]);
+    }
+    private void singleSell(String result[]){
+        // String result[] = new String[5];
+        // result = doconnect.readSell();
+        
+        textFeildNameUpdate1.setText(result[1]);
+        textFeildPriceUpdate1.setText(result[4]);
+        textFeildQuantityUpdate1.setText(result[3]);
+        textFeildNameUpdate2.setText(result[2]);
+    }
+    
+    private void singleStaff(String result[]){
+        // String result[] = new String[6];
+        // result = doconnect.readStaff();
+        
+        textFeildNameUpdate10.setText(result[0]);
+        textFeildNameUpdate14.setText(result[1]);
+        textFeildPriceUpdate4.setText(result[3]);
+        textFeildNameUpdate11.setText(result[4]);
+        textFeildNameUpdate12.setText(result[5]);
+    }
+    
+    private void singleStorage(String result[]){
+        // String result[] = new String[3];
+        // result = doconnect.readStorage();
+        
+        textFeildNameUpdate16.setText(result[0]);
+        textAreaDescription3.setText(result[2]);
+    }
+    
+    private void singleSupplier(String result[]){
+        // String result[] = new String[7];
+        // result = doconnect.readSupplier();
+        
+        textFeildNameUpdate6.setText(result[1]);
+        textFeildPriceUpdate3.setText(result[2]);
+        textFeildNameUpdate7.setText(result[3]);
+        textFeildNameUpdate8.setText(result[4]);
+        textFeildNameUpdate9.setText(result[5]);
+        textAreaDescription2.setText(result[6]);
     }
     private void setIconImage() {
         //changes the icon image from the default java mug to a file that is in the working directory
