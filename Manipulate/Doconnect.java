@@ -18,7 +18,7 @@ public class Doconnect {
         try{
            String host = "jdbc:mysql://localhost:3306/inventory_system";
            String username = "root";
-           con = DriverManager.getConnection( host, username, "" );
+           con = DriverManager.getConnection( host, username, "7899" );
 
            stmt = con.createStatement(
            ResultSet.TYPE_SCROLL_SENSITIVE, 

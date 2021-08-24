@@ -16,7 +16,8 @@ public class Storage extends Connect implements reader{
             rs = stmt.executeQuery( SQL );
             //hold all the records from the database table
             rs.next( );
-            results[0] = Integer.toString(rs.getInt("storageArea"));
+           // results[0] = Integer.toString(rs.getInt("storageArea"));
+            results[0] = rs.getString("storageArea");
             results[1] = Integer.toString(rs.getInt("storageID"));
             results[2] = rs.getString("description");
         }
@@ -33,7 +34,6 @@ public class Storage extends Connect implements reader{
             rs.moveToInsertRow( );
             rs.updateString("storageArea",  result[0]);
             rs.updateString("description", result[2]);
-            
             rs.insertRow( );
       
         }
@@ -47,7 +47,8 @@ public class Storage extends Connect implements reader{
         String results[] = new String[3];
         try {
             if ( rs.next( )) {
-                results[0] = Integer.toString(rs.getInt("storageArea"));
+               // results[0] = Integer.toString(rs.getInt("storageArea"));
+                results[0] = rs.getString("storageArea");
                 results[1] = Integer.toString(rs.getInt("storageID"));
                 results[2] = rs.getString("description");
             }
@@ -66,7 +67,8 @@ public class Storage extends Connect implements reader{
         String results[] = new String[3];
         try {
             if ( rs.previous( )) {
-                results[0] = Integer.toString(rs.getInt("storageArea"));
+                //results[0] = Integer.toString(rs.getInt("storageArea"));
+                results[0] = rs.getString("storageArea");
                 results[1] = Integer.toString(rs.getInt("storageID"));
                 results[2] = rs.getString("description");
             }
@@ -85,7 +87,8 @@ public class Storage extends Connect implements reader{
         String results[] = new String[3];
         try {
             rs.last();
-            results[0] = Integer.toString(rs.getInt("storageArea"));
+            //results[0] = Integer.toString(rs.getInt("storageArea")); this is wrong but not sure
+            results[0] = rs.getString("storageArea");
             results[1] = Integer.toString(rs.getInt("storageID"));
             results[2] = rs.getString("description");
         }
@@ -97,9 +100,9 @@ public class Storage extends Connect implements reader{
 
     public boolean updateRow(String result[]){
         try {
-            rs.updateInt("storageArea", Integer.parseInt(result[0]));
             //THIS ARE COMMENTED BECAUSE THE ID PART IS AUTO INCREAMENT BY THE DATABASE
             //   rs.updateInt("storageID", Integer.parseInt(result[1]));
+            rs.updateString("storageArea",(result[0])); //area should be string
             rs.updateString("description",(result[2]));
             rs.updateRow( );
             JOptionPane.showMessageDialog(null, "Updated");

@@ -114,10 +114,13 @@ public class Staff extends Connect implements reader{
 
     public boolean updateRow( String result[]){
         try {
-           //THIS ARE COMMENTED BECAUSE THE ID PART IS AUTO INCREAMENT BY THE DATABASE
-           // rs.updateInt("StaffID", Integer.parseInt(result[0]));
-            rs.updateString("StaffName",(result[1]));
-            rs.updateString("Description",(result[2]));
+            rs.updateString("Fname",(result[0]));
+            rs.updateString("Lname",(result[1]));
+          //THIS ARE COMMENTED BECAUSE THE ID PART IS AUTO INCREAMENT BY THE DATABASE 
+          // rs.updateInt("StaffID", Integer.parseInt(result[2]));
+            rs.updateString("staffAddress",(result[3]));
+            rs.updateString("staffPhone",(result[4]));
+            rs.updateString("staffEmail",(result[5]));
             rs.updateRow( );
             JOptionPane.showMessageDialog(null, "Updated");
         }

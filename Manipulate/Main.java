@@ -29,10 +29,37 @@ public class Main {
         // //customer.updateRow(testCustomer);
         //  System.out.println(results[0]);
 
-        Supplier supplier= new Supplier();
-        String input[] = {"","Loki Laufeyson","Asgard", "12312","loki@avengers.com", "965", "Brother of Thor"};
-        supplier.write(input);
+      //supplier test  
+        // Supplier supplier= new Supplier();
+        // String input[] = {"","Loki Laufeyson","Asgard", "12312","loki@avengers.com", "965", "Brother of Thor"};
+        // supplier.write(input);
         
+     //staff test
+        // Staff staff= new Staff();
+        // String input2[] = {"Loki","Laufeyson","","Asgard", "0978997345","loki@avengers.com"};
+        // staff.write(input2);
+     
+    //storage test   
+        // Storage storage= new Storage();
+        // String input3[] = {"what","","Electronics area"};
+        // storage.write(input3);
+
+    //category test
+        // Category category= new Category();
+        // String input4[] = {"cosmotics","","Hair conditionar"};
+        // category.write(input4);
+
+    //product test
+    //    Product product= new Product();
+    //    String input5[] = {"HP laptop","","4000","Pavilion and proBook available","5","1","4"}; 
+    //    product.write(input5); //it works but need to find a way to add date otherwise it doesnt. or need to change date to can be null
+
+
+
+
+
+
+
         // results = customer.readLast();
         // System.out.println(results[0]);
         

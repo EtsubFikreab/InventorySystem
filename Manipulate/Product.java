@@ -3,7 +3,6 @@ package Manipulate;
 import java.sql.SQLException;
 import java.sql.ResultSet;
 import javax.swing.JOptionPane;
-
 public class Product extends Connect implements reader{
     String name;
     double quantity, priceBought;
@@ -32,6 +31,8 @@ public class Product extends Connect implements reader{
     }
     public void write(String result[]){
         try{
+            String SQL = "SELECT * FROM Product";
+            rs = stmt.executeQuery( SQL );
             rs.moveToInsertRow( );
             rs.updateString("productName", result[0]);
           //THIS ARE COMMENTED BECAUSE THE ID PART IS AUTO INCREAMENT BY THE DATABASE
@@ -42,7 +43,6 @@ public class Product extends Connect implements reader{
             rs.updateInt("productQuantity", Integer.parseInt(result[4]));
             rs.updateInt("catagoryID",  Integer.parseInt(result[5]));
             rs.updateInt("storageID",  Integer.parseInt(result[6]));
-            
             rs.insertRow( );
         }
         catch ( SQLException err ) {
