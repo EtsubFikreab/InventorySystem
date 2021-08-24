@@ -9,22 +9,15 @@ public class TestYeab {
         // buy.write(testBuy);
         Supplier supplier = new Supplier();
         supplier.setStatement(stmt);
-        String testSupplier[] = {"Yeabsira Tilahun","Algeria Street", "Yeabsiratilahun78@gmail.com","2310", "we Supply viagra"};
+        String result[]=new String[6];
+        result = supplier.read();
+        String testSupplier[] = {"NULL,Yeabsira Tilahun","Algeria Street", "Yeabsiratilahun78@gmail.com","2310", "we Supply viagra"};
         supplier.updateRow(testSupplier);
 
         
     
     }
     
-
-
-   
-
-
-
-
-
-
 
 
 

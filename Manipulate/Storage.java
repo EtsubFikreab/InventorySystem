@@ -18,7 +18,7 @@ public class Storage extends Connect implements reader{
             rs.next( );
             results[0] = Integer.toString(rs.getInt("storageArea"));
             results[1] = Integer.toString(rs.getInt("storageID"));
-            results[2] = rs.getString("Description");
+            results[2] = rs.getString("description");
         }
         catch ( SQLException err ) {
             System.out.println( err.getMessage( ) );
@@ -32,7 +32,7 @@ public class Storage extends Connect implements reader{
             rs = stmt.executeQuery( SQL );
             rs.moveToInsertRow( );
             rs.updateString("storageArea",  result[0]);
-            rs.updateString("Description", result[2]);
+            rs.updateString("description", result[2]);
             
             rs.insertRow( );
       
@@ -49,7 +49,7 @@ public class Storage extends Connect implements reader{
             if ( rs.next( )) {
                 results[0] = Integer.toString(rs.getInt("storageArea"));
                 results[1] = Integer.toString(rs.getInt("storageID"));
-                results[2] = rs.getString("Description");
+                results[2] = rs.getString("description");
             }
             else {
                 rs.previous( );
@@ -68,7 +68,7 @@ public class Storage extends Connect implements reader{
             if ( rs.previous( )) {
                 results[0] = Integer.toString(rs.getInt("storageArea"));
                 results[1] = Integer.toString(rs.getInt("storageID"));
-                results[2] = rs.getString("Description");
+                results[2] = rs.getString("description");
             }
             else {
                 rs.next( );
@@ -87,7 +87,7 @@ public class Storage extends Connect implements reader{
             rs.last();
             results[0] = Integer.toString(rs.getInt("storageArea"));
             results[1] = Integer.toString(rs.getInt("storageID"));
-            results[2] = rs.getString("Description");
+            results[2] = rs.getString("description");
         }
         catch (SQLException err) {
             JOptionPane.showMessageDialog(null, err.getMessage());
@@ -100,7 +100,7 @@ public class Storage extends Connect implements reader{
             rs.updateInt("storageArea", Integer.parseInt(result[0]));
             //THIS ARE COMMENTED BECAUSE THE ID PART IS AUTO INCREAMENT BY THE DATABASE
             //   rs.updateInt("storageID", Integer.parseInt(result[1]));
-            rs.updateString("Description",(result[2]));
+            rs.updateString("description",(result[2]));
             rs.updateRow( );
             JOptionPane.showMessageDialog(null, "Updated");
         }

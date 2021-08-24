@@ -17,6 +17,7 @@ public class Product extends Connect implements reader{
 
             rs.next( );
             results[0] = rs.getString("productName");
+            results[1] = Integer.toString(rs.getInt("productID"));
             results[2] = Double.toString(rs.getDouble("productPrice"));
             // String date = rsCus.getString("importDate");
             results[3] = rs.getString("productDescription");
@@ -33,9 +34,10 @@ public class Product extends Connect implements reader{
         try{
             rs.moveToInsertRow( );
             rs.updateString("productName", result[0]);
-            rs.updateInt("productID",  Integer.parseInt(result[1]));
+          //THIS ARE COMMENTED BECAUSE THE ID PART IS AUTO INCREAMENT BY THE DATABASE
+          //  rs.updateInt("productID",  Integer.parseInt(result[1]));
             rs.updateDouble("productPrice", Double.parseDouble(result[2]));
-            // TODO insert date
+            // TO DO insert date
             rs.updateString("productDescription", result[3]);
             rs.updateInt("productQuantity", Integer.parseInt(result[4]));
             rs.updateInt("catagoryID",  Integer.parseInt(result[5]));
@@ -117,7 +119,7 @@ public class Product extends Connect implements reader{
     public boolean deleteRow(){
         try{
             rs.deleteRow( );
-            //TODO  implement read() in the event handler (button)
+            //TO DO  implement read() in the event handler (button)
             JOptionPane.showMessageDialog(null, "Succesfully Deleted");
         }
         catch (SQLException err){
@@ -132,7 +134,7 @@ public class Product extends Connect implements reader{
         //THIS ARE COMMENTED BECAUSE THE ID PART IS AUTO INCREAMENT BY THE DATABASE
          //   rs.updateInt("productID",  Integer.parseInt(result[1]));
             rs.updateDouble("productPrice", Double.parseDouble(result[2]));
-            // TODO insert date
+            // TO DO insert date
             rs.updateString("productDescription", result[3]);
             rs.updateInt("productQuantity", Integer.parseInt(result[4]));
            // rs.updateInt("catagoryID",  Integer.parseInt(result[5]));

@@ -122,7 +122,7 @@ public class Supplier extends Connect implements reader{
   public boolean deleteRow(){
     try{
         rs.deleteRow( );
-        //TODO  implement read() in the event handler (button)
+        //TO DO  implement read() in the event handler (button)
         JOptionPane.showMessageDialog(null, "Succesfully Deleted");
     }
     catch (SQLException err){

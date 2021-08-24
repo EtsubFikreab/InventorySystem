@@ -5,9 +5,9 @@ import java.sql.ResultSet;
 import javax.swing.JOptionPane;
 
 public class Category extends Connect implements reader{
-    String CatName;
-    int CatID;
-    String CatDesc;
+    String categoryName;
+    int categoryID;
+    String Description;
     ResultSet rs;
     public  void doConnect(){
 
@@ -22,9 +22,9 @@ public class Category extends Connect implements reader{
             //hold all the records from the database table
 
             rs.next( );
-            int id_col = rs.getInt("CatID");
+            int id_col = rs.getInt("categoryID");
             results[0] = Integer.toString(id_col);
-            results[1] = rs.getString("CatName");
+            results[1] = rs.getString("categoryName");
             results[2] = rs.getString("Description");
         }
         catch ( SQLException err ) {
@@ -37,8 +37,8 @@ public class Category extends Connect implements reader{
             String SQL = "SELECT * FROM Category";
             rs = stmt.executeQuery( SQL );
             rs.moveToInsertRow( );
-            rs.updateInt("CatID", Integer.parseInt(result[0]));
-            rs.updateString("CatName",(result[1]));
+            rs.updateInt("categoryID", Integer.parseInt(result[0]));
+            rs.updateString("categoryName",(result[1]));
             rs.updateString("Description",(result[2]));
             rs.insertRow();
         }
@@ -52,9 +52,9 @@ public class Category extends Connect implements reader{
         String results[] = new String[3];
         try {
             if ( rs.next( )) {
-                int id_col = rs.getInt("CatID");
+                int id_col = rs.getInt("categoryID");
                 results[0] = Integer.toString(id_col);
-                results[1] = rs.getString("CatName");
+                results[1] = rs.getString("categoryName");
                 results[2] = rs.getString("Description");
             }
             else {
@@ -72,9 +72,9 @@ public class Category extends Connect implements reader{
         String results[] = new String[3];
         try {
             if ( rs.previous( )) {
-                int id_col = rs.getInt("CatID");
+                int id_col = rs.getInt("categoryID");
                 results[0] = Integer.toString(id_col);
-                results[1] = rs.getString("CatName");
+                results[1] = rs.getString("categoryName");
                 results[2] = rs.getString("Description");
             }
             else {
@@ -92,9 +92,9 @@ public class Category extends Connect implements reader{
         String results[] = new String[3];
         try {
             rs.last();
-            int id_col = rs.getInt("CatID");
+            int id_col = rs.getInt("categoryID");
             results[0] = Integer.toString(id_col);
-            results[1] = rs.getString("CatName");
+            results[1] = rs.getString("categoryName");
             results[2] = rs.getString("Description");
         }
         catch (SQLException err) {
@@ -118,7 +118,7 @@ public class Category extends Connect implements reader{
     public boolean updateRow( String result[]){
         try {
            //THIS ARE COMMENTED BECAUSE THE ID PART IS AUTO INCREAMENT BY THE DATABASE
-          //  rs.updateInt("CatID", Integer.parseInt(result[0]));
+          //  rs.updateInt("categoryID", Integer.parseInt(result[0]));
             rs.updateString("CatName",(result[1]));
             rs.updateString("Description",(result[2]));
             rs.updateRow( );
