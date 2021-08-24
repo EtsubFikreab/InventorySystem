@@ -1,11 +1,6 @@
 package Manipulate;
 
-import java.sql.Statement;
 
-import java.sql.DriverManager;
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
 public class Main {
     //static Statement stmt = doconnect();
     // static Statement doconnect (){
@@ -26,13 +21,17 @@ public class Main {
     //     return stmt;
     // }
     public static void main(String[] args){
-        Customer customer = new Customer();
-        //customer.setStatement(stmt);
-        String results[]=new String[6];
-        results = customer.read();
-        //String testCustomer[] = {"hello", "world", "12","pc","1222","pc@some.com"};
-        //customer.updateRow(testCustomer);
-         System.out.println(results[0]);
+        // Customer customer = new Customer();
+        // //customer.setStatement(stmt);
+        // String results[]=new String[6];
+        // results = customer.read();
+        // //String testCustomer[] = {"hello", "world", "12","pc","1222","pc@some.com"};
+        // //customer.updateRow(testCustomer);
+        //  System.out.println(results[0]);
+
+        Supplier supplier= new Supplier();
+        String input[] = {"","Loki Laufeyson","Asgard", "12312","loki@avengers.com", "965", "Brother of Thor"};
+        supplier.write(input);
         
         // results = customer.readLast();
         // System.out.println(results[0]);

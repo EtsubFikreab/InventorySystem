@@ -44,9 +44,10 @@ public class Supplier extends Connect implements reader{
       rs.moveToInsertRow( );
       rs.updateString("supplierName",(results[1]));
       rs.updateString("supplierAddress",(results[2]));
-      rs.updateString("supplierEmail",(results[3]));
-      rs.updateString("POBOX",(results[4]));
-      rs.updateString("supplierDescription",(results[5]));
+      rs.updateString("supplierPhone",(results[3]));
+      rs.updateString("supplierEmail",(results[4]));
+      rs.updateInt("POBOX",Integer.parseInt((results[5])));
+      rs.updateString("supplierDescription",(results[6]));
       rs.insertRow();
     }
     catch ( SQLException err ) {
