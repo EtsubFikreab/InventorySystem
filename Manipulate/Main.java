@@ -30,8 +30,8 @@ public class Main {
         //customer.setStatement(stmt);
         String results[]=new String[6];
         results = customer.read();
-        String testCustomer[] = {"hello", "world", "12","pc","1222","pc@some.com"};
-        customer.updateRow(testCustomer);
+        //String testCustomer[] = {"hello", "world", "12","pc","1222","pc@some.com"};
+        //customer.updateRow(testCustomer);
          System.out.println(results[0]);
         
         // results = customer.readLast();
