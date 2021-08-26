@@ -3074,7 +3074,7 @@ public class Dashboard extends javax.swing.JFrame {
         re[3]=textFeildQuantityUpdate2.getText();
         re[4]=textFeildPriceUpdate2.getText();
         table.buy.write(re);
-        int RequestQuantity,Total;
+        int RequestQuantity,Total=0;
         RequestQuantity=Integer.parseInt(re[3]);
        
        if (RequestQuantity<=0){
