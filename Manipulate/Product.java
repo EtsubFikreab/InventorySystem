@@ -39,10 +39,10 @@ public class Product extends Connect implements reader{
           //  rs.updateInt("productID",  Integer.parseInt(result[1]));
             rs.updateDouble("productPrice", Double.parseDouble(result[2]));
             // TO DO insert date
-            rs.updateString("productDescription", result[3]);
-            rs.updateInt("productQuantity", Integer.parseInt(result[4]));
-            rs.updateInt("catagoryID",  Integer.parseInt(result[5]));
-            rs.updateInt("storageID",  Integer.parseInt(result[6]));
+            rs.updateString("productDescription", result[4]);
+            rs.updateInt("productQuantity", Integer.parseInt(result[5]));
+            rs.updateInt("catagoryID",  Integer.parseInt(result[6]));
+            rs.updateInt("storageID",  Integer.parseInt(result[7]));
             rs.insertRow( );
         }
         catch ( SQLException err ) {
