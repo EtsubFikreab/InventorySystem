@@ -31,7 +31,7 @@ public class Dashboard extends javax.swing.JFrame {
      */
     public Dashboard() {
         initComponents();
-        //DoConnectCategory();
+        
         setIconImage();
     }
     /**
@@ -2860,7 +2860,7 @@ public class Dashboard extends javax.swing.JFrame {
         
     }
     /*
-    testing doconnect
+    testing doconnects
     public void DoConnectCategory( ) {
         try{
             String host = "jdbc:mysql://localhost:3306/inventory_management_system";
@@ -2953,8 +2953,10 @@ public class Dashboard extends javax.swing.JFrame {
         Parent.add(manage);
         Parent.repaint();
         Parent.revalidate();
-        // singleCategory();
+        
         table.manageTables();
+        btnFirst5ActionPerformed(evt);
+        initManage();
     }//GEN-LAST:event_mangeBtnActionPerformed
 
     private void SupplierComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SupplierComboBoxActionPerformed
@@ -3042,7 +3044,7 @@ public class Dashboard extends javax.swing.JFrame {
         re[3]=textFeildQuantityUpdate1.getText();
         re[4]=textFeildPriceUpdate1.getText();
     //CHECKING QUANTITY
-        int RequestQuantity,Total =0;
+        int RequestQuantity,Total = 0;
         RequestQuantity=Integer.parseInt(re[3]);
         if (RequestQuantity>Total){
             JOptionPane.showMessageDialog(null, "The requested quantity is not available in the store!");
@@ -3777,6 +3779,27 @@ public class Dashboard extends javax.swing.JFrame {
         
         textFeildNameUpdate16.setText(result[0]);
         textAreaDescription3.setText(result[2]);
+    }
+    private void initManage(){
+        String results[] = new String[8];
+        results = table.category.read();
+        singleCategory(results);
+        
+//        String result [] = new String[6];
+//        result = table.customer.read();
+//        singleCustomer(result);
+        
+//        String results[] = new String[7];
+        results = table.supplier.read();
+        singleSupplier(results);
+        
+//        String results[] = new String[6];
+        results = table.staff.read();
+        singleStaff(results);
+        
+//        String results[] = new String[3];
+        results = table.storage.read();
+        singleStorage(results);
     }
     
     private void singleSupplier(String result[]){
