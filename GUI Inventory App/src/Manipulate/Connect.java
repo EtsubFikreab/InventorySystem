@@ -12,7 +12,7 @@ abstract class Connect {
     Statement stmt;
     Connect(){
         try{
-           String host = "jdbc:mysql://localhost:3306/inventorysystem";//set name to your own database
+           String host = "jdbc:mysql://localhost:3306/inventory_system";//set name to your own database
            String username = "root";
            con = DriverManager.getConnection( host, username, "" );
 

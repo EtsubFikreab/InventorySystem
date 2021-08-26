@@ -2,3 +2,4 @@
 .vscode/settings.json
 /GUI Inventory App/nbproject/private/
 /GUI Inventory App/build/
+*.java

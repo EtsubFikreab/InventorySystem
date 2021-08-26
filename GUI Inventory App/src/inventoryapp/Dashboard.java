@@ -13,7 +13,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import javax.swing.*;
 import Manipulate.Tables;
-
+/// this is a test on merge conflict
 /**
  *
  * @author Yeab
