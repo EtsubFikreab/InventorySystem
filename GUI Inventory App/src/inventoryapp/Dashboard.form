@@ -380,11 +380,11 @@
                                               <Group type="102" alignment="0" attributes="0">
                                                   <Component id="jLabel8" pref="48" max="32767" attributes="0"/>
                                                   <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
-                                                  <Component id="SupplierComboBox" pref="70" max="32767" attributes="0"/>
+                                                  <Component id="SupplierComboBox" max="32767" attributes="0"/>
                                                   <EmptySpace min="-2" pref="78" max="-2" attributes="0"/>
                                                   <Component id="jLabel9" max="32767" attributes="0"/>
                                                   <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
-                                                  <Component id="CategoryComboBox" pref="70" max="32767" attributes="0"/>
+                                                  <Component id="CategoryComboBox" max="32767" attributes="0"/>
                                               </Group>
                                           </Group>
                                           <EmptySpace min="-2" pref="89" max="-2" attributes="0"/>

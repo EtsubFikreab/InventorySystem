@@ -30,7 +30,6 @@ public class Dashboard extends javax.swing.JFrame {
      * Creates new form Dashboard
      */
     public Dashboard() {
-        doconnect = new Doconnect();
         initComponents();
         //DoConnectCategory();
         setIconImage();
@@ -2860,6 +2859,8 @@ public class Dashboard extends javax.swing.JFrame {
     private void manageCategory(){
         
     }
+    /*
+    testing doconnect
     public void DoConnectCategory( ) {
         try{
             String host = "jdbc:mysql://localhost:3306/inventory_management_system";
@@ -2891,7 +2892,7 @@ public class Dashboard extends javax.swing.JFrame {
         catch ( SQLException err ) {
             System.out.println( err.getMessage( ) );
             }
-    }
+    }*/
     private void homeBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_homeBtnActionPerformed
         Parent.removeAll();
         Parent.add(home);
@@ -3041,7 +3042,7 @@ public class Dashboard extends javax.swing.JFrame {
         re[3]=textFeildQuantityUpdate1.getText();
         re[4]=textFeildPriceUpdate1.getText();
     //CHECKING QUANTITY
-        int RequestQuantity,Total;
+        int RequestQuantity,Total =0;
         RequestQuantity=Integer.parseInt(re[3]);
         if (RequestQuantity>Total){
             JOptionPane.showMessageDialog(null, "The requested quantity is not available in the store!");
@@ -3726,10 +3727,10 @@ public class Dashboard extends javax.swing.JFrame {
         // String result[] = new String[5];
         // result = doconnect.readBuy();
         
-        textFeildNameUpdate3.setText(result[2]);
+        //textFeildNameUpdate3.setText(result[2]);
         textFeildPriceUpdate2.setText(result[4]);
         textFeildQuantityUpdate2.setText(result[3]);
-        textFeildNameUpdate4.setText(result[1]);
+        //textFeildNameUpdate4.setText(result[1]);
     }
     
     private void singleCustomer(String result[]){
@@ -3753,10 +3754,10 @@ public class Dashboard extends javax.swing.JFrame {
         // String result[] = new String[5];
         // result = doconnect.readSell();
         
-        textFeildNameUpdate1.setText(result[1]);
+        //textFeildNameUpdate1.setText(result[1]);
         textFeildPriceUpdate1.setText(result[4]);
         textFeildQuantityUpdate1.setText(result[3]);
-        textFeildNameUpdate2.setText(result[2]);
+        //textFeildNameUpdate2.setText(result[2]);
     }
     
     private void singleStaff(String result[]){
