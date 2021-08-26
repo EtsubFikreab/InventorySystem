@@ -16,7 +16,7 @@ import Manipulate.Tables;
 
 /**
  *
- * @author EtsubF
+ * @author Yeab
  */
 public class Dashboard extends javax.swing.JFrame {
     Doconnect doconnect;
@@ -3045,42 +3045,53 @@ public class Dashboard extends javax.swing.JFrame {
     }//GEN-LAST:event_textFeildPriceUpdate1ActionPerformed
 
     private void textFeildQuantityUpdate1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textFeildQuantityUpdate1ActionPerformed
-        // TODO add your handling code here:
+        // TO DO add your handling code here:
     }//GEN-LAST:event_textFeildQuantityUpdate1ActionPerformed
 
     private void textFeildNameUpdate2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textFeildNameUpdate2ActionPerformed
-        // TODO add your handling code here:
+        // TO DO add your handling code here:
     }//GEN-LAST:event_textFeildNameUpdate2ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        // TODO add your handling code here:
+        // TO DO add your handling code here:
         String [] re = new String[5];
         //re[0]= stuff id
         re[1]=textFeildNameUpdate1.getText();
         re[2]=textFeildNameUpdate2.getText();
         re[3]=textFeildQuantityUpdate1.getText();
         re[4]=textFeildPriceUpdate1.getText();
+    //CHECKING QUANTITY
+        int RequestQuantity,Total;
+        RequestQuantity=Integer.parseInt(re[3]);
+        if (RequestQuantity>Total){
+            JOptionPane.showMessageDialog(null, "The requested quantity is not available in the store!");
+        }
+        else if (RequestQuantity<=0){
+            JOptionPane.showMessageDialog(null, "Choose atleast one quantity!");
+        }
+        else
         table.sell.write(re);
+
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void textFeildNameUpdate3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textFeildNameUpdate3ActionPerformed
-        // TODO add your handling code here:
+        // TO DO add your handling code here:
     }//GEN-LAST:event_textFeildNameUpdate3ActionPerformed
 
     private void textFeildPriceUpdate2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textFeildPriceUpdate2ActionPerformed
-        // TODO add your handling code here:
+        // TO DO add your handling code here:
     }//GEN-LAST:event_textFeildPriceUpdate2ActionPerformed
 
     private void textFeildQuantityUpdate2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textFeildQuantityUpdate2ActionPerformed
-        // TODO add your handling code here:
+        // TO DO add your handling code here:
     }//GEN-LAST:event_textFeildQuantityUpdate2ActionPerformed
 
     private void textFeildNameUpdate4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textFeildNameUpdate4ActionPerformed
-        // TODO add your handling code here:
+        // TO DO add your handling code here:
     }//GEN-LAST:event_textFeildNameUpdate4ActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-        // TODO add your handling code here:
+        // TO DO add your handling code here:
         String [] re = new String[5];
         //re[0]= stuff id
         re[1]=textFeildNameUpdate4.getText();
@@ -3088,6 +3099,16 @@ public class Dashboard extends javax.swing.JFrame {
         re[3]=textFeildQuantityUpdate2.getText();
         re[4]=textFeildPriceUpdate2.getText();
         table.buy.write(re);
+        int RequestQuantity,Total;
+        RequestQuantity=Integer.parseInt(re[3]);
+       
+       if (RequestQuantity<=0){
+            JOptionPane.showMessageDialog(null, "Choose atleast one quantity!");
+        }
+        else
+        table.buy.write(re);
+
+
     }//GEN-LAST:event_jButton6ActionPerformed
 
     private void textFeildNameCategoryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textFeildNameCategoryActionPerformed

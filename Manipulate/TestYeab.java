@@ -28,12 +28,12 @@ public class TestYeab {
         // System.out.println(result[0]);
 
     //STORAGE    
-        // Storage storage = new Storage();
-        // String result[]=new String[6];
-        // result = storage.read();
-        // String teststorage[] = {"West","","Cosmotics area"};
-        // storage.updateRow(teststorage);
-        // System.out.println(result[0]);
+        Storage storage = new Storage();
+        String result[]=new String[6];
+        result = storage.read();
+        String teststorage[] = {"West","","Cosmotics area"};
+        storage.updateRow(teststorage);
+        System.out.println(result[0]);
 
      //CATEGORY   
         // Category category = new Category();
