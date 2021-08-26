@@ -51,7 +51,7 @@ public class Main {
 
     //product test
     //    Product product= new Product();
-    //    String input5[] = {"HP laptop","","4000","Pavilion and proBook available","5","1","4"}; 
+    //    String input5[] = {"HP laptop","","4000","20/10/2021","Pavilion and proBook available","5","1","4"}; 
     //    product.write(input5); //it works but need to find a way to add date otherwise it doesnt. or need to change date to can be null
 
 
