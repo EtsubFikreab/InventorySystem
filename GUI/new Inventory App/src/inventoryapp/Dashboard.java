@@ -16,7 +16,7 @@ import Manipulate.Tables;
 
 /**
  *
- * @author EtsubF
+ * @author Yeab
  */
 public class Dashboard extends javax.swing.JFrame {
     Doconnect doconnect;
@@ -2942,6 +2942,17 @@ public class Dashboard extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+        String [] re = new String[8];
+        
+        re[0]=textFeildNameAdd.getText();
+       // re[1]=textFeildNameUpdate2.gettext(); add id
+        re[2]=priceTextFeild.getText();
+        //re[3]=tejTextArea1.gettext();
+        re[4]=quantityTextFeild.getText();
+        //re[5]=CategoryComboBox.gettext();
+        //re[6]=StorageComboBox.gettext();
+        //re[7]=SupplierComboBox.gettext();//does not exist in products
+        table.product.write(re);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void quantityTextFeildActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_quantityTextFeildActionPerformed
@@ -2963,22 +2974,43 @@ public class Dashboard extends javax.swing.JFrame {
 
     private void btnDeleteRecord1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteRecord1ActionPerformed
         // TODO add your handling code here:
+        table.product.deleteRow();
     }//GEN-LAST:event_btnDeleteRecord1ActionPerformed
 
     private void btnUpdateRecord1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateRecord1ActionPerformed
         // TODO add your handling code here:
+        String [] re = new String[8];
+        
+        re[0]=textFeildNameAdd.getText();
+       // re[1]=textFeildNameUpdate2.gettext(); add id
+        re[2]=priceTextFeild.getText();
+       // re[3]=tejTextArea1.getText();
+        re[4]=quantityTextFeild.getText();
+        //re[5]=CategoryComboBox.getText();
+        //re[6]=StorageComboBox.getText();
+        //re[7]=SupplierComboBox.gettext();//does not exist in products
+        table.product.write(re);
     }//GEN-LAST:event_btnUpdateRecord1ActionPerformed
 
     private void btnFirst1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFirst1ActionPerformed
         // TODO add your handling code here:
+        String results[] = new String[3];
+        results = table.product.read();
+       singleProduct(results);
     }//GEN-LAST:event_btnFirst1ActionPerformed
 
     private void btnLast1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLast1ActionPerformed
         // TODO add your handling code here:
+        String results[] = new String[3];
+        results = table.product.readLast();
+        singleProduct(results);
     }//GEN-LAST:event_btnLast1ActionPerformed
 
     private void btnPrevious1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPrevious1ActionPerformed
         // TODO add your handling code here:
+        String results[] = new String[3];
+        results = table.product.readPrevious();
+       singleProduct(results);
     }//GEN-LAST:event_btnPrevious1ActionPerformed
 
     private void comboBoxSupplierActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboBoxSupplierActionPerformed
@@ -2999,6 +3031,9 @@ public class Dashboard extends javax.swing.JFrame {
 
     private void btnNextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNextActionPerformed
         // TODO add your handling code here:
+        String results[] = new String[3];
+        results = table.product.readNext();
+       singleProduct(results);
     }//GEN-LAST:event_btnNextActionPerformed
 
     private void textFeildNameUpdate1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textFeildNameUpdate1ActionPerformed
@@ -3010,35 +3045,70 @@ public class Dashboard extends javax.swing.JFrame {
     }//GEN-LAST:event_textFeildPriceUpdate1ActionPerformed
 
     private void textFeildQuantityUpdate1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textFeildQuantityUpdate1ActionPerformed
-        // TODO add your handling code here:
+        // TO DO add your handling code here:
     }//GEN-LAST:event_textFeildQuantityUpdate1ActionPerformed
 
     private void textFeildNameUpdate2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textFeildNameUpdate2ActionPerformed
-        // TODO add your handling code here:
+        // TO DO add your handling code here:
     }//GEN-LAST:event_textFeildNameUpdate2ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        // TODO add your handling code here:
+        // TO DO add your handling code here:
+        String [] re = new String[5];
+        //re[0]= stuff id
+        re[1]=textFeildNameUpdate1.getText();
+        re[2]=textFeildNameUpdate2.getText();
+        re[3]=textFeildQuantityUpdate1.getText();
+        re[4]=textFeildPriceUpdate1.getText();
+    //CHECKING QUANTITY
+        int RequestQuantity,Total;
+        RequestQuantity=Integer.parseInt(re[3]);
+        if (RequestQuantity>Total){
+            JOptionPane.showMessageDialog(null, "The requested quantity is not available in the store!");
+        }
+        else if (RequestQuantity<=0){
+            JOptionPane.showMessageDialog(null, "Choose atleast one quantity!");
+        }
+        else
+        table.sell.write(re);
+
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void textFeildNameUpdate3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textFeildNameUpdate3ActionPerformed
-        // TODO add your handling code here:
+        // TO DO add your handling code here:
     }//GEN-LAST:event_textFeildNameUpdate3ActionPerformed
 
     private void textFeildPriceUpdate2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textFeildPriceUpdate2ActionPerformed
-        // TODO add your handling code here:
+        // TO DO add your handling code here:
     }//GEN-LAST:event_textFeildPriceUpdate2ActionPerformed
 
     private void textFeildQuantityUpdate2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textFeildQuantityUpdate2ActionPerformed
-        // TODO add your handling code here:
+        // TO DO add your handling code here:
     }//GEN-LAST:event_textFeildQuantityUpdate2ActionPerformed
 
     private void textFeildNameUpdate4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textFeildNameUpdate4ActionPerformed
-        // TODO add your handling code here:
+        // TO DO add your handling code here:
     }//GEN-LAST:event_textFeildNameUpdate4ActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-        // TODO add your handling code here:
+        // TO DO add your handling code here:
+        String [] re = new String[5];
+        //re[0]= stuff id
+        re[1]=textFeildNameUpdate4.getText();
+        re[2]=textFeildNameUpdate3.getText();
+        re[3]=textFeildQuantityUpdate2.getText();
+        re[4]=textFeildPriceUpdate2.getText();
+        table.buy.write(re);
+        int RequestQuantity,Total;
+        RequestQuantity=Integer.parseInt(re[3]);
+       
+       if (RequestQuantity<=0){
+            JOptionPane.showMessageDialog(null, "Choose atleast one quantity!");
+        }
+        else
+        table.buy.write(re);
+
+
     }//GEN-LAST:event_jButton6ActionPerformed
 
     private void textFeildNameCategoryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textFeildNameCategoryActionPerformed
