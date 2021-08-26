@@ -3102,6 +3102,7 @@ public class Dashboard extends javax.swing.JFrame {
         String results[] = new String[3];
         results = table.category.read();
         singleCategory(results);
+        //hello merge
     }//GEN-LAST:event_btnLastCategoryActionPerformed
 
     private void btnFirstCategoryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFirstCategoryActionPerformed
