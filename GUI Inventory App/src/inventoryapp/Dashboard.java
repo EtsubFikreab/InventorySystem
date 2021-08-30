@@ -298,7 +298,7 @@ public class Dashboard extends javax.swing.JFrame {
 
         getContentPane().add(topPanel, java.awt.BorderLayout.PAGE_START);
 
-        sidePanel.setBackground(new java.awt.Color(255, 255, 255));
+        sidePanel.setBackground(new java.awt.Color(23, 42, 58));
 
         homeBtn.setBackground(new java.awt.Color(23, 42, 58));
         homeBtn.setForeground(new java.awt.Color(255, 255, 255));
@@ -532,11 +532,11 @@ public class Dashboard extends javax.swing.JFrame {
                             .addGroup(ProductLayout.createSequentialGroup()
                                 .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
                                 .addGap(35, 35, 35)
-                                .addComponent(SupplierComboBox, 0, 70, Short.MAX_VALUE)
+                                .addComponent(SupplierComboBox, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addGap(78, 78, 78)
                                 .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addGap(35, 35, 35)
-                                .addComponent(CategoryComboBox, 0, 70, Short.MAX_VALUE)))
+                                .addComponent(CategoryComboBox, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                         .addGap(89, 89, 89)
                         .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
                         .addGap(35, 35, 35)

@@ -78,7 +78,7 @@
     <Container class="javax.swing.JPanel" name="sidePanel">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="ff" green="ff" red="ff" type="rgb"/>
+          <Color blue="3a" green="2a" red="17" type="rgb"/>
         </Property>
       </Properties>
       <Constraints>
