@@ -22,9 +22,9 @@ public class Doconnect {
     int curRow = 0;
     Doconnect(){
          try{
-            String host = "jdbc:mysql://localhost:3306/inventorymanagmentsystem";
+            String host = "jdbc:mysql://localhost:3306/inventory_system";
             String username = "root";
-            con = DriverManager.getConnection( host, username, "" );
+            con = DriverManager.getConnection( host, username, "7899" );
 
             stmt = con.createStatement(
             ResultSet.TYPE_SCROLL_INSENSITIVE, 
