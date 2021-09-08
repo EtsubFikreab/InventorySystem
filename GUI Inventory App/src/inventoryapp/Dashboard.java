@@ -2897,6 +2897,9 @@ public class Dashboard extends javax.swing.JFrame {
         Parent.add(product);
         Parent.repaint();
         Parent.revalidate();
+        
+        table.productTables();
+        initProduct();
     }//GEN-LAST:event_productBtnActionPerformed
 
     private void tradeBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tradeBtnActionPerformed
@@ -3768,27 +3771,6 @@ public class Dashboard extends javax.swing.JFrame {
         textFeildNameUpdate18.setText(result[0]);
         textAreaDescription3.setText(result[2]);
     }
-    private void initManage(){
-        String results[] = new String[8];
-        results = table.category.read();
-        singleCategory(results);
-        
-//        String result [] = new String[6];
-        results = table.customer.read();
-        singleCustomer(results);
-        
-//        String results[] = new String[7];
-        results = table.supplier.read();
-        singleSupplier(results);
-        
-//        String results[] = new String[6];
-        results = table.staff.read();
-        singleStaff(results);
-        
-//        String results[] = new String[3];
-        results = table.storage.read();
-        singleStorage(results);
-    }
     
     private void singleSupplier(String result[]){
         // String result[] = new String[7];
@@ -3800,6 +3782,31 @@ public class Dashboard extends javax.swing.JFrame {
         textFeildNameUpdate8.setText(result[4]);
         textFeildNameUpdate9.setText(result[5]);
         textAreaDescription2.setText(result[6]);
+    }
+    
+    private void initManage(){
+        String results[] = new String[8];
+        results = table.category.read();
+        singleCategory(results);
+        
+        results = table.customer.read();
+        singleCustomer(results);
+        
+        results = table.supplier.read();
+        singleSupplier(results);
+        
+        results = table.staff.read();
+        singleStaff(results);
+        
+        results = table.storage.read();
+        singleStorage(results);
+    }
+    
+    private void initProduct(){
+        String results[] = new String[8];
+        
+        results = table.product.read();
+        singleProduct(results);
     }
     private void setIconImage() {
         //changes the icon image from the default java mug to a file that is in the working directory
