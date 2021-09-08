@@ -3741,7 +3741,10 @@ public class Dashboard extends javax.swing.JFrame {
         // String result[] = new String[7];
         // result = doconnect.readProduct();
         
-        textFeildNameUpdate.setText(result[3]);
+        textFeildNameUpdate.setText(result[0]);
+        textFeildPriceUpdate.setText(result[2]);
+        textAreaDescription.setText(result[3]);
+        textFeildQuantityUpdate.setText(result[4]);
     }
     private void singleSell(String result[]){
         // String result[] = new String[5];
