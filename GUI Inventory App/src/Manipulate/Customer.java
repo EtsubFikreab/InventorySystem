@@ -138,5 +138,38 @@ public class Customer extends Connect implements reader{
         }
         return true;
     }
+    
+    public String[] loadCustomerID () { 
+            String result[]=null;
+            
+            try{
+                    String size = "CALL `getCustomerNumber`();";
+                    rs = stmt.executeQuery( size );
+                    rs.next();
+                    int arrySize = rs.getInt("COUNT(*)");
+                    result= new String[arrySize];
+                    
+                    String SQL = "SELECT * FROM `customer`";
+
+                    rs = stmt.executeQuery( SQL );
+                    
+                    //hold all the records from the database table
+                    int i =0;
+                     while (rs.next())
+                     { 
+                      result[i]=Integer.toString(rs.getInt("customerID")); // Adding Items
+                      i++;
+                     }//end while
+                
+                     con.close();
+                  
+                }
+                catch ( SQLException err ) {
+                    System.out.println("error");
+                    System.out.println( err.getMessage( ) );
+                } 
+            return result;
+        }
+
 
 }
