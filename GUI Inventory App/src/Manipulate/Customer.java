@@ -1,7 +1,9 @@
 package Manipulate;
 
+import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import javax.swing.JComboBox;
 import javax.swing.JOptionPane;
 
 public class Customer extends Connect implements reader{
@@ -170,6 +172,5 @@ public class Customer extends Connect implements reader{
                 } 
             return result;
         }
-
 
 }
