@@ -52,17 +52,17 @@ public class Customer extends Connect implements reader{
         String results[] = new String[6];
         try {
             if ( rs.next( )) {
-                results[0] = rs.getString("Fname");
-                results[1] = rs.getString("Lname");
-                results[2] = Integer.toString(rs.getInt("customerID"));
-                results[3] = rs.getString("customerAddress");
-                results[4] = rs.getString("customerPhone");
-                results[5] = rs.getString("customerEmail");
             }
             else {
                 rs.previous( );
                 JOptionPane.showMessageDialog(null, "End of File");
             }
+            results[0] = rs.getString("Fname");
+            results[1] = rs.getString("Lname");
+            results[2] = Integer.toString(rs.getInt("customerID"));
+            results[3] = rs.getString("customerAddress");
+            results[4] = rs.getString("customerPhone");
+            results[5] = rs.getString("customerEmail");
         }
         catch (SQLException err) {
             JOptionPane.showMessageDialog(null, err.getMessage());
@@ -74,17 +74,17 @@ public class Customer extends Connect implements reader{
         String results[] = new String[6];
         try {
             if ( rs.previous( )) {
-                results[0] = rs.getString("Fname");
-                results[1] = rs.getString("Lname");
-                results[2] = Integer.toString(rs.getInt("customerID"));
-                results[3] = rs.getString("customerAddress");
-                results[4] = rs.getString("customerPhone");
-                results[5] = rs.getString("customerEmail");
             }
             else {
                 rs.next( );
                 JOptionPane.showMessageDialog(null, "Start of File");
             }
+            results[0] = rs.getString("Fname");
+            results[1] = rs.getString("Lname");
+            results[2] = Integer.toString(rs.getInt("customerID"));
+            results[3] = rs.getString("customerAddress");
+            results[4] = rs.getString("customerPhone");
+            results[5] = rs.getString("customerEmail");
         }
         catch (SQLException err) {
             JOptionPane.showMessageDialog(null, err.getMessage());

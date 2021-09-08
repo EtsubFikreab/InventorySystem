@@ -47,15 +47,15 @@ public class Storage extends Connect implements reader{
         String results[] = new String[3];
         try {
             if ( rs.next( )) {
-               // results[0] = Integer.toString(rs.getInt("storageArea"));
-                results[0] = rs.getString("storageArea");
-                results[1] = Integer.toString(rs.getInt("storageID"));
-                results[2] = rs.getString("description");
             }
             else {
                 rs.previous( );
                 JOptionPane.showMessageDialog(null, "End of File");
             }
+            // results[0] = Integer.toString(rs.getInt("storageArea"));
+             results[0] = rs.getString("storageArea");
+             results[1] = Integer.toString(rs.getInt("storageID"));
+             results[2] = rs.getString("description");
         }
         catch (SQLException err) {
             JOptionPane.showMessageDialog(null, err.getMessage());
@@ -67,15 +67,15 @@ public class Storage extends Connect implements reader{
         String results[] = new String[3];
         try {
             if ( rs.previous( )) {
-                //results[0] = Integer.toString(rs.getInt("storageArea"));
-                results[0] = rs.getString("storageArea");
-                results[1] = Integer.toString(rs.getInt("storageID"));
-                results[2] = rs.getString("description");
             }
             else {
                 rs.next( );
                 JOptionPane.showMessageDialog(null, "Start of File");
             }
+            //results[0] = Integer.toString(rs.getInt("storageArea"));
+            results[0] = rs.getString("storageArea");
+            results[1] = Integer.toString(rs.getInt("storageID"));
+            results[2] = rs.getString("description");
         }
         catch (SQLException err) {
             JOptionPane.showMessageDialog(null, err.getMessage());
