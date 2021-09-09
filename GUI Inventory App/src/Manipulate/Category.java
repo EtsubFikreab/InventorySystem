@@ -77,10 +77,10 @@ public class Category extends Connect implements reader{
                 rs.next( );
                 JOptionPane.showMessageDialog(null, "Start of File");
             }
-        int id_col = rs.getInt("categoryID");
-        results[0] = Integer.toString(id_col);
-        results[1] = rs.getString("categoryName");
-        results[2] = rs.getString("Description");
+            int id_col = rs.getInt("categoryID");
+            results[0] = Integer.toString(id_col);
+            results[1] = rs.getString("categoryName");
+            results[2] = rs.getString("Description");
         }
         catch (SQLException err) {
             JOptionPane.showMessageDialog(null, err.getMessage());
