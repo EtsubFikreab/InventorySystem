@@ -437,7 +437,7 @@ public class Dashboard extends javax.swing.JFrame {
         btnDeleteRecord4 = new javax.swing.JButton();
         btnNext3 = new javax.swing.JButton();
         javax.swing.JScrollPane jScrollPane13 = new javax.swing.JScrollPane();
-        javax.swing.JTable jTable6 = new javax.swing.JTable();
+        jTable6 = new javax.swing.JTable();
         javax.swing.JPanel jPanelCustomer = new javax.swing.JPanel();
         javax.swing.JPanel updateTab4 = new javax.swing.JPanel();
         javax.swing.JPanel Product7 = new javax.swing.JPanel();
@@ -609,15 +609,29 @@ public class Dashboard extends javax.swing.JFrame {
 
         home.setBackground(new java.awt.Color(64, 121, 140));
         home.setForeground(new java.awt.Color(60, 63, 65));
-        home.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel34.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
         jLabel34.setForeground(new java.awt.Color(255, 255, 255));
         jLabel34.setText("Welcome");
-        home.add(jLabel34, new org.netbeans.lib.awtextra.AbsoluteConstraints(36, 21, 215, -1));
 
         jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/inventoryapp/javaHome.png"))); // NOI18N
-        home.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1010, 780));
+
+        javax.swing.GroupLayout homeLayout = new javax.swing.GroupLayout(home);
+        home.setLayout(homeLayout);
+        homeLayout.setHorizontalGroup(
+            homeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(homeLayout.createSequentialGroup()
+                .addGap(36, 36, 36)
+                .addComponent(jLabel34, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(758, Short.MAX_VALUE))
+        );
+        homeLayout.setVerticalGroup(
+            homeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(homeLayout.createSequentialGroup()
+                .addGap(21, 21, 21)
+                .addComponent(jLabel34)
+                .addContainerGap(709, Short.MAX_VALUE))
+        );
 
         Parent.add(home, "card2");
 
@@ -1768,14 +1782,14 @@ public class Dashboard extends javax.swing.JFrame {
         jPanelCategoryLayout.setVerticalGroup(
             jPanelCategoryLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelCategoryLayout.createSequentialGroup()
-                .addContainerGap(401, Short.MAX_VALUE)
+                .addContainerGap(385, Short.MAX_VALUE)
                 .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 318, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(34, 34, 34))
             .addGroup(jPanelCategoryLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanelCategoryLayout.createSequentialGroup()
-                    .addGap(0, 51, Short.MAX_VALUE)
+                    .addGap(0, 43, Short.MAX_VALUE)
                     .addComponent(updateTab1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 52, Short.MAX_VALUE)))
+                    .addGap(0, 44, Short.MAX_VALUE)))
         );
 
         jTabbedPaneManage.addTab("Category", jPanelCategory);
@@ -2101,14 +2115,14 @@ public class Dashboard extends javax.swing.JFrame {
         jPanelSupplierLayout.setVerticalGroup(
             jPanelSupplierLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelSupplierLayout.createSequentialGroup()
-                .addContainerGap(489, Short.MAX_VALUE)
+                .addContainerGap(473, Short.MAX_VALUE)
                 .addComponent(jScrollPane11, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(30, 30, 30))
             .addGroup(jPanelSupplierLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanelSupplierLayout.createSequentialGroup()
-                    .addGap(0, 51, Short.MAX_VALUE)
+                    .addGap(0, 43, Short.MAX_VALUE)
                     .addComponent(updateTab2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 52, Short.MAX_VALUE)))
+                    .addGap(0, 44, Short.MAX_VALUE)))
         );
 
         jTabbedPaneManage.addTab("Supplier", jPanelSupplier);
@@ -2359,11 +2373,11 @@ public class Dashboard extends javax.swing.JFrame {
 
             },
             new String [] {
-                "ID", "First Name", "Price", "Quantity", "Category", "Storage"
+                "ID", "First Name", "Last Name", "Phone Number", "Email", "Address"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, true, false
+                false, false, false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -2371,6 +2385,9 @@ public class Dashboard extends javax.swing.JFrame {
             }
         });
         jScrollPane13.setViewportView(jTable6);
+        if (jTable6.getColumnModel().getColumnCount() > 0) {
+            jTable6.getColumnModel().getColumn(4).setResizable(false);
+        }
 
         javax.swing.GroupLayout updateTab3Layout = new javax.swing.GroupLayout(updateTab3);
         updateTab3.setLayout(updateTab3Layout);
@@ -2725,12 +2742,12 @@ public class Dashboard extends javax.swing.JFrame {
         );
         jPanelCustomerLayout.setVerticalGroup(
             jPanelCustomerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 753, Short.MAX_VALUE)
+            .addGap(0, 740, Short.MAX_VALUE)
             .addGroup(jPanelCustomerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelCustomerLayout.createSequentialGroup()
                     .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(updateTab4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(19, Short.MAX_VALUE)))
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
 
         jTabbedPaneManage.addTab("Customer", jPanelCustomer);
@@ -2939,7 +2956,7 @@ public class Dashboard extends javax.swing.JFrame {
                 .addComponent(Product8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel17, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(283, Short.MAX_VALUE))
+                .addContainerGap(321, Short.MAX_VALUE))
         );
 
         jTable8.setModel(new javax.swing.table.DefaultTableModel(
@@ -2969,22 +2986,22 @@ public class Dashboard extends javax.swing.JFrame {
                 .addComponent(jScrollPane15, javax.swing.GroupLayout.PREFERRED_SIZE, 814, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(96, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel1Layout.createSequentialGroup()
-                    .addGap(0, 20, Short.MAX_VALUE)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                    .addContainerGap(20, Short.MAX_VALUE)
                     .addComponent(updateTab5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 20, Short.MAX_VALUE)))
+                    .addContainerGap(20, Short.MAX_VALUE)))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(402, Short.MAX_VALUE)
+                .addContainerGap(386, Short.MAX_VALUE)
                 .addComponent(jScrollPane15, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(51, 51, 51))
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel1Layout.createSequentialGroup()
-                    .addGap(0, 51, Short.MAX_VALUE)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                    .addContainerGap(43, Short.MAX_VALUE)
                     .addComponent(updateTab5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 52, Short.MAX_VALUE)))
+                    .addContainerGap()))
         );
 
         jTabbedPaneManage.addTab("Storage", jPanel1);
@@ -3002,8 +3019,8 @@ public class Dashboard extends javax.swing.JFrame {
             manageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(manageLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jTabbedPaneManage)
-                .addContainerGap())
+                .addComponent(jTabbedPaneManage, javax.swing.GroupLayout.PREFERRED_SIZE, 770, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         Parent.add(manage, "card6");
@@ -3492,7 +3509,38 @@ public class Dashboard extends javax.swing.JFrame {
         result[3] = textFeildPriceUpdate4.getText();
         result[4] = textFeildNameUpdate11.getText();
         result[5] = textFeildNameUpdate12.getText();
-        table.staff.write(result);
+        //table.staff.write(result);
+        try{
+              String host = "jdbc:mysql://localhost:3306/inventory_system";
+              String username = "root";
+              con = DriverManager.getConnection( host, username, "7899" );
+              stmt = con.createStatement(
+              ResultSet.TYPE_SCROLL_INSENSITIVE, 
+              ResultSet.CONCUR_UPDATABLE );          
+              String PI = "SELECT Fname,Lname,staffID,staffAddress,staffPhone,staffEmail FROM staff";
+              
+              ResultSet rs = stmt.executeQuery(PI);
+              //hold all the records from the database table
+              DefaultTableModel tblModel = (DefaultTableModel) jTable6.getModel();
+               tblModel.setRowCount(0);
+               while (rs.next())
+               {   
+            	 String id = String.valueOf(rs.getInt("staffID"));
+                 String fname = rs.getString("Fname");
+                 String lname = rs.getString("Lname");
+                 String address = String.valueOf(rs.getString("staffAddress"));
+                 String phone =String.valueOf(rs.getInt("staffPhone"));
+                 String email = rs.getString("staffEmail");
+                 String Tbl[]={id,fname,lname,address,phone,email};
+                 tblModel.addRow(Tbl);
+               }//end while
+               con.close();
+               rs.close();
+          }
+          catch ( SQLException err ) {
+              System.out.println( err.getMessage( ) );
+          }
+
     }//GEN-LAST:event_btnUpdateRecord4ActionPerformed
 
     private void btnDeleteRecord4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteRecord4ActionPerformed
@@ -3556,7 +3604,38 @@ public class Dashboard extends javax.swing.JFrame {
         result[3] = textFeildPriceUpdate5.getText();
         result[4] = textFeildNameUpdate15.getText();
         result[5] = textFeildNameUpdate19.getText();
-        table.customer.write(result);
+        //table.customer.write(result);
+        try{
+              String host = "jdbc:mysql://localhost:3306/inventory_system";
+              String username = "root";
+              con = DriverManager.getConnection( host, username, "7899" );
+              stmt = con.createStatement(
+              ResultSet.TYPE_SCROLL_INSENSITIVE, 
+              ResultSet.CONCUR_UPDATABLE );          
+              String PI = "SELECT Fname,Lname,customerID,customerAddress,customerPhone,customerEmail FROM customer";
+              
+              ResultSet rs = stmt.executeQuery(PI);
+              //hold all the records from the database table
+              DefaultTableModel tblModel = (DefaultTableModel) jTable7.getModel();
+               tblModel.setRowCount(0);
+               while (rs.next())
+               {   
+            	 String id = String.valueOf(rs.getInt("customerID"));
+                 String fname = rs.getString("Fname");
+                 String lname = rs.getString("Lname");
+                 String address = String.valueOf(rs.getString("customerAddress"));
+                 String phone =String.valueOf(rs.getInt("customerPhone"));
+                 String email = rs.getString("customerEmail");
+                 String Tbl[]={id,fname,lname,address,phone,email};
+                 tblModel.addRow(Tbl);
+               }//end while
+               con.close();
+               rs.close();
+          }
+          catch ( SQLException err ) {
+              System.out.println( err.getMessage( ) );
+          }
+
     }//GEN-LAST:event_btnUpdateRecord5ActionPerformed
 
     private void btnDeleteRecord5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteRecord5ActionPerformed
@@ -3601,7 +3680,34 @@ public class Dashboard extends javax.swing.JFrame {
         String result[] = new String[3];
         result[0] = textFeildNameUpdate18.getText();
         result[2] = textAreaDescription3.getText();
-        table.storage.write(result);
+        //table.storage.write(result);
+       try{
+              String host = "jdbc:mysql://localhost:3306/inventory_system";
+              String username = "root";
+              con = DriverManager.getConnection( host, username, "7899" );
+              stmt = con.createStatement(
+              ResultSet.TYPE_SCROLL_INSENSITIVE, 
+              ResultSet.CONCUR_UPDATABLE );          
+              String PI = "SELECT storageArea,storageID FROM storage";
+              
+              ResultSet rs = stmt.executeQuery(PI);
+              //hold all the records from the database table
+              DefaultTableModel tblModel = (DefaultTableModel) jTable7.getModel();
+               tblModel.setRowCount(0);
+               while (rs.next())
+               {   
+            	 String id = String.valueOf(rs.getInt("storageID"));
+                 String storageArea = rs.getString("storageArea");
+                 String Tbl[]={id,storageArea};
+                 tblModel.addRow(Tbl);
+               }//end while
+               con.close();
+               rs.close();
+          }
+          catch ( SQLException err ) {
+              System.out.println( err.getMessage( ) );
+          }
+
     }//GEN-LAST:event_btnUpdateRecord6ActionPerformed
 
     private void btnDeleteRecord6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteRecord6ActionPerformed
@@ -3692,7 +3798,39 @@ public class Dashboard extends javax.swing.JFrame {
         result[3] = textFeildPriceUpdate4.getText();
         result[4] = textFeildNameUpdate11.getText();
         result[5] = textFeildNameUpdate12.getText();
-        table.staff.write(result);
+        //table.staff.write(result);
+        
+        try{
+              String host = "jdbc:mysql://localhost:3306/inventory_system";
+              String username = "root";
+              con = DriverManager.getConnection( host, username, "7899" );
+              stmt = con.createStatement(
+              ResultSet.TYPE_SCROLL_INSENSITIVE, 
+              ResultSet.CONCUR_UPDATABLE );          
+              String PI = "SELECT Fname,Lname,staffID,staffAddress,staffPhone,staffEmail FROM staff";
+              
+              ResultSet rs = stmt.executeQuery(PI);
+              //hold all the records from the database table
+              DefaultTableModel tblModel = (DefaultTableModel) jTable6.getModel();
+               tblModel.setRowCount(0);
+               while (rs.next())
+               {   
+            	 String id = String.valueOf(rs.getInt("staffID"));
+                 String fname = rs.getString("Fname");
+                 String lname = rs.getString("Lname");
+                 String address = String.valueOf(rs.getString("staffAddress"));
+                 String phone =String.valueOf(rs.getInt("staffPhone"));
+                 String email = rs.getString("staffEmail");
+                 String Tbl[]={id,fname,lname,address,phone,email};
+                 tblModel.addRow(Tbl);
+               }//end while
+               con.close();
+               rs.close();
+          }
+          catch ( SQLException err ) {
+              System.out.println( err.getMessage( ) );
+          }
+
 
         btnFirst4.setEnabled(true);
         btnPrevious4.setEnabled(true);
@@ -3712,8 +3850,40 @@ public class Dashboard extends javax.swing.JFrame {
         result[3] = textFeildPriceUpdate5.getText();
         result[4] = textFeildNameUpdate15.getText();
         result[5] = textFeildNameUpdate19.getText();
-        table.customer.write(result);
+        //table.customer.write(result);
 
+        try{
+              String host = "jdbc:mysql://localhost:3306/inventory_system";
+              String username = "root";
+              con = DriverManager.getConnection( host, username, "7899" );
+              stmt = con.createStatement(
+              ResultSet.TYPE_SCROLL_INSENSITIVE, 
+              ResultSet.CONCUR_UPDATABLE );          
+              String PI = "SELECT Fname,Lname,customerID,customerAddress,customerPhone,customerEmail FROM customer";
+              
+              ResultSet rs = stmt.executeQuery(PI);
+              //hold all the records from the database table
+              DefaultTableModel tblModel = (DefaultTableModel) jTable7.getModel();
+               tblModel.setRowCount(0);
+               while (rs.next())
+               {   
+            	 String id = String.valueOf(rs.getInt("customerID"));
+                 String fname = rs.getString("Fname");
+                 String lname = rs.getString("Lname");
+                 String address = String.valueOf(rs.getString("customerAddress"));
+                 String phone =String.valueOf(rs.getInt("customerPhone"));
+                 String email = rs.getString("customerEmail");
+                 String Tbl[]={id,fname,lname,address,phone,email};
+                 tblModel.addRow(Tbl);
+               }//end while
+               con.close();
+               rs.close();
+          }
+          catch ( SQLException err ) {
+              System.out.println( err.getMessage( ) );
+          }
+
+        
         btnFirst5.setEnabled(true);
         btnPrevious5.setEnabled(true);
         btnNext4.setEnabled(true);
@@ -4053,6 +4223,7 @@ public class Dashboard extends javax.swing.JFrame {
     public javax.swing.JTable jTable1;
     public javax.swing.JTable jTable2;
     public javax.swing.JTable jTable3;
+    public javax.swing.JTable jTable6;
     public javax.swing.JTable jTable7;
     public javax.swing.JTextArea jTextArea1;
     public javax.swing.JPanel manage;
