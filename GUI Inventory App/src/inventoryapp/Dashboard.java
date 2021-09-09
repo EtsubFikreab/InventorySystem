@@ -4045,7 +4045,7 @@ public class Dashboard extends javax.swing.JFrame {
               stmt = con.createStatement(
               ResultSet.TYPE_SCROLL_INSENSITIVE, 
               ResultSet.CONCUR_UPDATABLE );          
-              String PI = "SELECT productID,productName,productPrice,productQuantity,categoryID,storageID FROM product";
+              String PI = "SELECT productID,productName,productPrice,productQuantity FROM product";
               
               ResultSet rs = stmt.executeQuery(PI);
               //hold all the records from the database table
@@ -4057,10 +4057,7 @@ public class Dashboard extends javax.swing.JFrame {
                  String productName = rs.getString("ProductName");
                  String cost = String.valueOf(rs.getDouble("productPrice"));
                  String quan = String.valueOf(rs.getInt("productQuantity"));
-                String cat= String.valueOf(rs.getInt("CategoryID"));
-                String si= String.valueOf(rs.getInt("Storage ID"));
-                 
-                 String Tbl[]={id,productName,cost,quan,cat,si};
+                 String Tbl[]={id,productName,cost,quan};
                  tblModel.addRow(Tbl);
                }//end while
                con.close();
