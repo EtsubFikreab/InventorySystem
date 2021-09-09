@@ -243,12 +243,12 @@ public class Dashboard extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         javax.swing.JPanel updateTab = new javax.swing.JPanel();
         javax.swing.JPanel Product1 = new javax.swing.JPanel();
-        javax.swing.JTextField textFeildNameUpdate = new javax.swing.JTextField();
-        javax.swing.JTextField textFeildPriceUpdate = new javax.swing.JTextField();
+        textFeildNameUpdate = new javax.swing.JTextField();
+        textFeildPriceUpdate = new javax.swing.JTextField();
         javax.swing.JLabel jLabel26 = new javax.swing.JLabel();
         javax.swing.JLabel jLabel27 = new javax.swing.JLabel();
         javax.swing.JLabel jLabel28 = new javax.swing.JLabel();
-        javax.swing.JTextField textFeildQuantityUpdate = new javax.swing.JTextField();
+        textFeildQuantityUpdate = new javax.swing.JTextField();
         javax.swing.JLabel jLabel29 = new javax.swing.JLabel();
         javax.swing.JLabel jLabel31 = new javax.swing.JLabel();
         comboBoxSupplier = new javax.swing.JComboBox<>();
@@ -258,15 +258,15 @@ public class Dashboard extends javax.swing.JFrame {
         comboBoxStorage = new javax.swing.JComboBox<>();
         javax.swing.JLabel jLabel11 = new javax.swing.JLabel();
         javax.swing.JScrollPane jScrollPane3 = new javax.swing.JScrollPane();
-        javax.swing.JTextArea textAreaDescription = new javax.swing.JTextArea();
+        textAreaDescription = new javax.swing.JTextArea();
         javax.swing.JPanel jPanel5 = new javax.swing.JPanel();
-        javax.swing.JButton btnPrevious1 = new javax.swing.JButton();
-        javax.swing.JButton btnLast1 = new javax.swing.JButton();
-        javax.swing.JButton btnFirst1 = new javax.swing.JButton();
+        btnPrevious1 = new javax.swing.JButton();
+        btnLast1 = new javax.swing.JButton();
+        btnFirst1 = new javax.swing.JButton();
         javax.swing.JPanel jPanel6 = new javax.swing.JPanel();
-        javax.swing.JButton btnUpdateRecord1 = new javax.swing.JButton();
-        javax.swing.JButton btnDeleteRecord1 = new javax.swing.JButton();
-        javax.swing.JButton btnNext = new javax.swing.JButton();
+        btnUpdateRecord1 = new javax.swing.JButton();
+        btnDeleteRecord1 = new javax.swing.JButton();
+        btnNext = new javax.swing.JButton();
         javax.swing.JScrollPane jScrollPane1 = new javax.swing.JScrollPane();
         javax.swing.JTable jTable1 = new javax.swing.JTable();
         trade = new javax.swing.JPanel();
@@ -393,11 +393,11 @@ public class Dashboard extends javax.swing.JFrame {
         javax.swing.JLabel jLabel58 = new javax.swing.JLabel();
         textFeildNameUpdate15 = new javax.swing.JTextField();
         javax.swing.JLabel jLabel59 = new javax.swing.JLabel();
-        textFeildNameUpdate16 = new javax.swing.JTextField();
         textFeildNameUpdate17 = new javax.swing.JTextField();
         javax.swing.JLabel jLabel60 = new javax.swing.JLabel();
         jButton9 = new javax.swing.JButton();
         jButtonNewCategory4 = new javax.swing.JButton();
+        textFeildNameUpdate19 = new javax.swing.JTextField();
         javax.swing.JPanel jPanel15 = new javax.swing.JPanel();
         btnPrevious5 = new javax.swing.JButton();
         btnLast5 = new javax.swing.JButton();
@@ -2438,13 +2438,6 @@ public class Dashboard extends javax.swing.JFrame {
         jLabel59.setForeground(new java.awt.Color(255, 255, 255));
         jLabel59.setText("Email");
 
-        textFeildNameUpdate16.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        textFeildNameUpdate16.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                textFeildNameUpdate16ActionPerformed(evt);
-            }
-        });
-
         textFeildNameUpdate17.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         textFeildNameUpdate17.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -2472,22 +2465,21 @@ public class Dashboard extends javax.swing.JFrame {
             Product7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(Product7Layout.createSequentialGroup()
                 .addGap(67, 67, 67)
-                .addGroup(Product7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(Product7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(Product7Layout.createSequentialGroup()
-                        .addComponent(jLabel58, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(textFeildNameUpdate15, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(42, 42, 42)
-                        .addComponent(jLabel59, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(textFeildNameUpdate16, javax.swing.GroupLayout.PREFERRED_SIZE, 229, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))
+                        .addComponent(jButtonNewCategory4, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jButton9))
                     .addGroup(Product7Layout.createSequentialGroup()
-                        .addGroup(Product7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(Product7Layout.createSequentialGroup()
-                                .addComponent(jButtonNewCategory4, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(Product7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, Product7Layout.createSequentialGroup()
+                                .addComponent(jLabel58, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(textFeildNameUpdate15, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(42, 42, 42)
+                                .addComponent(jLabel59, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
-                                .addComponent(jButton9))
+                                .addComponent(textFeildNameUpdate19))
                             .addGroup(Product7Layout.createSequentialGroup()
                                 .addComponent(jLabel55)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -2495,12 +2487,12 @@ public class Dashboard extends javax.swing.JFrame {
                                 .addGap(30, 30, 30)
                                 .addComponent(jLabel60)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(textFeildNameUpdate17, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(24, 24, 24)
-                                .addComponent(jLabel57, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(textFeildPriceUpdate5, javax.swing.GroupLayout.PREFERRED_SIZE, 268, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addContainerGap(20, Short.MAX_VALUE))))
+                                .addComponent(textFeildNameUpdate17, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(24, 24, 24)
+                        .addComponent(jLabel57, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(textFeildPriceUpdate5, javax.swing.GroupLayout.PREFERRED_SIZE, 268, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(20, Short.MAX_VALUE))
         );
         Product7Layout.setVerticalGroup(
             Product7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2522,7 +2514,7 @@ public class Dashboard extends javax.swing.JFrame {
                     .addComponent(jLabel58)
                     .addComponent(textFeildNameUpdate15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel59)
-                    .addComponent(textFeildNameUpdate16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(textFeildNameUpdate19, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(26, Short.MAX_VALUE))
         );
 
@@ -3147,7 +3139,6 @@ public class Dashboard extends javax.swing.JFrame {
         Parent.revalidate();
         
         
-        btnFirst5ActionPerformed(evt);
         initManage();
     }//GEN-LAST:event_mangeBtnActionPerformed
 
@@ -3437,10 +3428,6 @@ public class Dashboard extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_textFeildNameUpdate15ActionPerformed
 
-    private void textFeildNameUpdate16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textFeildNameUpdate16ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_textFeildNameUpdate16ActionPerformed
-
     private void textFeildNameUpdate17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textFeildNameUpdate17ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_textFeildNameUpdate17ActionPerformed
@@ -3471,9 +3458,9 @@ public class Dashboard extends javax.swing.JFrame {
         String result[] = new String[6];
         result[0] = textFeildNameUpdate13.getText();
         result[1] = textFeildNameUpdate17.getText();
-        result[4] = textFeildPriceUpdate5.getText();
-        result[3] = textFeildNameUpdate16.getText();
-        result[5] = textFeildNameUpdate16.getText();
+        result[3] = textFeildPriceUpdate5.getText();
+        result[4] = textFeildNameUpdate15.getText();
+        result[5] = textFeildNameUpdate19.getText();
         table.customer.write(result);
     }//GEN-LAST:event_btnUpdateRecord5ActionPerformed
 
@@ -3517,7 +3504,7 @@ public class Dashboard extends javax.swing.JFrame {
     private void btnUpdateRecord6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateRecord6ActionPerformed
         // TODO add your handling code here:
         String result[] = new String[3];
-        result[0] = textFeildNameUpdate16.getText();
+        result[0] = textFeildNameUpdate18.getText();
         result[2] = textAreaDescription3.getText();
         table.storage.write(result);
     }//GEN-LAST:event_btnUpdateRecord6ActionPerformed
@@ -3598,9 +3585,9 @@ public class Dashboard extends javax.swing.JFrame {
         String result[] = new String[6];
         result[0] = textFeildNameUpdate13.getText();
         result[1] = textFeildNameUpdate17.getText();
-        result[4] = textFeildPriceUpdate5.getText();
-        result[3] = textFeildNameUpdate16.getText();
-        result[5] = textFeildNameUpdate16.getText();
+        result[3] = textFeildPriceUpdate5.getText();
+        result[4] = textFeildNameUpdate15.getText();
+        result[5] = textFeildNameUpdate19.getText();
         table.customer.write(result);
 
         btnFirst5.setEnabled(true);
@@ -3616,7 +3603,7 @@ public class Dashboard extends javax.swing.JFrame {
     private void jButtonNewCategory5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonNewCategory5ActionPerformed
         // TODO add your handling code here:
         String result[] = new String[3];
-        result[0] = textFeildNameUpdate16.getText();
+        result[0] = textFeildNameUpdate18.getText();
         result[2] = textAreaDescription3.getText();
         table.storage.write(result);
 
@@ -3798,14 +3785,14 @@ public class Dashboard extends javax.swing.JFrame {
         textFeildNameUpdate13.setText("");
         textFeildNameUpdate17.setText("");
         textFeildPriceUpdate5.setText("");
-        textFeildNameUpdate16.setText("");
-        textFeildNameUpdate16.setText("");
+        textFeildNameUpdate15.setText("");
+        textFeildNameUpdate19.setText("");
 
         result[0] = textFeildNameUpdate13.getText();
         result[1] = textFeildNameUpdate17.getText();
-        result[4] = textFeildPriceUpdate5.getText();
-        result[3] = textFeildNameUpdate16.getText();
-        result[5] = textFeildNameUpdate16.getText();
+        result[3] = textFeildPriceUpdate5.getText();
+        result[4] = textFeildNameUpdate15.getText();
+        result[5] = textFeildNameUpdate19.getText();
         table.customer.write(result);
 
         btnFirst5.setEnabled(false);
@@ -3821,10 +3808,10 @@ public class Dashboard extends javax.swing.JFrame {
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {                                         
         // TODO add your handling code here:
         String result[] = new String[3];
-        textFeildNameUpdate16.setText("");
+        textFeildNameUpdate18.setText("");
         textAreaDescription3.setText("");
 
-        result[0] = textFeildNameUpdate16.getText();
+        result[0] = textFeildNameUpdate18.getText();
         result[2] = textAreaDescription3.getText();
         table.storage.write(result);
 
@@ -3871,31 +3858,37 @@ public class Dashboard extends javax.swing.JFrame {
     public javax.swing.JComboBox<String> StorageComboBox;
     public javax.swing.JComboBox<String> SupplierComboBox;
     public javax.swing.JPanel about;
+    public javax.swing.JButton btnDeleteRecord1;
     public javax.swing.JButton btnDeleteRecord3;
     public javax.swing.JButton btnDeleteRecord4;
     public javax.swing.JButton btnDeleteRecord5;
     public javax.swing.JButton btnDeleteRecord6;
     public javax.swing.JButton btnDeleteRecordCategory;
+    public javax.swing.JButton btnFirst1;
     public javax.swing.JButton btnFirst3;
     public javax.swing.JButton btnFirst4;
     public javax.swing.JButton btnFirst5;
     public javax.swing.JButton btnFirst6;
     public javax.swing.JButton btnFirstCategory;
+    public javax.swing.JButton btnLast1;
     public javax.swing.JButton btnLast3;
     public javax.swing.JButton btnLast4;
     public javax.swing.JButton btnLast5;
     public javax.swing.JButton btnLast6;
     public javax.swing.JButton btnLastCategory;
+    public javax.swing.JButton btnNext;
     public javax.swing.JButton btnNext2;
     public javax.swing.JButton btnNext3;
     public javax.swing.JButton btnNext4;
     public javax.swing.JButton btnNext5;
     public javax.swing.JButton btnNextCategory;
+    public javax.swing.JButton btnPrevious1;
     public javax.swing.JButton btnPrevious3;
     public javax.swing.JButton btnPrevious4;
     public javax.swing.JButton btnPrevious5;
     public javax.swing.JButton btnPrevious6;
     public javax.swing.JButton btnPreviousCategory;
+    public javax.swing.JButton btnUpdateRecord1;
     public javax.swing.JButton btnUpdateRecord3;
     public javax.swing.JButton btnUpdateRecord4;
     public javax.swing.JButton btnUpdateRecord5;
@@ -3933,29 +3926,33 @@ public class Dashboard extends javax.swing.JFrame {
     public javax.swing.JTextField priceTextFeild;
     public javax.swing.JPanel product;
     public javax.swing.JTextField quantityTextFeild;
+    public javax.swing.JTextArea textAreaDescription;
     public javax.swing.JTextArea textAreaDescription2;
     public javax.swing.JTextArea textAreaDescription3;
     public javax.swing.JTextArea textAreaDescriptionCategory;
     public javax.swing.JTextField textFeildNameAdd;
     public javax.swing.JTextField textFeildNameCategory;
+    public javax.swing.JTextField textFeildNameUpdate;
     public javax.swing.JTextField textFeildNameUpdate10;
     public javax.swing.JTextField textFeildNameUpdate11;
     public javax.swing.JTextField textFeildNameUpdate12;
     public javax.swing.JTextField textFeildNameUpdate13;
     public javax.swing.JTextField textFeildNameUpdate14;
     public javax.swing.JTextField textFeildNameUpdate15;
-    public javax.swing.JTextField textFeildNameUpdate16;
     public javax.swing.JTextField textFeildNameUpdate17;
     public javax.swing.JTextField textFeildNameUpdate18;
+    public javax.swing.JTextField textFeildNameUpdate19;
     public javax.swing.JTextField textFeildNameUpdate6;
     public javax.swing.JTextField textFeildNameUpdate7;
     public javax.swing.JTextField textFeildNameUpdate8;
     public javax.swing.JTextField textFeildNameUpdate9;
+    public javax.swing.JTextField textFeildPriceUpdate;
     public javax.swing.JTextField textFeildPriceUpdate1;
     public javax.swing.JTextField textFeildPriceUpdate2;
     public javax.swing.JTextField textFeildPriceUpdate3;
     public javax.swing.JTextField textFeildPriceUpdate4;
     public javax.swing.JTextField textFeildPriceUpdate5;
+    public javax.swing.JTextField textFeildQuantityUpdate;
     public javax.swing.JTextField textFeildQuantityUpdate1;
     public javax.swing.JTextField textFeildQuantityUpdate2;
     public javax.swing.JPanel trade;
@@ -3982,9 +3979,9 @@ public class Dashboard extends javax.swing.JFrame {
         
         textFeildNameUpdate13.setText(result[0]);
         textFeildNameUpdate17.setText(result[1]);
-        textFeildPriceUpdate5.setText(result[4]);
-        textFeildNameUpdate16.setText(result[3]);
-        textFeildNameUpdate16.setText(result[5]);
+        textFeildPriceUpdate5.setText(result[3]);
+        textFeildNameUpdate15.setText(result[4]);
+        textFeildNameUpdate19.setText(result[5]);
     }
     
     private void singleProduct(String result[]){
@@ -4018,7 +4015,7 @@ public class Dashboard extends javax.swing.JFrame {
         // String result[] = new String[3];
         // result = doconnect.readStorage();
         
-        textFeildNameUpdate16.setText(result[0]);
+        textFeildNameUpdate18.setText(result[0]);
         textAreaDescription3.setText(result[2]);
     }
     private void initManage(){
@@ -4027,8 +4024,8 @@ public class Dashboard extends javax.swing.JFrame {
         singleCategory(results);
         
 //        String result [] = new String[6];
-//        result = table.customer.read();
-//        singleCustomer(result);
+        results = table.customer.read();
+        singleCustomer(results);
         
 //        String results[] = new String[7];
         results = table.supplier.read();

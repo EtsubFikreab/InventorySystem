@@ -61,6 +61,11 @@ public class Supplier extends Connect implements reader{
     String results[] = new String[7];
     try {
       if ( rs.next( )) {
+      }
+      else {
+          rs.previous( );
+          JOptionPane.showMessageDialog(null, "End of File");
+      }
         results[0] = Integer.toString(rs.getInt("supplierID"));
         results[1] = rs.getString("supplierName");
         results[2] = rs.getString("supplierAddress");
@@ -68,11 +73,6 @@ public class Supplier extends Connect implements reader{
         results[4] = rs.getString("supplierEmail");
         results[5] = Integer.toString(rs.getInt("POBOX"));
         results[6] = rs.getString("supplierDescription");
-      }
-      else {
-          rs.previous( );
-          JOptionPane.showMessageDialog(null, "End of File");
-      }
     }
     catch (SQLException err) {
         JOptionPane.showMessageDialog(null, err.getMessage());
@@ -84,6 +84,11 @@ public class Supplier extends Connect implements reader{
     String results[] = new String[7];
     try {
       if ( rs.previous( )) {
+      }
+      else {
+          rs.next( );
+          JOptionPane.showMessageDialog(null, "Start of File");
+      }
         results[0] = Integer.toString(rs.getInt("supplierID"));
         results[1] = rs.getString("supplierName");
         results[2] = rs.getString("supplierAddress");
@@ -91,11 +96,6 @@ public class Supplier extends Connect implements reader{
         results[4] = rs.getString("supplierEmail");
         results[5] = Integer.toString(rs.getInt("POBOX"));
         results[6] = rs.getString("supplierDescription");
-      }
-      else {
-          rs.next( );
-          JOptionPane.showMessageDialog(null, "Start of File");
-      }
     }
     catch (SQLException err) {
         JOptionPane.showMessageDialog(null, err.getMessage());

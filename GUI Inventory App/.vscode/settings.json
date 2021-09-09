@@ -1,0 +1,21 @@
+{
+    "sqltools.connections": [
+        {
+            "mysqlOptions": {
+                "authProtocol": "default"
+            },
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 3306,
+            "askForPassword": true,
+            "driver": "MySQL",
+            "name": "Data",
+            "database": "inventory_system",
+            "username": "root"
+        }
+    ],
+    "java.project.referencedLibraries": [
+        "lib/**/*.jar",
+        "c:\\Users\\Yeab\\Desktop\\CS341\\Lab Files\\mysql-connector-java-8.0.26\\mysql-connector-java-8.0.26.jar"
+    ]
+}
