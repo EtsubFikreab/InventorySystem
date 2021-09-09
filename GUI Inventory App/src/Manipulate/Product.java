@@ -148,5 +148,35 @@ public class Product extends Connect implements reader{
         }
         return true;
     }
+        public String[] loadProductID () { 
+            String result[]=null;
+            
+            try{
+                    String size = "CALL `getProductNumber`();";
+                    ResultSet rs = stmt.executeQuery( size );
+                    int arrySize =rs.getInt("COUNT(*)");
+                    System.out.println("Array Size:"+arrySize);
+                    result= new String[arrySize];
+                    
+                    String SQL = "SELECT productID FROM product";
+
+                    rs = stmt.executeQuery( SQL );
+                    //hold all the records from the database table
+                    int i =0;
+                     while (rs.next())
+                     {   
+                      result[i]=Integer.toString( rs.getInt("productID")); // Adding Items
+                      i++;
+                     }//end while
+                     con.close();
+                  
+                }
+                catch ( SQLException err ) {
+                    System.out.println("error");
+                    System.out.println( err.getMessage( ) );
+                }     
+            return result;
+        }
+
 
 }
