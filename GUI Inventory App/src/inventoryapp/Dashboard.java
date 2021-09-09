@@ -3265,14 +3265,35 @@ public class Dashboard extends javax.swing.JFrame {
         re[3]=textFeildQuantityUpdate2.getText();
         re[4]=textFeildPriceUpdate2.getText();
         table.buy.write(re);
-        int RequestQuantity,Total=0;
+        int RequestQuantity;
         RequestQuantity=Integer.parseInt(re[3]);
-       
-       if (RequestQuantity<=0){
+        double price = Double.parseDouble(textFeildPriceUpdate2.getText());
+        int productId = Integer.parseInt(jComboBox4.getItemAt(jComboBox4.getSelectedIndex()));
+        if (RequestQuantity<=0){
             JOptionPane.showMessageDialog(null, "Choose atleast one quantity!");
         }
-        else
-        table.buy.write(re);
+        else if(price <= 0){
+            JOptionPane.showMessageDialog(null, "Use a valid price!");
+        }
+        else{
+            int staff = Integer.parseInt(jComboBox5.getItemAt(jComboBox5.getSelectedIndex()));
+            int cust = Integer.parseInt(jComboBox6.getItemAt(jComboBox6.getSelectedIndex()));
+            try{
+                String host = "jdbc:mysql://localhost:3306/inventory_system";
+                String username = "root";
+                con = DriverManager.getConnection( host, username, "7899" );
+
+                stmt = con.createStatement(
+                ResultSet.TYPE_SCROLL_INSENSITIVE, 
+                ResultSet.CONCUR_UPDATABLE );
+                String add = "CALL `addBuy`(" + staff + "," + productId + "," + cust + "," + RequestQuantity + "," + price + ")";
+                stmt.executeQuery(add);
+                String update = "CALL `updateBuy`(" + productId + "," + RequestQuantity + ")";
+                stmt.executeQuery(update);
+            }catch(SQLException err){
+                JOptionPane.showMessageDialog(null, "Can Not Complete Transaction!!");
+            } 
+        }
                    
         try{
               String host = "jdbc:mysql://localhost:3306/inventory_system";
@@ -3339,7 +3360,7 @@ public class Dashboard extends javax.swing.JFrame {
         String result[] = new String[3];
         result[1] = textFeildNameCategory.getText();
         result[2] = textAreaDescriptionCategory.getText();
-        //table.category.write(result);
+        table.category.updateRow(result);
          try{
               String host = "jdbc:mysql://localhost:3306/inventory_system";
               String username = "root";
@@ -3621,7 +3642,7 @@ public class Dashboard extends javax.swing.JFrame {
         String result[] = new String[3];
         result[1] = textFeildNameCategory.getText();
         result[2] = textAreaDescriptionCategory.getText();
-        //table.category.write(result);
+        table.category.write(result);
         
          try{
               String host = "jdbc:mysql://localhost:3306/inventory_system";
