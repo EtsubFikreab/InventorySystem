@@ -34,11 +34,11 @@ public class Category extends Connect implements reader{
     }
     public void write(String result[]){
         try{
-//            String SQL = "CALL `addCategory`(" + result[1] + "," + result[2] +")";
-            String SQL = "SELECT * FROM category";
+            String SQL = "SELECT * FROM Category";
             rs = stmt.executeQuery( SQL );
             rs.moveToInsertRow( );
-            rs.updateString("categoryName",(result[1]));
+           // rs.updateInt("categoryID", Integer.parseInt(result[1]));
+            rs.updateString("categoryName",(result[0]));
             rs.updateString("Description",(result[2]));
             rs.insertRow();
         }
