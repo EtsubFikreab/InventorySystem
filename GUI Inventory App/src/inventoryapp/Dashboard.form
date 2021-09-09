@@ -376,22 +376,22 @@
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Group type="102" alignment="0" attributes="0">
                                           <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="jLabel7" alignment="0" min="-2" max="-2" attributes="0"/>
                                               <Group type="102" alignment="0" attributes="0">
-                                                  <Component id="jLabel8" pref="49" max="32767" attributes="0"/>
-                                                  <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
-                                                  <Component id="SupplierComboBox" max="32767" attributes="0"/>
-                                                  <EmptySpace min="-2" pref="78" max="-2" attributes="0"/>
-                                                  <Component id="jLabel9" max="32767" attributes="0"/>
-                                                  <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
+                                                  <EmptySpace min="-2" pref="77" max="-2" attributes="0"/>
+                                                  <Component id="jLabel9" pref="49" max="32767" attributes="0"/>
+                                                  <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
                                                   <Component id="CategoryComboBox" max="32767" attributes="0"/>
+                                                  <EmptySpace min="-2" pref="287" max="-2" attributes="0"/>
+                                                  <Component id="jLabel10" pref="57" max="32767" attributes="0"/>
+                                                  <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
+                                              </Group>
+                                              <Group type="102" attributes="0">
+                                                  <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
+                                                  <EmptySpace min="-2" pref="244" max="-2" attributes="0"/>
                                               </Group>
                                           </Group>
-                                          <EmptySpace min="-2" pref="89" max="-2" attributes="0"/>
-                                          <Component id="jLabel10" pref="57" max="32767" attributes="0"/>
-                                          <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
                                           <Component id="StorageComboBox" pref="87" max="32767" attributes="0"/>
-                                          <EmptySpace min="-2" pref="237" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="174" max="-2" attributes="0"/>
                                       </Group>
                                       <Group type="102" alignment="1" attributes="0">
                                           <Group type="103" groupAlignment="1" attributes="0">
@@ -435,20 +435,22 @@
                                       <Component id="priceTextFeild" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="jLabel5" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
-                                      <Component id="SupplierComboBox" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jLabel9" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="CategoryComboBox" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jLabel10" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="StorageComboBox" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Group type="103" alignment="0" groupAlignment="3" attributes="0">
+                                          <Component id="CategoryComboBox" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jLabel9" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Group type="103" alignment="0" groupAlignment="3" attributes="0">
+                                          <Component id="jLabel10" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="StorageComboBox" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      </Group>
                                   </Group>
                                   <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
                                   <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
                                   <Component id="jScrollPane2" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace pref="240" max="32767" attributes="0"/>
+                                  <EmptySpace pref="243" max="32767" attributes="0"/>
                                   <Component id="jPanel3" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                               </Group>
@@ -540,34 +542,6 @@
                             </Property>
                             <Property name="text" type="java.lang.String" value="Description"/>
                           </Properties>
-                        </Component>
-                        <Component class="javax.swing.JLabel" name="jLabel8">
-                          <Properties>
-                            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                              <Color blue="ff" green="ff" red="ff" type="rgb"/>
-                            </Property>
-                            <Property name="text" type="java.lang.String" value="Supplier"/>
-                          </Properties>
-                        </Component>
-                        <Component class="javax.swing.JComboBox" name="SupplierComboBox">
-                          <Properties>
-                            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                              <StringArray count="4">
-                                <StringItem index="0" value="Item 1"/>
-                                <StringItem index="1" value="Item 2"/>
-                                <StringItem index="2" value="Item 3"/>
-                                <StringItem index="3" value="Item 4"/>
-                              </StringArray>
-                            </Property>
-                          </Properties>
-                          <Events>
-                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="SupplierComboBoxActionPerformed"/>
-                          </Events>
-                          <AuxValues>
-                            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
-                            <AuxValue name="JavaCodeGenerator_VariableLocal" type="java.lang.Boolean" value="false"/>
-                            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
-                          </AuxValues>
                         </Component>
                         <Component class="javax.swing.JLabel" name="jLabel9">
                           <Properties>
@@ -779,14 +753,11 @@
                                       <Group type="102" attributes="0">
                                           <Group type="103" groupAlignment="0" attributes="0">
                                               <Group type="102" alignment="0" attributes="0">
-                                                  <Component id="jLabel31" pref="62" max="32767" attributes="0"/>
-                                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                                  <Component id="comboBoxSupplier" min="-2" pref="160" max="-2" attributes="0"/>
-                                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                                  <EmptySpace min="-2" pref="101" max="-2" attributes="0"/>
                                                   <Component id="jLabel32" pref="67" max="32767" attributes="0"/>
-                                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                                  <EmptySpace type="separate" max="-2" attributes="0"/>
                                                   <Component id="comboBoxCategory" min="-2" pref="145" max="-2" attributes="0"/>
-                                                  <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
+                                                  <EmptySpace min="-2" pref="180" max="-2" attributes="0"/>
                                               </Group>
                                               <Group type="102" alignment="0" attributes="0">
                                                   <Component id="jLabel27" min="-2" pref="37" max="-2" attributes="0"/>
@@ -806,9 +777,10 @@
                                                   <Component id="textFeildQuantityUpdate" min="-2" pref="96" max="-2" attributes="0"/>
                                                   <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
                                               </Group>
-                                              <Group type="102" attributes="0">
+                                              <Group type="102" alignment="0" attributes="0">
+                                                  <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
                                                   <Component id="jLabel33" max="32767" attributes="0"/>
-                                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                                  <EmptySpace max="-2" attributes="0"/>
                                                   <Component id="comboBoxStorage" min="-2" pref="109" max="-2" attributes="0"/>
                                                   <EmptySpace min="-2" pref="188" max="-2" attributes="0"/>
                                               </Group>
@@ -839,10 +811,6 @@
                                   </Group>
                                   <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Group type="103" alignment="0" groupAlignment="3" attributes="0">
-                                          <Component id="jLabel31" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="comboBoxSupplier" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      </Group>
                                       <Group type="103" alignment="0" groupAlignment="3" attributes="0">
                                           <Component id="jLabel32" alignment="3" min="-2" max="-2" attributes="0"/>
                                           <Component id="comboBoxCategory" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -938,34 +906,6 @@
                             </Property>
                             <Property name="text" type="java.lang.String" value="Quantity"/>
                           </Properties>
-                        </Component>
-                        <Component class="javax.swing.JLabel" name="jLabel31">
-                          <Properties>
-                            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                              <Color blue="ff" green="ff" red="ff" type="rgb"/>
-                            </Property>
-                            <Property name="text" type="java.lang.String" value="Supplier"/>
-                          </Properties>
-                        </Component>
-                        <Component class="javax.swing.JComboBox" name="comboBoxSupplier">
-                          <Properties>
-                            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                              <StringArray count="4">
-                                <StringItem index="0" value="Item 1"/>
-                                <StringItem index="1" value="Item 2"/>
-                                <StringItem index="2" value="Item 3"/>
-                                <StringItem index="3" value="Item 4"/>
-                              </StringArray>
-                            </Property>
-                          </Properties>
-                          <Events>
-                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="comboBoxSupplierActionPerformed"/>
-                          </Events>
-                          <AuxValues>
-                            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
-                            <AuxValue name="JavaCodeGenerator_VariableLocal" type="java.lang.Boolean" value="false"/>
-                            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
-                          </AuxValues>
                         </Component>
                         <Component class="javax.swing.JLabel" name="jLabel32">
                           <Properties>
@@ -1285,6 +1225,10 @@
                               <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
                             </Property>
                           </Properties>
+                          <AuxValues>
+                            <AuxValue name="JavaCodeGenerator_VariableLocal" type="java.lang.Boolean" value="false"/>
+                            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+                          </AuxValues>
                         </Component>
                       </SubComponents>
                     </Container>
@@ -1439,9 +1383,7 @@
                                           <Component id="jLabel37" min="-2" pref="47" max="-2" attributes="0"/>
                                           <EmptySpace type="separate" max="-2" attributes="0"/>
                                           <Component id="textFeildQuantityUpdate1" min="-2" pref="96" max="-2" attributes="0"/>
-                                          <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
-                                          <Component id="jButton3" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace min="-2" pref="140" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="224" max="-2" attributes="0"/>
                                       </Group>
                                       <Group type="102" alignment="0" attributes="0">
                                           <EmptySpace type="separate" max="-2" attributes="0"/>
@@ -1455,26 +1397,18 @@
                         <DimensionLayout dim="1">
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" attributes="0">
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Group type="102" attributes="0">
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="jLabel30" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                                          <Group type="103" groupAlignment="3" attributes="0">
-                                              <Component id="jLabel35" alignment="3" min="-2" max="-2" attributes="0"/>
-                                              <Component id="textFeildQuantityUpdate1" alignment="3" min="-2" max="-2" attributes="0"/>
-                                              <Component id="jLabel37" alignment="3" min="-2" max="-2" attributes="0"/>
-                                              <Component id="textFeildPriceUpdate1" alignment="3" min="-2" max="-2" attributes="0"/>
-                                              <Component id="jLabel36" alignment="3" min="-2" max="-2" attributes="0"/>
-                                              <Component id="jComboBox3" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          </Group>
-                                      </Group>
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <EmptySpace min="-2" pref="51" max="-2" attributes="0"/>
-                                          <Component id="jButton3" min="-2" max="-2" attributes="0"/>
-                                      </Group>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="jLabel30" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="3" attributes="0">
+                                      <Component id="jLabel35" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="textFeildQuantityUpdate1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel37" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="textFeildPriceUpdate1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel36" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jComboBox3" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace pref="63" max="32767" attributes="0"/>
+                                  <EmptySpace pref="74" max="32767" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
                                       <Component id="jLabel17" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="jComboBox1" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -1536,14 +1470,6 @@
                         <Component class="javax.swing.JLabel" name="jLabel37">
                           <Properties>
                             <Property name="text" type="java.lang.String" value="Quantity"/>
-                          </Properties>
-                        </Component>
-                        <Component class="javax.swing.JButton" name="jButton3">
-                          <Properties>
-                            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                              <Font name="Segoe UI Black" size="24" style="1"/>
-                            </Property>
-                            <Property name="text" type="java.lang.String" value="+"/>
                           </Properties>
                         </Component>
                         <Component class="javax.swing.JComboBox" name="jComboBox1">
@@ -1833,35 +1759,25 @@
                                       <Component id="jLabel42" min="-2" pref="47" max="-2" attributes="0"/>
                                       <EmptySpace type="separate" max="-2" attributes="0"/>
                                       <Component id="textFeildQuantityUpdate2" min="-2" pref="96" max="-2" attributes="0"/>
-                                      <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
-                                      <Component id="jButton5" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace min="-2" pref="140" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="224" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                             </DimensionLayout>
                             <DimensionLayout dim="1">
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" alignment="0" attributes="0">
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Group type="102" alignment="0" attributes="0">
-                                              <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="jLabel39" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                                              <Group type="103" groupAlignment="3" attributes="0">
-                                                  <Component id="jLabel40" alignment="3" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="textFeildQuantityUpdate2" alignment="3" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="jLabel42" alignment="3" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="textFeildPriceUpdate2" alignment="3" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="jLabel41" alignment="3" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="jComboBox4" alignment="3" min="-2" max="-2" attributes="0"/>
-                                              </Group>
-                                          </Group>
-                                          <Group type="102" alignment="0" attributes="0">
-                                              <EmptySpace min="-2" pref="51" max="-2" attributes="0"/>
-                                              <Component id="jButton5" min="-2" max="-2" attributes="0"/>
-                                          </Group>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="jLabel39" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="3" attributes="0">
+                                          <Component id="jLabel40" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="textFeildQuantityUpdate2" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jLabel42" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="textFeildPriceUpdate2" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jLabel41" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jComboBox4" alignment="3" min="-2" max="-2" attributes="0"/>
                                       </Group>
-                                      <EmptySpace pref="63" max="32767" attributes="0"/>
+                                      <EmptySpace pref="74" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
                             </DimensionLayout>
@@ -1919,14 +1835,6 @@
                             <Component class="javax.swing.JLabel" name="jLabel42">
                               <Properties>
                                 <Property name="text" type="java.lang.String" value="Quantity"/>
-                              </Properties>
-                            </Component>
-                            <Component class="javax.swing.JButton" name="jButton5">
-                              <Properties>
-                                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                                  <Font name="Segoe UI Black" size="24" style="1"/>
-                                </Property>
-                                <Property name="text" type="java.lang.String" value="+"/>
                               </Properties>
                             </Component>
                             <Component class="javax.swing.JComboBox" name="jComboBox4">
@@ -3823,7 +3731,7 @@
                                                       <Component id="textFeildNameUpdate15" min="-2" pref="138" max="-2" attributes="0"/>
                                                       <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
                                                       <Component id="jLabel59" min="-2" pref="37" max="-2" attributes="0"/>
-                                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                                      <EmptySpace type="separate" max="-2" attributes="0"/>
                                                       <Component id="textFeildNameUpdate19" max="32767" attributes="0"/>
                                                   </Group>
                                                   <Group type="102" attributes="0">
