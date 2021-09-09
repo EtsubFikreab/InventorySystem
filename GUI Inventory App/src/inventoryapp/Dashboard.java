@@ -46,7 +46,6 @@ public class Dashboard extends javax.swing.JFrame {
       loadstaffIDtoComboBox(jComboBox1);
       loadstaffIDtoComboBox(jComboBox5);
       loadsupplierIDtoComboBox(jComboBox6);
-      loadsuppliertoComboBox (comboBoxSupplier);
       loadCategoryIDtoComboBox (CategoryComboBox);
       loadCategoryIDtoComboBox (comboBoxCategory);
       loadStorageIDtoComboBox (comboBoxStorage);
@@ -1407,6 +1406,11 @@ public class Dashboard extends javax.swing.JFrame {
         });
 
         jComboBox6.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBox6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox6ActionPerformed(evt);
+            }
+        });
 
         jLabel18.setText("Staff ID");
 
@@ -2517,7 +2521,7 @@ public class Dashboard extends javax.swing.JFrame {
                                 .addComponent(textFeildNameUpdate15, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(42, 42, 42)
                                 .addComponent(jLabel59, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGap(18, 18, 18)
                                 .addComponent(textFeildNameUpdate19))
                             .addGroup(Product7Layout.createSequentialGroup()
                                 .addComponent(jLabel55)
@@ -2767,6 +2771,11 @@ public class Dashboard extends javax.swing.JFrame {
 
         jButton8.setBackground(new java.awt.Color(199, 239, 207));
         jButton8.setText("New");
+        jButton8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton8ActionPerformed(evt);
+            }
+        });
 
         jButtonNewCategory5.setBackground(new java.awt.Color(199, 239, 207));
         jButtonNewCategory5.setText("Save");
@@ -3963,8 +3972,11 @@ public class Dashboard extends javax.swing.JFrame {
         jButtonNewCategory4.setEnabled(true);
     }//GEN-LAST:event_jButton9ActionPerformed
 
-    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {                                         
+    private void jComboBox6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox6ActionPerformed
         // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBox6ActionPerformed
+
+    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
         String result[] = new String[3];
         textFeildNameUpdate18.setText("");
         textAreaDescription3.setText("");
@@ -3981,7 +3993,7 @@ public class Dashboard extends javax.swing.JFrame {
         btnDeleteRecord6.setEnabled(false);
         jButton8.setEnabled(false);
         jButtonNewCategory5.setEnabled(true);
-    }
+    }//GEN-LAST:event_jButton8ActionPerformed
 
     /**
      * @param args the command line arguments
