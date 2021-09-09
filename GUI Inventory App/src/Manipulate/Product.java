@@ -21,7 +21,7 @@ public class Product extends Connect implements reader{
             // String date = rsCus.getString("importDate");
             results[3] = rs.getString("productDescription");
             results[4] = Integer.toString(rs.getInt("productQuantity"));
-            results[5] = Integer.toString(rs.getInt("catagoryID"));
+            results[5] = Integer.toString(rs.getInt("categoryID"));
             results[6] = Integer.toString(rs.getInt("storageID"));
         }
         catch ( SQLException err ) {
@@ -39,10 +39,10 @@ public class Product extends Connect implements reader{
           //  rs.updateInt("productID",  Integer.parseInt(result[1]));
             rs.updateDouble("productPrice", Double.parseDouble(result[2]));
             // TO DO insert date
-            rs.updateString("productDescription", result[4]);
-            rs.updateInt("productQuantity", Integer.parseInt(result[5]));
-            rs.updateInt("catagoryID",  Integer.parseInt(result[6]));
-            rs.updateInt("storageID",  Integer.parseInt(result[7]));
+            rs.updateString("productDescription", result[3]);
+            rs.updateInt("productQuantity", Integer.parseInt(result[4]));
+            rs.updateInt("categoryID",  Integer.parseInt(result[5]));
+            rs.updateInt("storageID",  Integer.parseInt(result[6]));
             rs.insertRow( );
         }
         catch ( SQLException err ) {
@@ -65,7 +65,7 @@ public class Product extends Connect implements reader{
             // String date = rsCus.getString("importDate");
             results[3] = rs.getString("productDescription");
             results[4] = Integer.toString(rs.getInt("productQuantity"));
-            results[5] = Integer.toString(rs.getInt("catagoryID"));
+            results[5] = Integer.toString(rs.getInt("categoryID"));
             results[6] = Integer.toString(rs.getInt("storageID"));
         }
         catch (SQLException err) {
@@ -89,7 +89,7 @@ public class Product extends Connect implements reader{
             // String date = rsCus.getString("importDate");
             results[3] = rs.getString("productDescription");
             results[4] = Integer.toString(rs.getInt("productQuantity"));
-            results[5] = Integer.toString(rs.getInt("catagoryID"));
+            results[5] = Integer.toString(rs.getInt("categoryID"));
             results[6] = Integer.toString(rs.getInt("storageID"));
         }
         catch (SQLException err) {
@@ -108,7 +108,7 @@ public class Product extends Connect implements reader{
             // String date = rsCus.getString("importDate");
             results[3] = rs.getString("productDescription");
             results[4] = Integer.toString(rs.getInt("productQuantity"));
-            results[5] = Integer.toString(rs.getInt("catagoryID"));
+            results[5] = Integer.toString(rs.getInt("categoryID"));
             results[6] = Integer.toString(rs.getInt("storageID"));
         }
         catch (SQLException err) {
@@ -137,8 +137,8 @@ public class Product extends Connect implements reader{
             // TO DO insert date
             rs.updateString("productDescription", result[3]);
             rs.updateInt("productQuantity", Integer.parseInt(result[4]));
-           // rs.updateInt("catagoryID",  Integer.parseInt(result[5]));
-           // rs.updateInt("storageID",  Integer.parseInt(result[6]));
+            rs.updateInt("categoryID",  Integer.parseInt(result[5]));
+            rs.updateInt("storageID",  Integer.parseInt(result[6]));
             rs.updateRow( );
             JOptionPane.showMessageDialog(null, "Updated");
         }

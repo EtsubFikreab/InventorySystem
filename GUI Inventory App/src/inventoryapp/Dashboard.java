@@ -47,8 +47,8 @@ public class Dashboard extends javax.swing.JFrame {
       loadstaffIDtoComboBox(jComboBox5);
       loadsupplierIDtoComboBox(jComboBox6);
       loadCategoryIDtoComboBox (CategoryComboBox);
-      loadCategoryIDtoComboBox (comboBoxCategory);
-      loadStorageIDtoComboBox (comboBoxStorage);
+     // loadCategoryIDtoComboBox (comboBoxCategory);
+    //  loadStorageIDtoComboBox (comboBoxStorage);
       loadStorageIDtoComboBox (StorageComboBox);
     }
     /**
@@ -310,12 +310,12 @@ public class Dashboard extends javax.swing.JFrame {
         textFeildQuantityUpdate = new javax.swing.JTextField();
         javax.swing.JLabel jLabel29 = new javax.swing.JLabel();
         javax.swing.JLabel jLabel32 = new javax.swing.JLabel();
-        comboBoxCategory = new javax.swing.JComboBox<>();
         javax.swing.JLabel jLabel33 = new javax.swing.JLabel();
-        comboBoxStorage = new javax.swing.JComboBox<>();
         javax.swing.JLabel jLabel11 = new javax.swing.JLabel();
         javax.swing.JScrollPane jScrollPane3 = new javax.swing.JScrollPane();
         textAreaDescription = new javax.swing.JTextArea();
+        jTextField1 = new javax.swing.JTextField();
+        jTextField2 = new javax.swing.JTextField();
         javax.swing.JPanel jPanel5 = new javax.swing.JPanel();
         btnPrevious1 = new javax.swing.JButton();
         btnLast1 = new javax.swing.JButton();
@@ -506,7 +506,7 @@ public class Dashboard extends javax.swing.JFrame {
             topPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(topPanelLayout.createSequentialGroup()
                 .addGap(348, 348, 348)
-                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 404, Short.MAX_VALUE)
+                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 412, Short.MAX_VALUE)
                 .addGap(347, 347, 347))
         );
         topPanelLayout.setVerticalGroup(
@@ -597,7 +597,7 @@ public class Dashboard extends javax.swing.JFrame {
                 .addComponent(tradeBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(mangeBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 444, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 465, Short.MAX_VALUE)
                 .addComponent(AboutBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(17, 17, 17))
         );
@@ -734,7 +734,7 @@ public class Dashboard extends javax.swing.JFrame {
                         .addGroup(ProductLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(ProductLayout.createSequentialGroup()
                                 .addGap(77, 77, 77)
-                                .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+                                .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, 51, Short.MAX_VALUE)
                                 .addGap(44, 44, 44)
                                 .addComponent(CategoryComboBox, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addGap(287, 287, 287)
@@ -743,7 +743,7 @@ public class Dashboard extends javax.swing.JFrame {
                             .addGroup(ProductLayout.createSequentialGroup()
                                 .addComponent(jLabel7)
                                 .addGap(244, 244, 244)))
-                        .addComponent(StorageComboBox, 0, 87, Short.MAX_VALUE)
+                        .addComponent(StorageComboBox, 0, 88, Short.MAX_VALUE)
                         .addGap(174, 174, 174))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ProductLayout.createSequentialGroup()
                         .addGroup(ProductLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -791,7 +791,7 @@ public class Dashboard extends javax.swing.JFrame {
                 .addComponent(jLabel7)
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 243, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 263, Short.MAX_VALUE)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -856,17 +856,8 @@ public class Dashboard extends javax.swing.JFrame {
         jLabel32.setForeground(new java.awt.Color(255, 255, 255));
         jLabel32.setText("Category");
 
-        comboBoxCategory.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        comboBoxCategory.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                comboBoxCategoryActionPerformed(evt);
-            }
-        });
-
         jLabel33.setForeground(new java.awt.Color(255, 255, 255));
         jLabel33.setText("Storage");
-
-        comboBoxStorage.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         jLabel11.setForeground(new java.awt.Color(255, 255, 255));
         jLabel11.setText("Description");
@@ -874,6 +865,18 @@ public class Dashboard extends javax.swing.JFrame {
         textAreaDescription.setColumns(20);
         textAreaDescription.setRows(5);
         jScrollPane3.setViewportView(textAreaDescription);
+
+        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField1ActionPerformed(evt);
+            }
+        });
+
+        jTextField2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField2ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout Product1Layout = new javax.swing.GroupLayout(Product1);
         Product1.setLayout(Product1Layout);
@@ -890,10 +893,10 @@ public class Dashboard extends javax.swing.JFrame {
                         .addGroup(Product1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(Product1Layout.createSequentialGroup()
                                 .addGap(101, 101, 101)
-                                .addComponent(jLabel32, javax.swing.GroupLayout.DEFAULT_SIZE, 67, Short.MAX_VALUE)
-                                .addGap(18, 18, 18)
-                                .addComponent(comboBoxCategory, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(180, 180, 180))
+                                .addComponent(jLabel32, javax.swing.GroupLayout.DEFAULT_SIZE, 83, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(173, 173, 173))
                             .addGroup(Product1Layout.createSequentialGroup()
                                 .addComponent(jLabel27, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -903,18 +906,17 @@ public class Dashboard extends javax.swing.JFrame {
                             .addGroup(Product1Layout.createSequentialGroup()
                                 .addComponent(jLabel28, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(textFeildPriceUpdate, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
-                                .addComponent(jLabel29, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(textFeildQuantityUpdate, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(25, 25, 25))
+                                .addComponent(textFeildPriceUpdate, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(Product1Layout.createSequentialGroup()
-                                .addGap(27, 27, 27)
+                                .addGap(26, 26, 26)
                                 .addComponent(jLabel33, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(comboBoxStorage, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(188, 188, 188))))
+                                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 6, Short.MAX_VALUE)
+                        .addComponent(jLabel29, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(textFeildQuantityUpdate, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(39, 39, 39))
                     .addGroup(Product1Layout.createSequentialGroup()
                         .addComponent(jLabel11)
                         .addGap(464, 464, 464))
@@ -937,10 +939,10 @@ public class Dashboard extends javax.swing.JFrame {
                 .addGroup(Product1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(Product1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel32)
-                        .addComponent(comboBoxCategory, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(Product1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel33)
-                        .addComponent(comboBoxStorage, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel11)
                 .addGap(18, 18, 18)
@@ -1103,7 +1105,7 @@ public class Dashboard extends javax.swing.JFrame {
                 .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(60, Short.MAX_VALUE))
+                .addContainerGap(85, Short.MAX_VALUE))
         );
 
         TabsTrade.addTab("Update", updateTab);
@@ -1204,7 +1206,7 @@ public class Dashboard extends javax.swing.JFrame {
                         .addComponent(jLabel36, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(textFeildPriceUpdate1, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 74, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 57, Short.MAX_VALUE)
                         .addComponent(jLabel37, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(textFeildQuantityUpdate1, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1301,7 +1303,7 @@ public class Dashboard extends javax.swing.JFrame {
                     .addComponent(jLabel38)
                     .addComponent(jButton4)
                     .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 49, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 62, Short.MAX_VALUE)
                 .addComponent(jLabel12)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1476,23 +1478,23 @@ public class Dashboard extends javax.swing.JFrame {
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addGap(54, 54, 54)
                 .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 878, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(66, Short.MAX_VALUE))
+                .addContainerGap(53, Short.MAX_VALUE))
             .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel4Layout.createSequentialGroup()
-                    .addGap(0, 19, Short.MAX_VALUE)
+                    .addGap(0, 11, Short.MAX_VALUE)
                     .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 19, Short.MAX_VALUE)))
+                    .addGap(0, 10, Short.MAX_VALUE)))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                .addGap(0, 308, Short.MAX_VALUE)
+                .addGap(0, 324, Short.MAX_VALUE)
                 .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel4Layout.createSequentialGroup()
-                    .addGap(0, 40, Short.MAX_VALUE)
+                    .addGap(0, 48, Short.MAX_VALUE)
                     .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, 655, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 40, Short.MAX_VALUE)))
+                    .addGap(0, 48, Short.MAX_VALUE)))
         );
 
         jTabbedPane2.addTab("Buy", jPanel4);
@@ -1758,12 +1760,12 @@ public class Dashboard extends javax.swing.JFrame {
             .addGroup(jPanelCategoryLayout.createSequentialGroup()
                 .addGap(40, 40, 40)
                 .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 918, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(40, Short.MAX_VALUE))
+                .addContainerGap(27, Short.MAX_VALUE))
             .addGroup(jPanelCategoryLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanelCategoryLayout.createSequentialGroup()
-                    .addGap(0, 19, Short.MAX_VALUE)
+                    .addGap(0, 13, Short.MAX_VALUE)
                     .addComponent(updateTab1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 19, Short.MAX_VALUE)))
+                    .addGap(0, 12, Short.MAX_VALUE)))
         );
         jPanelCategoryLayout.setVerticalGroup(
             jPanelCategoryLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2091,12 +2093,12 @@ public class Dashboard extends javax.swing.JFrame {
             .addGroup(jPanelSupplierLayout.createSequentialGroup()
                 .addGap(20, 20, 20)
                 .addComponent(jScrollPane11, javax.swing.GroupLayout.PREFERRED_SIZE, 951, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(27, Short.MAX_VALUE))
+                .addContainerGap(14, Short.MAX_VALUE))
             .addGroup(jPanelSupplierLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanelSupplierLayout.createSequentialGroup()
-                    .addGap(0, 20, Short.MAX_VALUE)
+                    .addGap(0, 14, Short.MAX_VALUE)
                     .addComponent(updateTab2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 20, Short.MAX_VALUE)))
+                    .addGap(0, 13, Short.MAX_VALUE)))
         );
         jPanelSupplierLayout.setVerticalGroup(
             jPanelSupplierLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2407,10 +2409,10 @@ public class Dashboard extends javax.swing.JFrame {
         jPanelStaff.setLayout(jPanelStaffLayout);
         jPanelStaffLayout.setHorizontalGroup(
             jPanelStaffLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 998, Short.MAX_VALUE)
+            .addGap(0, 985, Short.MAX_VALUE)
             .addGroup(jPanelStaffLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelStaffLayout.createSequentialGroup()
-                    .addContainerGap(20, Short.MAX_VALUE)
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(updateTab3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addContainerGap()))
         );
@@ -2524,7 +2526,7 @@ public class Dashboard extends javax.swing.JFrame {
                         .addComponent(jLabel57, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(textFeildPriceUpdate5, javax.swing.GroupLayout.PREFERRED_SIZE, 268, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(20, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         Product7Layout.setVerticalGroup(
             Product7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2716,12 +2718,12 @@ public class Dashboard extends javax.swing.JFrame {
         jPanelCustomer.setLayout(jPanelCustomerLayout);
         jPanelCustomerLayout.setHorizontalGroup(
             jPanelCustomerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 998, Short.MAX_VALUE)
+            .addGap(0, 985, Short.MAX_VALUE)
             .addGroup(jPanelCustomerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelCustomerLayout.createSequentialGroup()
-                    .addContainerGap(20, Short.MAX_VALUE)
+                    .addContainerGap(19, Short.MAX_VALUE)
                     .addComponent(updateTab4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(20, Short.MAX_VALUE)))
+                    .addContainerGap(18, Short.MAX_VALUE)))
         );
         jPanelCustomerLayout.setVerticalGroup(
             jPanelCustomerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2967,12 +2969,12 @@ public class Dashboard extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(88, 88, 88)
                 .addComponent(jScrollPane15, javax.swing.GroupLayout.PREFERRED_SIZE, 814, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(96, Short.MAX_VALUE))
+                .addContainerGap(83, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel1Layout.createSequentialGroup()
-                    .addGap(0, 20, Short.MAX_VALUE)
+                    .addGap(0, 14, Short.MAX_VALUE)
                     .addComponent(updateTab5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 20, Short.MAX_VALUE)))
+                    .addGap(0, 13, Short.MAX_VALUE)))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -3054,7 +3056,7 @@ public class Dashboard extends javax.swing.JFrame {
                 .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 519, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(aboutLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(aboutLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 73, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 94, Short.MAX_VALUE)
                         .addComponent(jLabel3)
                         .addGap(119, 119, 119))
                     .addGroup(aboutLayout.createSequentialGroup()
@@ -3087,6 +3089,8 @@ public class Dashboard extends javax.swing.JFrame {
         Parent.add(product);
         Parent.repaint();
         Parent.revalidate();
+       table.productTables();
+        intUpdatePro();
     }//GEN-LAST:event_productBtnActionPerformed
 
     private void tradeBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tradeBtnActionPerformed
@@ -3768,7 +3772,7 @@ public class Dashboard extends javax.swing.JFrame {
 
     private void btnNextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNextActionPerformed
         // TODO add your handling code here:
-        String results[] = new String[3];
+        String results[] = new String[7];
         results = table.product.readNext();
         singleProduct(results);
     }//GEN-LAST:event_btnNextActionPerformed
@@ -3780,15 +3784,15 @@ public class Dashboard extends javax.swing.JFrame {
 
     private void btnUpdateRecord1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateRecord1ActionPerformed
         // TODO add your handling code here:
-        String [] re = new String[8];
+        String [] re = new String[7];
 
-        re[0]=textFeildNameAdd.getText();
+        re[0]=textFeildNameUpdate.getText();
         // re[1]=textFeildNameUpdate2.gettext(); add id
-        re[2]=priceTextFeild.getText();
-        // re[3]=tejTextArea1.getText();
-        re[4]=quantityTextFeild.getText();
-        //re[5]=CategoryComboBox.getText();
-        //re[6]=StorageComboBox.getText();
+        re[2]=textFeildPriceUpdate.getText();
+        re[3]=textAreaDescription.getText();
+        re[4]=textFeildQuantityUpdate.getText();
+        re[5]=jTextField1.getText();
+        re[6]=jTextField2.getText();
         //re[7]=SupplierComboBox.gettext();//does not exist in products
         double price = Double.parseDouble(textFeildPriceUpdate.getText());
         int quantity=Integer.parseInt(textFeildQuantityUpdate.getText());
@@ -3799,7 +3803,7 @@ public class Dashboard extends javax.swing.JFrame {
              JOptionPane.showMessageDialog(null, "Enter atleast 1 quantity ");
          }
          else{
-        //table.product.write(re);
+        table.product.updateRow(re);
           try{
               String host = "jdbc:mysql://localhost:3306/inventory_system";
               String username = "root";
@@ -3807,7 +3811,7 @@ public class Dashboard extends javax.swing.JFrame {
               stmt = con.createStatement(
               ResultSet.TYPE_SCROLL_INSENSITIVE, 
               ResultSet.CONCUR_UPDATABLE );          
-              String PI = "SELECT productID,productName,productPrice,productQuantity FROM product";
+              String PI = "SELECT productID,productName,productPrice,productQuantity,categoryID,storageID FROM product";
               
               ResultSet rs = stmt.executeQuery(PI);
               //hold all the records from the database table
@@ -3819,9 +3823,10 @@ public class Dashboard extends javax.swing.JFrame {
                  String productName = rs.getString("ProductName");
                  String cost = String.valueOf(rs.getDouble("productPrice"));
                  String quan = String.valueOf(rs.getInt("productQuantity"));
-                // String cat= String.valueOf(rs.getInt("CategoryID"));
+                String cat= String.valueOf(rs.getInt("CategoryID"));
+                String si= String.valueOf(rs.getInt("Storage ID"));
                  
-                 String Tbl[]={id,productName,cost,quan};
+                 String Tbl[]={id,productName,cost,quan,cat,si};
                  tblModel.addRow(Tbl);
                }//end while
                con.close();
@@ -3840,21 +3845,21 @@ public class Dashboard extends javax.swing.JFrame {
 
     private void btnFirst1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFirst1ActionPerformed
         // TODO add your handling code here:
-        String results[] = new String[3];
+        String results[] = new String[7];
         results = table.product.read();
         singleProduct(results);
     }//GEN-LAST:event_btnFirst1ActionPerformed
 
     private void btnLast1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLast1ActionPerformed
         // TODO add your handling code here:
-        String results[] = new String[3];
+        String results[] = new String[7];
         results = table.product.readLast();
         singleProduct(results);
     }//GEN-LAST:event_btnLast1ActionPerformed
 
     private void btnPrevious1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPrevious1ActionPerformed
         // TODO add your handling code here:
-        String results[] = new String[3];
+        String results[] = new String[7];
         results = table.product.readPrevious();
         singleProduct(results);
     }//GEN-LAST:event_btnPrevious1ActionPerformed
@@ -3874,10 +3879,6 @@ public class Dashboard extends javax.swing.JFrame {
     private void CategoryComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CategoryComboBoxActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_CategoryComboBoxActionPerformed
-
-    private void comboBoxCategoryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboBoxCategoryActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_comboBoxCategoryActionPerformed
 
     private void jButtonNewCategoryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonNewCategoryActionPerformed
         // TODO add your handling code here: String result[] = new String[3];
@@ -3960,6 +3961,14 @@ public class Dashboard extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jComboBox6ActionPerformed
 
+    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField2ActionPerformed
+
+    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -4028,8 +4037,6 @@ public class Dashboard extends javax.swing.JFrame {
     public javax.swing.JButton btnUpdateRecord5;
     public javax.swing.JButton btnUpdateRecord6;
     public javax.swing.JButton btnUpdateRecordCategory;
-    public javax.swing.JComboBox<String> comboBoxCategory;
-    public javax.swing.JComboBox<String> comboBoxStorage;
     public javax.swing.JPanel home;
     public javax.swing.JButton jButton1;
     public javax.swing.JButton jButton10;
@@ -4056,6 +4063,8 @@ public class Dashboard extends javax.swing.JFrame {
     public javax.swing.JTable jTable3;
     public javax.swing.JTable jTable7;
     public javax.swing.JTextArea jTextArea1;
+    public javax.swing.JTextField jTextField1;
+    public javax.swing.JTextField jTextField2;
     public javax.swing.JPanel manage;
     public javax.swing.JTextField priceTextFeild;
     public javax.swing.JPanel product;
@@ -4121,7 +4130,12 @@ public class Dashboard extends javax.swing.JFrame {
     private void singleProduct(String result[]){
         // String result[] = new String[7];
         // result = doconnect.readProduct();
-        
+        textFeildNameUpdate.setText(result[0]);
+                textFeildPriceUpdate.setText(result[2]);
+                textFeildQuantityUpdate.setText(result[4]);
+                jTextField1.setText(result[5]);
+                jTextField2.setText(result[6]);
+                textAreaDescription.setText(result[3]);
         //textFeildNameUpdate.setText(result[3]);
     }
     private void singleSell(String result[]){
@@ -4173,6 +4187,13 @@ public class Dashboard extends javax.swing.JFrame {
         results = table.storage.read();
         singleStorage(results);
 
+    }
+    private void intUpdatePro(){
+   String results[] = new String[7];
+        results = table.product.read();
+        singleProduct(results);
+       
+    
     }
     private void cutomerBox(){
      String result[]=table.customer.loadCustomerID();
