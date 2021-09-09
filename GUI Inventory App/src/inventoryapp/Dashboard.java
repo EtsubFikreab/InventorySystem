@@ -3111,8 +3111,8 @@ public class Dashboard extends javax.swing.JFrame {
         }
         else{
             
-            int staff = Integer.parseInt(jComboBox3.getItemAt(jComboBox3.getSelectedIndex()));
-            int cust = Integer.parseInt(jComboBox3.getItemAt(jComboBox3.getSelectedIndex()));
+            int staff = Integer.parseInt(jComboBox1.getItemAt(jComboBox1.getSelectedIndex()));
+            int cust = Integer.parseInt(jComboBox2.getItemAt(jComboBox2.getSelectedIndex()));
             try{
                 String host = "jdbc:mysql://localhost:3306/inventory_system";
                 String username = "root";
@@ -3121,16 +3121,17 @@ public class Dashboard extends javax.swing.JFrame {
                 stmt = con.createStatement(
                 ResultSet.TYPE_SCROLL_INSENSITIVE, 
                 ResultSet.CONCUR_UPDATABLE );
-                String pPrice = "CALL `getPrice`(" + productId + ")";
-                stmt.executeQuery(pPrice);
-                String add = "CALL `addSell`(" + staff + "," + productId + "," + cust + "," + RequestQuantity + "," + price + ")";
-                stmt.executeQuery(add);
+//                String pPrice = "CALL `getPrice`(" + productId + ")";
+//                stmt.executeQuery(pPrice);
+//                String add = "CALL `addSell`(" + staff + "," + productId + "," + cust + "," + RequestQuantity + "," + price + ")";
+//                stmt.executeQuery(add);
                 String update = "CALL `updateSell`(" + productId + "," + RequestQuantity + ")";
                 stmt.executeQuery(update);
             }catch(SQLException err){
                 JOptionPane.showMessageDialog(null, "Can Not Complete Transaction!!");
             }
         }
+        
             
         try{
               String host = "jdbc:mysql://localhost:3306/inventory_system";
