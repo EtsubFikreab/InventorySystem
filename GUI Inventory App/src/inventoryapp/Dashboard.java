@@ -3210,8 +3210,8 @@ public class Dashboard extends javax.swing.JFrame {
                 ResultSet.CONCUR_UPDATABLE );
 //                String pPrice = "CALL `getPrice`(" + productId + ")";
 //                stmt.executeQuery(pPrice);
-//                String add = "CALL `addSell`(" + staff + "," + productId + "," + cust + "," + RequestQuantity + "," + price + ")";
-//                stmt.executeQuery(add);
+                String add = "CALL `addSell`(" + staff + "," + productId + "," + cust + "," + RequestQuantity + "," + price + ")";
+                stmt.executeQuery(add);
                 String update = "CALL `updateSell`(" + productId + "," + RequestQuantity + ")";
                 stmt.executeQuery(update);
             }catch(SQLException err){
