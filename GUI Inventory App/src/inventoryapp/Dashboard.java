@@ -3175,7 +3175,6 @@ public class Dashboard extends javax.swing.JFrame {
             rs1 = stmt.executeQuery(quan);
             rs1.next();
             Total = rs1.getInt("PQ");
-            JOptionPane.showMessageDialog(null,"Quantity"+Total);
         }
         catch(SQLException err){
             JOptionPane.showMessageDialog(null, "Unable to Execute");
