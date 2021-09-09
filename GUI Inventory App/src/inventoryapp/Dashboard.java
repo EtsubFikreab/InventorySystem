@@ -3151,11 +3151,11 @@ public class Dashboard extends javax.swing.JFrame {
         re[0]=textFeildNameAdd.getText();
        // re[1]=textFeildNameUpdate2.gettext(); add id
         re[2]=priceTextFeild.getText();
-        //re[3]=tejTextArea1.gettext();
+        re[3]=jTextArea1.getText();
         re[4]=quantityTextFeild.getText();
-        //re[5]=CategoryComboBox.gettext();
-        //re[6]=StorageComboBox.gettext();
-        //re[7]=SupplierComboBox.gettext();//does not exist in products
+        re[5]=(String)CategoryComboBox.getSelectedItem();
+        re[6]=(String)StorageComboBox.getSelectedItem();
+
         table.product.write(re);
     }//GEN-LAST:event_jButton1ActionPerformed
 
