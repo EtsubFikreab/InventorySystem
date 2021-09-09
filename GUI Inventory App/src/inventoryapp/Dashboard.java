@@ -3361,7 +3361,7 @@ public class Dashboard extends javax.swing.JFrame {
         String result[] = new String[3];
         result[1] = textFeildNameCategory.getText();
         result[2] = textAreaDescriptionCategory.getText();
-        //table.category.write(result);
+        table.category.updateRow(result);
          try{
               String host = "jdbc:mysql://localhost:3306/inventory_system";
               String username = "root";
@@ -3732,7 +3732,7 @@ public class Dashboard extends javax.swing.JFrame {
         String result[] = new String[3];
         result[1] = textFeildNameCategory.getText();
         result[2] = textAreaDescriptionCategory.getText();
-        //table.category.write(result);
+        table.category.write(result);
         
          try{
               String host = "jdbc:mysql://localhost:3306/inventory_system";
