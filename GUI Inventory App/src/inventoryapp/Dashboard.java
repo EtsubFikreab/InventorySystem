@@ -14,6 +14,7 @@ import java.sql.Statement;
 import java.sql.*;
 import javax.swing.*;
 import Manipulate.Tables;
+import java.awt.event.ActionEvent;
 import java.util.ArrayList;
 import javax.swing.table.DefaultTableModel;
 /// this is a test on merge conflict
@@ -4112,7 +4113,9 @@ public class Dashboard extends javax.swing.JFrame {
     private void CategoryComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CategoryComboBoxActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_CategoryComboBoxActionPerformed
-
+    void jButton8ActionPerformed(ActionEvent evt){
+        
+    }
     private void jButtonNewCategoryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonNewCategoryActionPerformed
 
         textFeildNameCategory.setText("");
