@@ -171,5 +171,4 @@ public class Customer extends Connect implements reader{
             return result;
         }
 
-
 }
