@@ -1191,27 +1191,15 @@
                         <Component class="javax.swing.JTable" name="jTable1">
                           <Properties>
                             <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                              <Table columnCount="6" rowCount="0">
+                              <Table columnCount="4" rowCount="0">
                                 <Column editable="false" title="Product ID" type="java.lang.Object"/>
                                 <Column editable="false" title="Name" type="java.lang.Object"/>
                                 <Column editable="false" title="Price" type="java.lang.Object"/>
                                 <Column editable="false" title="Quantity" type="java.lang.Object"/>
-                                <Column editable="false" title="Category" type="java.lang.Object"/>
-                                <Column editable="false" title="Storage" type="java.lang.Object"/>
                               </Table>
                             </Property>
                             <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
                               <TableColumnModel selectionModel="0">
-                                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
-                                  <Title/>
-                                  <Editor/>
-                                  <Renderer/>
-                                </Column>
-                                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
-                                  <Title/>
-                                  <Editor/>
-                                  <Renderer/>
-                                </Column>
                                 <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
                                   <Title/>
                                   <Editor/>
@@ -2480,6 +2468,10 @@
                               <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
                             </Property>
                           </Properties>
+                          <AuxValues>
+                            <AuxValue name="JavaCodeGenerator_VariableLocal" type="java.lang.Boolean" value="false"/>
+                            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+                          </AuxValues>
                         </Component>
                       </SubComponents>
                     </Container>
@@ -3034,12 +3026,12 @@
                           <Properties>
                             <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                               <Table columnCount="6" rowCount="0">
-                                <Column editable="false" title="Product ID" type="java.lang.Object"/>
-                                <Column editable="false" title="Name" type="java.lang.Object"/>
-                                <Column editable="false" title="Price" type="java.lang.Object"/>
-                                <Column editable="false" title="Quantity" type="java.lang.Object"/>
-                                <Column editable="true" title="Category" type="java.lang.Object"/>
-                                <Column editable="false" title="Storage" type="java.lang.Object"/>
+                                <Column editable="false" title="supplier ID" type="java.lang.Object"/>
+                                <Column editable="false" title="supplier Name" type="java.lang.Object"/>
+                                <Column editable="false" title="supplier Address" type="java.lang.Object"/>
+                                <Column editable="false" title="supplier Phone" type="java.lang.Object"/>
+                                <Column editable="false" title="supplierEmail" type="java.lang.Object"/>
+                                <Column editable="false" title="POBOX" type="java.lang.Object"/>
                               </Table>
                             </Property>
                             <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
@@ -3080,6 +3072,10 @@
                               <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
                             </Property>
                           </Properties>
+                          <AuxValues>
+                            <AuxValue name="JavaCodeGenerator_VariableLocal" type="java.lang.Boolean" value="false"/>
+                            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+                          </AuxValues>
                         </Component>
                       </SubComponents>
                     </Container>
@@ -4142,10 +4138,10 @@
                                   <Table columnCount="6" rowCount="4">
                                     <Column editable="false" title="ID" type="java.lang.Object"/>
                                     <Column editable="false" title="First Name" type="java.lang.Object"/>
-                                    <Column editable="false" title="Price" type="java.lang.Object"/>
-                                    <Column editable="false" title="Quantity" type="java.lang.Object"/>
-                                    <Column editable="true" title="Category" type="java.lang.Object"/>
-                                    <Column editable="false" title="Storage" type="java.lang.Object"/>
+                                    <Column editable="false" title="Last Name" type="java.lang.Object"/>
+                                    <Column editable="false" title="Customer Address" type="java.lang.Object"/>
+                                    <Column editable="false" title="Customer Phone" type="java.lang.Object"/>
+                                    <Column editable="false" title="Customer Email" type="java.lang.Object"/>
                                   </Table>
                                 </Property>
                                 <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
@@ -4638,6 +4634,10 @@
                               <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
                             </Property>
                           </Properties>
+                          <AuxValues>
+                            <AuxValue name="JavaCodeGenerator_VariableLocal" type="java.lang.Boolean" value="false"/>
+                            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+                          </AuxValues>
                         </Component>
                       </SubComponents>
                     </Container>

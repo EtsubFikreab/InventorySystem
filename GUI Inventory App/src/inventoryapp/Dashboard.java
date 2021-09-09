@@ -384,7 +384,7 @@ public class Dashboard extends javax.swing.JFrame {
         btnDeleteRecordCategory = new javax.swing.JButton();
         btnNextCategory = new javax.swing.JButton();
         javax.swing.JScrollPane jScrollPane9 = new javax.swing.JScrollPane();
-        javax.swing.JTable jTable4 = new javax.swing.JTable();
+        jTable4 = new javax.swing.JTable();
         javax.swing.JPanel jPanelSupplier = new javax.swing.JPanel();
         javax.swing.JPanel updateTab2 = new javax.swing.JPanel();
         javax.swing.JPanel Product5 = new javax.swing.JPanel();
@@ -412,7 +412,7 @@ public class Dashboard extends javax.swing.JFrame {
         btnDeleteRecord3 = new javax.swing.JButton();
         btnNext2 = new javax.swing.JButton();
         javax.swing.JScrollPane jScrollPane11 = new javax.swing.JScrollPane();
-        javax.swing.JTable jTable5 = new javax.swing.JTable();
+        jTable5 = new javax.swing.JTable();
         javax.swing.JPanel jPanelStaff = new javax.swing.JPanel();
         javax.swing.JPanel updateTab3 = new javax.swing.JPanel();
         javax.swing.JPanel Product6 = new javax.swing.JPanel();
@@ -482,7 +482,7 @@ public class Dashboard extends javax.swing.JFrame {
         btnDeleteRecord6 = new javax.swing.JButton();
         btnNext5 = new javax.swing.JButton();
         javax.swing.JScrollPane jScrollPane15 = new javax.swing.JScrollPane();
-        javax.swing.JTable jTable8 = new javax.swing.JTable();
+        jTable8 = new javax.swing.JTable();
         about = new javax.swing.JPanel();
         javax.swing.JScrollPane jScrollPane4 = new javax.swing.JScrollPane();
         javax.swing.JTextArea jTextArea3 = new javax.swing.JTextArea();
@@ -1076,11 +1076,11 @@ public class Dashboard extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Product ID", "Name", "Price", "Quantity", "Category", "Storage"
+                "Product ID", "Name", "Price", "Quantity"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false
+                false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -2085,11 +2085,11 @@ public class Dashboard extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Product ID", "Name", "Price", "Quantity", "Category", "Storage"
+                "supplier ID", "supplier Name", "supplier Address", "supplier Phone", "supplierEmail", "POBOX"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, true, false
+                false, false, false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -2684,11 +2684,11 @@ public class Dashboard extends javax.swing.JFrame {
                 {null, null, null, null, null, null}
             },
             new String [] {
-                "ID", "First Name", "Price", "Quantity", "Category", "Storage"
+                "ID", "First Name", "Last Name", "Customer Address", "Customer Phone", "Customer Email"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, true, false
+                false, false, false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -3369,11 +3369,11 @@ public class Dashboard extends javax.swing.JFrame {
               stmt = con.createStatement(
               ResultSet.TYPE_SCROLL_INSENSITIVE, 
               ResultSet.CONCUR_UPDATABLE );          
-              String PI = "SELECT categoryName,categoryID FROM category";
+              String PI = "SELECT categoryID,categoryName FROM category";
               
               ResultSet rs = stmt.executeQuery(PI);
               //hold all the records from the database table
-              DefaultTableModel tblModel = (DefaultTableModel) jTable1.getModel();
+              DefaultTableModel tblModel = (DefaultTableModel) jTable4.getModel();
                tblModel.setRowCount(0);
                while (rs.next())
                {   
@@ -3442,7 +3442,40 @@ public class Dashboard extends javax.swing.JFrame {
         results[4] = textFeildNameUpdate8.getText();
         results[5] = textFeildNameUpdate9.getText();
         results[6] = textAreaDescription2.getText();
-        table.supplier.write(results);
+        //table.supplier.write(results);
+        
+        try{
+              String host = "jdbc:mysql://localhost:3306/inventory_system";
+              String username = "root";
+              con = DriverManager.getConnection( host, username, "7899" );
+              stmt = con.createStatement(
+              ResultSet.TYPE_SCROLL_INSENSITIVE, 
+              ResultSet.CONCUR_UPDATABLE );          
+              String PI = "SELECT supplierID,supplierName,supplierAddress,supplierPhone,supplierEmail,POBOX FROM supplier";
+              
+              ResultSet rs = stmt.executeQuery(PI);
+              //hold all the records from the database table
+              DefaultTableModel tblModel = (DefaultTableModel) jTable5.getModel();
+               tblModel.setRowCount(0);
+               while (rs.next())
+               {   
+            	 String id = String.valueOf(rs.getInt("supplierID"));
+                 String fname = rs.getString("supplierName");
+                 String address = String.valueOf(rs.getString("supplierAddress"));
+                 String phone =String.valueOf(rs.getInt("supplierPhone"));
+                 String email = rs.getString("supplierEmail");
+                 String pbox =String.valueOf(rs.getInt("POBOX"));
+                 String Tbl[]={id,fname,address,phone,email,pbox};
+                 tblModel.addRow(Tbl);
+               }//end while
+               con.close();
+               rs.close();
+          }
+          catch ( SQLException err ) {
+              System.out.println( err.getMessage( ) );
+          }
+
+        
     }//GEN-LAST:event_btnUpdateRecord3ActionPerformed
 
     private void btnDeleteRecord3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteRecord3ActionPerformed
@@ -3697,7 +3730,7 @@ public class Dashboard extends javax.swing.JFrame {
               
               ResultSet rs = stmt.executeQuery(PI);
               //hold all the records from the database table
-              DefaultTableModel tblModel = (DefaultTableModel) jTable7.getModel();
+              DefaultTableModel tblModel = (DefaultTableModel) jTable8.getModel();
                tblModel.setRowCount(0);
                while (rs.next())
                {   
@@ -3745,7 +3778,7 @@ public class Dashboard extends javax.swing.JFrame {
               
               ResultSet rs = stmt.executeQuery(PI);
               //hold all the records from the database table
-              DefaultTableModel tblModel = (DefaultTableModel) jTable1.getModel();
+              DefaultTableModel tblModel = (DefaultTableModel) jTable4.getModel();
                tblModel.setRowCount(0);
                while (rs.next())
                {   
@@ -3904,8 +3937,34 @@ public class Dashboard extends javax.swing.JFrame {
         String result[] = new String[3];
         result[0] = textFeildNameUpdate18.getText();
         result[2] = textAreaDescription3.getText();
-        table.storage.write(result);
-
+        //table.storage.write(result);
+         try{
+              String host = "jdbc:mysql://localhost:3306/inventory_system";
+              String username = "root";
+              con = DriverManager.getConnection( host, username, "7899" );
+              stmt = con.createStatement(
+              ResultSet.TYPE_SCROLL_INSENSITIVE, 
+              ResultSet.CONCUR_UPDATABLE );          
+              String PI = "SELECT storageArea,storageID FROM storage";
+              
+              ResultSet rs = stmt.executeQuery(PI);
+              //hold all the records from the database table
+              DefaultTableModel tblModel = (DefaultTableModel) jTable8.getModel();
+               tblModel.setRowCount(0);
+               while (rs.next())
+               {   
+            	 String id = String.valueOf(rs.getInt("storageID"));
+                 String storageArea = rs.getString("storageArea");
+                 String Tbl[]={id,storageArea};
+                 tblModel.addRow(Tbl);
+               }//end while
+               con.close();
+               rs.close();
+          }
+          catch ( SQLException err ) {
+              System.out.println( err.getMessage( ) );
+          }
+        
         btnFirst6.setEnabled(true);
         btnPrevious6.setEnabled(true);
         btnNext5.setEnabled(true);
@@ -4236,8 +4295,11 @@ public class Dashboard extends javax.swing.JFrame {
     public javax.swing.JTable jTable1;
     public javax.swing.JTable jTable2;
     public javax.swing.JTable jTable3;
+    public javax.swing.JTable jTable4;
+    public javax.swing.JTable jTable5;
     public javax.swing.JTable jTable6;
     public javax.swing.JTable jTable7;
+    public javax.swing.JTable jTable8;
     public javax.swing.JTextArea jTextArea1;
     public javax.swing.JPanel manage;
     public javax.swing.JTextField priceTextFeild;
