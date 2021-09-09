@@ -3165,7 +3165,26 @@ public class Dashboard extends javax.swing.JFrame {
      // for price
       double price = Double.parseDouble(textFeildPriceUpdate1.getText());
     //CHECKING QUANTITY
-        int RequestQuantity,Total = 2;
+        int RequestQuantity,Total = 0; 
+        ResultSet rs1;
+        int productId = Integer.parseInt(jComboBox3.getItemAt(jComboBox3.getSelectedIndex()));
+        try{
+            String host = "jdbc:mysql://localhost:3306/inventory_system";
+            String username = "root";
+            con = DriverManager.getConnection( host, username, "7899" );
+
+            stmt = con.createStatement(
+            ResultSet.TYPE_SCROLL_INSENSITIVE, 
+            ResultSet.CONCUR_UPDATABLE );
+            
+            String quan = "CALL `getQuantity`(" + productId + ")";
+            rs1 = stmt.executeQuery(quan);
+            rs1.next();
+            Total = rs1.getInt("PQ");
+        }
+        catch(SQLException err){
+            JOptionPane.showMessageDialog(null, "Unable to Execute");
+        }
         RequestQuantity=Integer.parseInt(textFeildQuantityUpdate1.getText());
         if (RequestQuantity>Total){
             JOptionPane.showMessageDialog(null, "The requested quantity is not available in the store!");
@@ -3174,11 +3193,32 @@ public class Dashboard extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Write atleast one quantity!");
         }
 
-        else if (price<0){
+        else if (price<=0){
             JOptionPane.showMessageDialog(null, "Use a valid price!");
         }
-        else
-       // table.sell.write(re);
+        else{
+            
+            int staff = Integer.parseInt(jComboBox3.getItemAt(jComboBox3.getSelectedIndex()));
+            int cust = Integer.parseInt(jComboBox3.getItemAt(jComboBox3.getSelectedIndex()));
+            try{
+                String host = "jdbc:mysql://localhost:3306/inventory_system";
+                String username = "root";
+                con = DriverManager.getConnection( host, username, "7899" );
+
+                stmt = con.createStatement(
+                ResultSet.TYPE_SCROLL_INSENSITIVE, 
+                ResultSet.CONCUR_UPDATABLE );
+                String pPrice = "CALL `getPrice`(" + productId + ")";
+                stmt.executeQuery(pPrice);
+                String add = "CALL `addSell`(" + staff + "," + productId + "," + cust + "," + RequestQuantity + "," + price + ")";
+                stmt.executeQuery(add);
+                String update = "CALL `updateSell`(" + productId + "," + RequestQuantity + ")";
+                stmt.executeQuery(update);
+            }catch(SQLException err){
+                JOptionPane.showMessageDialog(null, "Can Not Complete Transaction!!");
+            }
+        }
+            
         try{
               String host = "jdbc:mysql://localhost:3306/inventory_system";
               String username = "root";
