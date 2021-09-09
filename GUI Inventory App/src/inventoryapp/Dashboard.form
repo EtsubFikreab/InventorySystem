@@ -241,8 +241,25 @@
             </Constraint>
           </Constraints>
 
-          <Layout class="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout">
-            <Property name="useNullLayout" type="boolean" value="false"/>
+          <Layout>
+            <DimensionLayout dim="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
+                      <Component id="jLabel34" min="-2" pref="215" max="-2" attributes="0"/>
+                      <EmptySpace pref="758" max="32767" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+            <DimensionLayout dim="1">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
+                      <Component id="jLabel34" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace pref="709" max="32767" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
           </Layout>
           <SubComponents>
             <Component class="javax.swing.JLabel" name="jLabel34">
@@ -255,11 +272,6 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="Welcome"/>
               </Properties>
-              <Constraints>
-                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="36" y="21" width="215" height="-1"/>
-                </Constraint>
-              </Constraints>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel8">
               <Properties>
@@ -267,11 +279,6 @@
                   <Image iconType="3" name="/inventoryapp/javaHome.png"/>
                 </Property>
               </Properties>
-              <Constraints>
-                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="0" y="0" width="1010" height="780"/>
-                </Constraint>
-              </Constraints>
             </Component>
           </SubComponents>
         </Container>
@@ -1164,27 +1171,15 @@
                         <Component class="javax.swing.JTable" name="jTable1">
                           <Properties>
                             <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                              <Table columnCount="6" rowCount="0">
+                              <Table columnCount="4" rowCount="0">
                                 <Column editable="false" title="Product ID" type="java.lang.Object"/>
                                 <Column editable="false" title="Name" type="java.lang.Object"/>
                                 <Column editable="false" title="Price" type="java.lang.Object"/>
                                 <Column editable="false" title="Quantity" type="java.lang.Object"/>
-                                <Column editable="false" title="Category" type="java.lang.Object"/>
-                                <Column editable="false" title="Storage" type="java.lang.Object"/>
                               </Table>
                             </Property>
                             <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
                               <TableColumnModel selectionModel="0">
-                                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
-                                  <Title/>
-                                  <Editor/>
-                                  <Renderer/>
-                                </Column>
-                                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
-                                  <Title/>
-                                  <Editor/>
-                                  <Renderer/>
-                                </Column>
                                 <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
                                   <Title/>
                                   <Editor/>
@@ -1993,8 +1988,8 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jTabbedPaneManage" max="32767" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="jTabbedPaneManage" min="-2" pref="770" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -2046,15 +2041,15 @@
                     <DimensionLayout dim="1">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="1" attributes="0">
-                              <EmptySpace pref="401" max="32767" attributes="0"/>
+                              <EmptySpace pref="385" max="32767" attributes="0"/>
                               <Component id="jScrollPane9" min="-2" pref="318" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
                           </Group>
                           <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
                               <Group type="102" attributes="0">
-                                  <EmptySpace min="0" pref="51" max="32767" attributes="0"/>
+                                  <EmptySpace min="0" pref="43" max="32767" attributes="0"/>
                                   <Component id="updateTab1" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace min="0" pref="52" max="32767" attributes="0"/>
+                                  <EmptySpace min="0" pref="44" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
@@ -2453,6 +2448,10 @@
                               <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
                             </Property>
                           </Properties>
+                          <AuxValues>
+                            <AuxValue name="JavaCodeGenerator_VariableLocal" type="java.lang.Boolean" value="false"/>
+                            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+                          </AuxValues>
                         </Component>
                       </SubComponents>
                     </Container>
@@ -2492,15 +2491,15 @@
                     <DimensionLayout dim="1">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="1" attributes="0">
-                              <EmptySpace pref="489" max="32767" attributes="0"/>
+                              <EmptySpace pref="473" max="32767" attributes="0"/>
                               <Component id="jScrollPane11" min="-2" pref="234" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
                           </Group>
                           <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
                               <Group type="102" attributes="0">
-                                  <EmptySpace min="0" pref="51" max="32767" attributes="0"/>
+                                  <EmptySpace min="0" pref="43" max="32767" attributes="0"/>
                                   <Component id="updateTab2" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace min="0" pref="52" max="32767" attributes="0"/>
+                                  <EmptySpace min="0" pref="44" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
@@ -3007,12 +3006,12 @@
                           <Properties>
                             <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                               <Table columnCount="6" rowCount="0">
-                                <Column editable="false" title="Product ID" type="java.lang.Object"/>
-                                <Column editable="false" title="Name" type="java.lang.Object"/>
-                                <Column editable="false" title="Price" type="java.lang.Object"/>
-                                <Column editable="false" title="Quantity" type="java.lang.Object"/>
-                                <Column editable="true" title="Category" type="java.lang.Object"/>
-                                <Column editable="false" title="Storage" type="java.lang.Object"/>
+                                <Column editable="false" title="supplier ID" type="java.lang.Object"/>
+                                <Column editable="false" title="supplier Name" type="java.lang.Object"/>
+                                <Column editable="false" title="supplier Address" type="java.lang.Object"/>
+                                <Column editable="false" title="supplier Phone" type="java.lang.Object"/>
+                                <Column editable="false" title="supplierEmail" type="java.lang.Object"/>
+                                <Column editable="false" title="POBOX" type="java.lang.Object"/>
                               </Table>
                             </Property>
                             <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
@@ -3053,6 +3052,10 @@
                               <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
                             </Property>
                           </Properties>
+                          <AuxValues>
+                            <AuxValue name="JavaCodeGenerator_VariableLocal" type="java.lang.Boolean" value="false"/>
+                            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+                          </AuxValues>
                         </Component>
                       </SubComponents>
                     </Container>
@@ -3562,10 +3565,10 @@
                                   <Table columnCount="6" rowCount="0">
                                     <Column editable="false" title="ID" type="java.lang.Object"/>
                                     <Column editable="false" title="First Name" type="java.lang.Object"/>
-                                    <Column editable="false" title="Price" type="java.lang.Object"/>
-                                    <Column editable="false" title="Quantity" type="java.lang.Object"/>
-                                    <Column editable="true" title="Category" type="java.lang.Object"/>
-                                    <Column editable="false" title="Storage" type="java.lang.Object"/>
+                                    <Column editable="false" title="Last Name" type="java.lang.Object"/>
+                                    <Column editable="false" title="Phone Number" type="java.lang.Object"/>
+                                    <Column editable="false" title="Email" type="java.lang.Object"/>
+                                    <Column editable="false" title="Address" type="java.lang.Object"/>
                                   </Table>
                                 </Property>
                                 <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
@@ -3590,7 +3593,7 @@
                                       <Editor/>
                                       <Renderer/>
                                     </Column>
-                                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="false">
                                       <Title/>
                                       <Editor/>
                                       <Renderer/>
@@ -3606,6 +3609,10 @@
                                   <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
                                 </Property>
                               </Properties>
+                              <AuxValues>
+                                <AuxValue name="JavaCodeGenerator_VariableLocal" type="java.lang.Boolean" value="false"/>
+                                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+                              </AuxValues>
                             </Component>
                           </SubComponents>
                         </Container>
@@ -3642,12 +3649,12 @@
                     </DimensionLayout>
                     <DimensionLayout dim="1">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <EmptySpace min="0" pref="753" max="32767" attributes="0"/>
+                          <EmptySpace min="0" pref="740" max="32767" attributes="0"/>
                           <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="1" attributes="0">
                                   <EmptySpace max="32767" attributes="0"/>
                                   <Component id="updateTab4" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace pref="19" max="32767" attributes="0"/>
+                                  <EmptySpace max="32767" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
@@ -4111,10 +4118,10 @@
                                   <Table columnCount="6" rowCount="4">
                                     <Column editable="false" title="ID" type="java.lang.Object"/>
                                     <Column editable="false" title="First Name" type="java.lang.Object"/>
-                                    <Column editable="false" title="Price" type="java.lang.Object"/>
-                                    <Column editable="false" title="Quantity" type="java.lang.Object"/>
-                                    <Column editable="true" title="Category" type="java.lang.Object"/>
-                                    <Column editable="false" title="Storage" type="java.lang.Object"/>
+                                    <Column editable="false" title="Last Name" type="java.lang.Object"/>
+                                    <Column editable="false" title="Customer Address" type="java.lang.Object"/>
+                                    <Column editable="false" title="Customer Phone" type="java.lang.Object"/>
+                                    <Column editable="false" title="Customer Email" type="java.lang.Object"/>
                                   </Table>
                                 </Property>
                                 <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
@@ -4200,15 +4207,15 @@
                     <DimensionLayout dim="1">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="1" attributes="0">
-                              <EmptySpace pref="402" max="32767" attributes="0"/>
+                              <EmptySpace pref="386" max="32767" attributes="0"/>
                               <Component id="jScrollPane15" min="-2" pref="300" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="51" max="-2" attributes="0"/>
                           </Group>
                           <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
-                              <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace min="0" pref="51" max="32767" attributes="0"/>
+                              <Group type="102" alignment="1" attributes="0">
+                                  <EmptySpace pref="43" max="32767" attributes="0"/>
                                   <Component id="updateTab5" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace min="0" pref="52" max="32767" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
@@ -4244,7 +4251,7 @@
                                   <Component id="Product8" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="jPanel17" min="-2" pref="122" max="-2" attributes="0"/>
-                                  <EmptySpace pref="283" max="32767" attributes="0"/>
+                                  <EmptySpace pref="321" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -4365,6 +4372,9 @@
                                 </Property>
                                 <Property name="text" type="java.lang.String" value="New"/>
                               </Properties>
+                              <Events>
+                                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton8ActionPerformed"/>
+                              </Events>
                               <AuxValues>
                                 <AuxValue name="JavaCodeGenerator_VariableLocal" type="java.lang.Boolean" value="false"/>
                                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
@@ -4604,6 +4614,10 @@
                               <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
                             </Property>
                           </Properties>
+                          <AuxValues>
+                            <AuxValue name="JavaCodeGenerator_VariableLocal" type="java.lang.Boolean" value="false"/>
+                            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+                          </AuxValues>
                         </Component>
                       </SubComponents>
                     </Container>

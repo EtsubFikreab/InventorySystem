@@ -38,7 +38,7 @@ public class Category extends Connect implements reader{
             rs = stmt.executeQuery( SQL );
             rs.moveToInsertRow( );
            // rs.updateInt("categoryID", Integer.parseInt(result[1]));
-            rs.updateString("categoryName",(result[0]));
+            rs.updateString("categoryName",(result[1]));
             rs.updateString("Description",(result[2]));
             rs.insertRow();
         }
@@ -119,7 +119,7 @@ public class Category extends Connect implements reader{
         try {
            //THIS ARE COMMENTED BECAUSE THE ID PART IS AUTO INCREAMENT BY THE DATABASE
           //  rs.updateInt("categoryID", Integer.parseInt(result[1]));
-            rs.updateString("categoryName",(result[0]));
+            rs.updateString("categoryName",(result[1]));
             rs.updateString("Description",(result[2]));
             rs.updateRow( );
             JOptionPane.showMessageDialog(null, "Updated");
