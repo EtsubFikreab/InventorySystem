@@ -36,6 +36,7 @@ public class Dashboard extends javax.swing.JFrame {
     public Dashboard() {
         initComponents();
         setSaveButtonsFalse();//sets all save buttons for new records found in the manage panel false
+        setTitle("Inventory System");
         setIconImage();
        table.manageTables();
        table.TradeTables();
@@ -704,6 +705,11 @@ public class Dashboard extends javax.swing.JFrame {
 
         jButton2.setBackground(new java.awt.Color(239, 118, 122));
         jButton2.setText("Cancel");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         jButton1.setBackground(new java.awt.Color(139, 232, 203));
         jButton1.setText("Save");
@@ -4197,6 +4203,13 @@ public class Dashboard extends javax.swing.JFrame {
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        textFeildNameAdd.setText("");
+        priceTextFeild.setText("");
+        quantityTextFeild.setText("");
+        jTextArea1.setText("");
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
