@@ -138,9 +138,10 @@ public boolean updateRow( String result[]){
     // rs.updateInt("supplierID", Integer.parseInt(result[0]));
       rs.updateString("supplierName",(result[1]));
       rs.updateString("supplierAddress",(result[2]));
-      rs.updateString("supplierEmail",(result[3]));
-      rs.updateString("POBOX",(result[4]));
-      rs.updateString("supplierDescription",(result[5]));
+      rs.updateString("supplierPhone",(result[3]));
+      rs.updateString("supplierEmail",(result[4]));
+      rs.updateString("POBOX",(result[5]));
+      rs.updateString("supplierDescription",(result[6]));
       rs.updateRow( );
       JOptionPane.showMessageDialog(null, "Updated");
   }

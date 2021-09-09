@@ -3442,7 +3442,7 @@ public class Dashboard extends javax.swing.JFrame {
         results[4] = textFeildNameUpdate8.getText();
         results[5] = textFeildNameUpdate9.getText();
         results[6] = textAreaDescription2.getText();
-        table.supplier.write(results);
+        table.supplier.updateRow(results);
     }//GEN-LAST:event_btnUpdateRecord3ActionPerformed
 
     private void btnDeleteRecord3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteRecord3ActionPerformed
@@ -3514,7 +3514,7 @@ public class Dashboard extends javax.swing.JFrame {
         result[3] = textFeildPriceUpdate4.getText();
         result[4] = textFeildNameUpdate11.getText();
         result[5] = textFeildNameUpdate12.getText();
-        //table.staff.write(result);
+        table.staff.updateRow(result);
         try{
               String host = "jdbc:mysql://localhost:3306/inventory_system";
               String username = "root";
@@ -3609,7 +3609,7 @@ public class Dashboard extends javax.swing.JFrame {
         result[3] = textFeildPriceUpdate5.getText();
         result[4] = textFeildNameUpdate15.getText();
         result[5] = textFeildNameUpdate19.getText();
-        //table.customer.write(result);
+        table.customer.updateRow(result);
         try{
               String host = "jdbc:mysql://localhost:3306/inventory_system";
               String username = "root";
@@ -3685,7 +3685,7 @@ public class Dashboard extends javax.swing.JFrame {
         String result[] = new String[3];
         result[0] = textFeildNameUpdate18.getText();
         result[2] = textAreaDescription3.getText();
-        //table.storage.write(result);
+        table.storage.updateRow(result);
        try{
               String host = "jdbc:mysql://localhost:3306/inventory_system";
               String username = "root";
@@ -4054,7 +4054,7 @@ public class Dashboard extends javax.swing.JFrame {
     }//GEN-LAST:event_comboBoxCategoryActionPerformed
 
     private void jButtonNewCategoryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonNewCategoryActionPerformed
-        // TODO add your handling code here: String result[] = new String[3];
+
         textFeildNameCategory.setText("");
         textAreaDescriptionCategory.setText("");
 
@@ -4069,7 +4069,7 @@ public class Dashboard extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonNewCategoryActionPerformed
 
     private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
-        String result[] = new String[7];
+
         textFeildNameUpdate6.setText("");
         textFeildPriceUpdate3.setText("");
         textFeildNameUpdate7.setText("");
