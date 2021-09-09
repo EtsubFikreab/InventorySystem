@@ -609,15 +609,29 @@ public class Dashboard extends javax.swing.JFrame {
 
         home.setBackground(new java.awt.Color(64, 121, 140));
         home.setForeground(new java.awt.Color(60, 63, 65));
-        home.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel34.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
         jLabel34.setForeground(new java.awt.Color(255, 255, 255));
         jLabel34.setText("Welcome");
-        home.add(jLabel34, new org.netbeans.lib.awtextra.AbsoluteConstraints(36, 21, 215, -1));
 
         jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/inventoryapp/javaHome.png"))); // NOI18N
-        home.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1010, 780));
+
+        javax.swing.GroupLayout homeLayout = new javax.swing.GroupLayout(home);
+        home.setLayout(homeLayout);
+        homeLayout.setHorizontalGroup(
+            homeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(homeLayout.createSequentialGroup()
+                .addGap(36, 36, 36)
+                .addComponent(jLabel34, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(758, Short.MAX_VALUE))
+        );
+        homeLayout.setVerticalGroup(
+            homeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(homeLayout.createSequentialGroup()
+                .addGap(21, 21, 21)
+                .addComponent(jLabel34)
+                .addContainerGap(709, Short.MAX_VALUE))
+        );
 
         Parent.add(home, "card2");
 
@@ -2760,6 +2774,11 @@ public class Dashboard extends javax.swing.JFrame {
 
         jButton8.setBackground(new java.awt.Color(199, 239, 207));
         jButton8.setText("New");
+        jButton8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton8ActionPerformed(evt);
+            }
+        });
 
         jButtonNewCategory5.setBackground(new java.awt.Color(199, 239, 207));
         jButtonNewCategory5.setText("Save");
@@ -3321,7 +3340,7 @@ public class Dashboard extends javax.swing.JFrame {
     private void btnLastCategoryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLastCategoryActionPerformed
         // TODO add your handling code here:
         String results[] = new String[3];
-        results = table.category.read();
+        results = table.category.readLast();
         singleCategory(results);
         //hello merge
     }//GEN-LAST:event_btnLastCategoryActionPerformed
@@ -3931,19 +3950,12 @@ public class Dashboard extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton10ActionPerformed
 
     private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
-        String result[] = new String[6];
+
         textFeildNameUpdate13.setText("");
         textFeildNameUpdate17.setText("");
         textFeildPriceUpdate5.setText("");
         textFeildNameUpdate15.setText("");
         textFeildNameUpdate19.setText("");
-
-        result[0] = textFeildNameUpdate13.getText();
-        result[1] = textFeildNameUpdate17.getText();
-        result[3] = textFeildPriceUpdate5.getText();
-        result[4] = textFeildNameUpdate15.getText();
-        result[5] = textFeildNameUpdate19.getText();
-        table.customer.write(result);
 
         btnFirst5.setEnabled(false);
         btnPrevious5.setEnabled(false);
@@ -3958,6 +3970,21 @@ public class Dashboard extends javax.swing.JFrame {
     private void jComboBox6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox6ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jComboBox6ActionPerformed
+
+    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+
+        textFeildNameUpdate18.setText("");
+        textAreaDescription3.setText("");
+
+        btnFirst6.setEnabled(false);
+        btnPrevious6.setEnabled(false);
+        btnNext5.setEnabled(false);
+        btnLast6.setEnabled(false);
+        btnUpdateRecord6.setEnabled(false);
+        btnDeleteRecord6.setEnabled(false);
+        jButton8.setEnabled(false);
+        jButtonNewCategory5.setEnabled(true);        
+    }//GEN-LAST:event_jButton8ActionPerformed
 
     /**
      * @param args the command line arguments
