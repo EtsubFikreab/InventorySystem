@@ -3726,17 +3726,10 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <EmptySpace min="0" pref="997" max="32767" attributes="0"/>
                           <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
-<<<<<<< HEAD
-                              <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace min="0" pref="19" max="32767" attributes="0"/>
-                                  <Component id="updateTab4" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace min="0" pref="20" max="32767" attributes="0"/>
-=======
                               <Group type="102" alignment="1" attributes="0">
                                   <EmptySpace pref="19" max="32767" attributes="0"/>
                                   <Component id="updateTab4" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace pref="20" max="32767" attributes="0"/>
->>>>>>> b700c10be4e25222a63b0004384c24017df95e7b
                               </Group>
                           </Group>
                       </Group>
