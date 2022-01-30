@@ -1,5 +1,6 @@
 package Manipulate;
 
+import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.ResultSet;
 import javax.swing.JOptionPane;
@@ -31,19 +32,32 @@ public class Product extends Connect implements reader{
     }
     public void write(String result[]){
         try{
-            String SQL = "SELECT * FROM Product";
-            rs = stmt.executeQuery( SQL );
-            rs.moveToInsertRow( );
-            rs.updateString("productName", result[0]);
-          //THIS ARE COMMENTED BECAUSE THE ID PART IS AUTO INCREAMENT BY THE DATABASE
-          //  rs.updateInt("productID",  Integer.parseInt(result[1]));
-            rs.updateDouble("productPrice", Double.parseDouble(result[2]));
-            // TO DO insert date
-            rs.updateString("productDescription", result[3]);
-            rs.updateInt("productQuantity", Integer.parseInt(result[4]));
-            rs.updateInt("categoryID",  Integer.parseInt(result[5]));
-            rs.updateInt("storageID",  Integer.parseInt(result[6]));
-            rs.insertRow( );
+            
+            String host = "jdbc:mysql://localhost:3306/inventory_system";
+            String username = "root";
+            con = DriverManager.getConnection( host, username, "7899" );
+
+            stmt = con.createStatement(
+            ResultSet.TYPE_SCROLL_INSENSITIVE, 
+            ResultSet.CONCUR_UPDATABLE );
+            
+            String SQL = "CALL `addProduct`(" + result[0] + "," + Double.parseDouble(result[2]) + "," + result[3] + 
+                    "," + Integer.parseInt(result[4]) + "," + Integer.parseInt(result[5]) + "," + Integer.parseInt(result[6]) + ")";
+//            String SQL = "Select * from product";
+            stmt.executeQuery( SQL );
+//            rs.moveToInsertRow( );
+//            rs.updateString("productName", result[0]);
+////          //THIS ARE COMMENTED BECAUSE THE ID PART IS AUTO INCREAMENT BY THE DATABASE
+////          //  rs.updateInt("productID",  Integer.parseInt(result[1]));
+//            rs.updateDouble("productPrice", Double.parseDouble(result[2]));
+////            // TO DO insert date
+//            rs.updateString("productDescription", result[3]);
+//            rs.updateInt("productQuantity", Integer.parseInt(result[4]));
+//            rs.updateInt("categoryID",  Integer.parseInt(result[5]));
+//            rs.updateInt("storageID",  Integer.parseInt(result[6]));
+//            SQL = "Insert into product(importDate) value (NOW()) where ";
+//            stmt.executeQuery(SQL);
+//            rs.insertRow( );
         }
         catch ( SQLException err ) {
             System.out.println( err.getMessage( ) );

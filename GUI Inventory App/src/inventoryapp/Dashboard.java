@@ -3146,7 +3146,6 @@ public class Dashboard extends javax.swing.JFrame {
         re[4]=quantityTextFeild.getText();
         re[5]=(String)CategoryComboBox.getSelectedItem();
         re[6]=(String)StorageComboBox.getSelectedItem();
-
         table.product.write(re);
     }//GEN-LAST:event_jButton1ActionPerformed
 
